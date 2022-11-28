@@ -50,7 +50,9 @@ export default function() {
       key={i}
       onClick={() => menuClick(i)}
     >
-      <SvgIcon icon={x.icon} color={current === i ? '#3F8CFF' : '#7D8592'} />
+      <div className="inline-block w-[24px] h-[24px]">
+        <SvgIcon icon={x.icon} color={current === i ? '#3F8CFF' : '#7D8592'} />
+      </div>
       <span className="ml-2">{x.name}</span>
       {
         trigger && current === i && x.children && x.children.length > 0 && (

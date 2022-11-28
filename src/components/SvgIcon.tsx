@@ -1,4 +1,4 @@
-import { useDynamicSvgImport } from "./useDynamicSvgImport"
+import { useEffect, useRef, useState } from 'react'
 
 interface IProps {
   icon: string
@@ -8,15 +8,28 @@ interface IProps {
   strokeWidth?: number
 }
 
+function dynamic(name: string) {
+  const [loading, setLoading] = useState(false)
+  const importedIconRef = useRef<React.FC<React.SVGProps<SVGElement>>>()
+  useEffect(() => {
+    setLoading(true)
+    const importSvgIcon = async (): Promise<void> => {
+      try {
+        importedIconRef.current = (await import(`../assets/svg/${name}.svg`)).ReactComponent
+      } finally {
+        setLoading(false)
+      }
+    }
+    importSvgIcon()
+  }, [name])
+  return { loading, SvgIcon: importedIconRef.current }
+}
+
 function SvgIcon(props: IProps) {
   const { icon, size = 24, color = '#7D8592', fill = 'none', ...rest } = props
-  const { loading, SvgIcon } = useDynamicSvgImport(icon)
-
+  const { SvgIcon } = dynamic(icon)
   return (
     <>
-      {loading && (
-        <div className="rounded-full bg-slate-400 animate-pulse h-8 w-8"></div>
-      )}
       {SvgIcon && <SvgIcon width={size} height={size} stroke={color} fill={fill} {...rest} />}
     </>
   )

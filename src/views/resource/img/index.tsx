@@ -58,14 +58,14 @@ export default function() {
       { error && <Alert /> }
       <div className="inline-flex justify-center items-center p-2">
         <button className="dark:bg-gray-900 px-4 py-2 t-button t-shadow-blue bg-[#3F8CFF] text-[14px]" type="button" onClick={trigger}>选择图片</button>
-        <button className="px-4 py-2 t-button t-shadow-gray ml-2 bg-[#7f8fa6] text-[14px]" type="button" onClick={cutout}>
+        <button className="dark:shadow-none px-4 py-2 t-button t-shadow-gray ml-2 bg-[#7f8fa6] text-[14px]" type="button" onClick={cutout}>
           <span className="ml-1">换底色</span>
         </button>
         <input className="ml-2 rounded" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.value)} />
       </div>
       <input ref={fileRef} type="file" hidden accept="image/*" onChange={sure} />
       <div className="flex">
-        { url && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2"><img className="w-[300px]" ref={imgRef} src={url} /></div> }
+        { url && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2 ml-2"><img className="w-[300px]" ref={imgRef} src={url} /></div> }
         { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2"><img ref={ctxImgRef} src={ctxUrl} /></div> }
       </div>
     </div>
