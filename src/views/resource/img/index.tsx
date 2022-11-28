@@ -5,7 +5,7 @@ import { hexToRgb } from '../../../utils'
 export default function() {
   const [color, setColor] = useState('#00b894')
   const [error, setError] = useState(false)
-  const [url, setUrl] = useState('/picture-bed@1.0.7/common/avatar.png')
+  const [url, setUrl] = useState('/api-img/picture-bed@1.0.7/common/avatar.png')
   const [ctxUrl, setCtxUrl] = useState('')
   const colorRef: any = useRef()
   const fileRef: any = useRef()

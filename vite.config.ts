@@ -6,9 +6,10 @@ export default defineConfig({
   plugins: [react(), svgr()],
   server: {
     proxy: {
-      '/picture-bed': {
+      '/api-img': {
         target: 'https://npm.elemecdn.com',
-        changeOrigin: true
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api-img/, '')
       }
     }
   },

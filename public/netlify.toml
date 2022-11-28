@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/picture-bed"
-  to = "https://npm.elemecdn.com/picture-bed"
+  from = "/api-img/*"
+  to = "https://npm.elemecdn.com/:splat"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
