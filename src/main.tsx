@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import './utils/heart'
+// import './utils/heart'
 import './index.css'
 import router from './router'
 

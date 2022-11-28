@@ -22,10 +22,10 @@ export default function() {
   }, [char])
   return (
     <div>
-      <div className="flex items-center">
+      <div className="dark:text-[#fff] flex items-center">
         <Tabs types={types} current={current} toggle={toggle} />
         <a className="ml-2 cursor-pointer" onClick={() => window.open('https://heroicons.com/', '_blank')}>
-          <SvgIcon icon="github" />
+          <SvgIcon icon="github" color="#fff" />
         </a>
       </div>
       <div className="flex flex-wrap mt-2">
@@ -34,7 +34,7 @@ export default function() {
             const Comp = (current === 0 ? IconOutline : IconSolid)[x]
             const convert = convertCamelToHyphen(x).slice(1, -5)
             return (
-              <span key={i} className="t-svg-container w-[150px] h-[150px] flex flex-col justify-center items-center bg-[#fff] m-2 cursor-pointer rounded-lg relative" onClick={() => setChar(convert)}>
+              <span key={i} className="dark:bg-gray-900 t-svg-container w-[132px] h-[132px] flex flex-col justify-center items-center bg-[#fff] m-2 cursor-pointer rounded-lg relative" onClick={() => setChar(convert)}>
                 <Comp />
                 <span className="text-[12px] absolute bottom-2 ml-auto text-[#9ba7ad] select-none">{ convert.length > 12 ? `${convert.slice(0, 12)}...` : convert }</span>
                 {/* 遮罩 */}

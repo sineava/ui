@@ -14,7 +14,7 @@ export default function() {
   return (
     <div className="flex flex-wrap relative">
       { Object.keys(list).map((key: any, i: number) => (
-        <div key={i} className="t-lottie-container t-card bg-[#fff] w-[300px] h-[300px] flex justify-center items-center m-2 cursor-pointer rounded-lg relative">
+        <div key={i} className="dark:bg-gray-900 t-lottie-container t-card bg-[#fff] w-[300px] h-[300px] flex justify-center items-center m-2 cursor-pointer rounded-lg relative">
           <Lottie className="w-[200px] mt-10" animationData={list[key]} />
           {/* 遮罩 */}
           <div className="absolute t-copy-mask z-10 h-[40px]" onClick={() => download(list[key], key)} onMouseLeave={() => setDownloading(false)}>

@@ -2,44 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 主题(亮色/暗黑) */
+@layer base {
+  :root {
+    --color-text-base: #fff;
+    --color-text-sub: #F4F9FD;
+  }
+}
+
+/* 登录图标 */
 .t-login svg {
   transition: transform 1s linear;
 }
-
 .t-login:hover svg {
   transform: translateX(10px);
   transition: transform 1s linear;
   /* animation: move 1s forwards; */
 }
-
 .t-svg-container svg {
   width: 24px !important;
   height: 24px !important;
 }
-
+.dark .t-svg-container svg {
+  stroke: #fff;
+}
+/* label */
 .t-label {
   @apply text-[#7D8592] font-bold;
 }
 .t-label:focus {
   display: none;
 }
+/* 输入框 */
 .t-input {
   @apply h-[48px] block w-full rounded-md border border-[#D8E0F0] pl-[40px] pr-12 sm:text-sm focus:ring-2 focus:ring-blue-600 outline-none;
 }
+/* 遮罩 */
 .t-shadow-gray {
   box-shadow: 0px 6px 12px 0px #7f8fa6;
 }
 .t-shadow-blue {
   box-shadow: 0px 6px 12px 0px #3F8CFF;
 }
+.dark .t-shadow-blue {
+  box-shadow: 0px 6px 12px 0px #1f2937;
+}
+/* 按钮 */
 .t-button {
   @apply rounded-lg text-[#fff] flex justify-center items-center relative overflow-hidden;
 }
-
+/* 背景 */
 .t-bg:hover {
   background-color: rgba(63, 140, 255, 0.1);
   @apply text-[#3F8CFF];
 }
+/* 菜单 */
 .t-menu-item:hover {
   color: #3F8CFF;
   background-color: rgba(63, 140, 255, 0.2);
@@ -62,7 +79,10 @@
   height: 100%;
   background-color: #3F8CFF;
 }
-
+/* 右侧高度适配 */
+.t-layout {
+  height: calc(100vh - 60px);
+}
 /* 波浪线 */
 .t-wave {
   position: absolute;
@@ -73,28 +93,23 @@
   line-height: 0;
   transform: rotate(180deg);
 }
-
 .t-wave svg {
   position: relative;
   display: block;
   width: calc(110% + 1.3px);
   height: 70px;
 }
-
 .t-wave .shape-fill {
   fill: #7851EB;
 }
-
 /* 图标动画 */
 .t-icon-animation {
   animation: icon 1s forwards;
 }
-
 /* 滚动条 */
 ::-webkit-scrollbar {
   width: 20px;
 }
-
 /* 选项卡切换 */
 .t-tabs {
   box-shadow: 0 1px 4px rgba(63, 140, 255, 0.3);
@@ -107,7 +122,6 @@
   color: #3F8CFF;
   background: rgba(63, 140, 255, 0.1);
 }
-
 /* 拷贝文本 */
 .t-lottie-container:hover > .t-copy-mask, .t-svg-container:hover > .t-copy-mask {
   @apply opacity-100;
@@ -119,24 +133,20 @@
   animation: move 2s linear forwards;
   @apply text-[12px] text-[#fff];
 }
-
 /* alert效果 */
 .t-alert {
   animation: alert 3s ease-in forwards;
 }
-
 /* 滚动条 */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
   background-color: #d6dee1;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }

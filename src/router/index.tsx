@@ -5,6 +5,7 @@ import { lazy } from 'react'
 import Home from '../views/home'
 import { BasicLogin } from '../views/login'
 const UiIcon  = lazy(() => import('../views/ui/icon'))
+const Chart  = lazy(() => import('../views/ui/chart'))
 const Btn  = lazy(() => import('../views/ui/btn'))
 const Lottie = lazy(() => import('../views/ui/lottie'))
 const Img = lazy(() => import('../views/resource/img'))
@@ -25,7 +26,8 @@ const router = createBrowserRouter([
         children: [
           { path: 'icon', element: <UiIcon /> },
           { path: 'btn', element: <Btn /> },
-          { path: 'lottie', element: <Lottie /> }
+          { path: 'lottie', element: <Lottie /> },
+          { path: 'chart', element: <Chart /> }
         ]
       },
       {
