@@ -1,0 +1,7 @@
+[[redirects]]
+  from = "/picture-bed"
+  to = "https://npm.elemecdn.com/picture-bed"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+  headers = {X-From = "Netlify"}
+  signed = "API_SIGNATURE_TOKEN"
