@@ -49,7 +49,7 @@
 }
 /* 按钮 */
 .t-button {
-  @apply rounded-lg text-[#fff] flex justify-center items-center relative overflow-hidden;
+  @apply rounded-lg text-[#fff] flex justify-center items-center overflow-hidden;
 }
 /* 背景 */
 .t-bg:hover {

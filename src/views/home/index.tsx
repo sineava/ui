@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Left from './components/Left'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Route, Navigate, Routes } from 'react-router-dom'
 import { Suspense } from 'react'
 import Lottie from 'lottie-react'
 import json from '../../assets/lottie/cat.json'
@@ -9,6 +9,7 @@ import emitter from '../../utils/ev'
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
+
 
 function Home() {
   const [theme, setTheme] = useState(initialTheme)
@@ -69,4 +70,10 @@ function Home() {
   )
 }
 
-export default Home
+function Auth() {
+  const [token] = useState(localStorage.getItem('token'))
+  console.log(token)
+  return token ? <Home /> : <Routes><Route path="*" element={<Navigate to="/login" replace />} /></Routes>
+}
+
+export default Auth

@@ -1,16 +1,37 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Lottie from 'lottie-react'
 import json from '../../../assets/lottie/machine.json'
 import Logo from '../../../assets/logo.png'
 import { useNavigate } from "react-router-dom"
 import SvgIcon from '../../../components/SvgIcon'
+import Alert  from '@/components/Alert'
 
-function BasicLogin({ props }: any) {
-  const navigate = useNavigate();
+function BasicLogin() {
+  const navigate = useNavigate()
+  const [username, setUsername] = useState('admin')
+  const [password, setPassword] = useState('123456')
   const [checked, setChecked] = useState(false)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
   const [focus, setFocus] = useState('')
+  const [error, setError] = useState('')
+  useEffect(() => {
+    localStorage.removeItem('token')
+  }, [])
   const login = () => {
+    let msg
+    if (!username) msg = '用户名未填'
+    if (!password) msg = '密码未填'
+    if (username !== 'admin') msg = '用户名错误'
+    if (password !== '123456') msg = '密码错误'
+    if (msg) {
+      setError(msg)
+      const timer = setTimeout(() => {
+        setError('')
+        clearTimeout(timer)
+      }, 3000)
+      return false
+    }
+    localStorage.setItem('token', 'daisyui')
     navigate("/")
   }
   return (
@@ -31,11 +52,15 @@ function BasicLogin({ props }: any) {
             <span className="dark:text-[#fff] text-[30px] mb-4">欢迎回来！</span>
             <label className="w-[400px] mt-[100px]">
               <span className="t-label text-[14px]">用户名</span>
-              <div className="relative">
+              <div className="relative group">
                 <div className="absolute left-0 top-0 w-[40px] h-full flex justify-center items-center">
                   <SvgIcon icon="account" color={focus === 'account' ? '#3F8CFF' : '#7D8592'} />
                 </div>
-                <input className="dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1" type="text" name="price" id="price" placeholder="请输入" required onFocus={() => setFocus('account')} onBlur={() => setFocus('')} />
+                <input className={`dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1`} required type="text" name="price" id="price" placeholder="请输入"
+                  defaultValue={username}
+                  onFocus={() => setFocus('account')}
+                  onChange={(e: any) => setUsername(e.target.value)}
+                />
               </div>
             </label>
             <label className="w-[400px] mt-[30px]">
@@ -44,23 +69,28 @@ function BasicLogin({ props }: any) {
                 <div className="absolute left-0 top-0 w-[40px] h-full flex justify-center items-center cursor-pointer" onClick={() => setShow(!show)}>
                   <SvgIcon icon={show ? 'lock-closed' : 'lock-open'} color={focus === 'password' ? '#3F8CFF' : '#7D8592'} />
                 </div>
-                <input className="dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1" type={show ? 'password' : 'text'} name="price" id="price" placeholder="请输入" required onFocus={() => setFocus('password')} onBlur={() => setFocus('')} />
+                <input className="dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1" type={show ? 'password' : 'text'} name="price" id="price" placeholder="请输入" required
+                  defaultValue={password}
+                  onFocus={() => setFocus('password')}
+                  onChange={(e: any) => setPassword(e.target.value)}
+                />
               </div>
             </label>
             <div className="w-[400px] mt-[30px] flex items-center justify-between">
               <div className="flex items-center">
-                <input className="dark:border-[#3F8CFF] checkbox" type="checkbox" checked={checked} onClick={() => setChecked(!checked)} />
+                <input className="dark:border-[#3F8CFF] checkbox" type="checkbox" defaultChecked={checked} onClick={() => setChecked(!checked)} />
                 <span className="ml-2 text-sm text-[#7D8592]">记住密码</span>
               </div>
               <a className="link link-hover text-[#3F8CFF] text-sm">忘记密码?</a>
             </div>
             <button type="button" onClick={login} className="dark:bg-gray-800 t-login mt-[30px] w-[170px] h-[48px] t-button t-shadow-blue bg-[#3F8CFF] flex justify-center items-center">
-              <span className="mr-2">登 录</span>
-              <SvgIcon icon="right-arrow" color="#fff" />
+              <span className="w-[40px] mr-2">登 录</span>
+              <SvgIcon icon="right-arrow" color="#fff" size={24} />
             </button>
           </form>
         </div>
       </div>
+      { error && <Alert msg={error} /> }
     </div>
   )
 }
