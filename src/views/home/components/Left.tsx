@@ -30,13 +30,20 @@ export default function() {
   const [trigger, setTrigger] = useState(false)
 
   useEffect(() => {
+    document.addEventListener('click', function(){
+      setTrigger(false)
+    })
+  })
+
+  useEffect(() => {
     const path = `/${location.pathname.split('/')[1]}`
     list.forEach((x: any, i: number) => {
       if (x.path === path) setCurrent(i)
     })
   }, [location.pathname])
 
-  function menuClick(i: number) {
+  function menuClick(e: any, i: number) {
+    e.stopPropagation()
     setCurrent(i)
     !trigger && setTrigger(true)
   }
@@ -48,7 +55,7 @@ export default function() {
     <li
       className={`t-menu-item h-[40px] w-full text-[#7D8592] dark:text-[#fff] font-semibold cursor-pointer flex my-4 items-center pl-2 ${current === i && 't-menu-item-select'}`}
       key={i}
-      onClick={() => menuClick(i)}
+      onClick={(e: any) => menuClick(e, i)}
     >
       <div className="inline-block w-[24px] h-[24px]">
         <SvgIcon icon={x.icon} color={current === i ? '#3F8CFF' : '#7D8592'} />
@@ -70,7 +77,7 @@ export default function() {
   return (
     <div className="px-[16px] relative">
       <div className="my-[50px] flex items-center">
-        <img className="w-[50px] mr-4 cursor-pointer" src={Logo} />
+        <img className="w-[50px] h-[50px] mr-4 cursor-pointer" src={Logo} />
         <span className="text-[20px] font-semibold dark:text-[#fff]">daisyUI</span>
       </div>
       <ul className="bg-base-100 w-full relative text-[14px] dark:bg-gray-900">

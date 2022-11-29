@@ -18,7 +18,7 @@ function BasicLogin({ props }: any) {
       <div className="w-[1360px] h-[770px] flex">
         <div className="dark:bg-gray-900 p-[60px] flex-1 h-full bg-[#3F8CFF] rounded-l-2xl text-[#fff]">
           <div className="flex items-center">
-            <img className="w-[50px] cursor-pointer" src={Logo} />
+            <img className="w-[50px] h-[50px] cursor-pointer" src={Logo} />
             <span className="ml-[20px] text-[30px] font-bold">daisyUI</span>
           </div>
           <div className="mt-4 text-[36px] font-bold tracking-widest">
