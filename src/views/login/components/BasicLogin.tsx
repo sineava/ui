@@ -49,7 +49,7 @@ function BasicLogin({ props }: any) {
             </label>
             <div className="w-[400px] mt-[30px] flex items-center justify-between">
               <div className="flex items-center">
-                <input className="checkbox" type="checkbox" checked={checked} onClick={() => setChecked(!checked)} />
+                <input className="dark:border-[#3F8CFF] checkbox" type="checkbox" checked={checked} onClick={() => setChecked(!checked)} />
                 <span className="ml-2 text-sm text-[#7D8592]">记住密码</span>
               </div>
               <a className="link link-hover text-[#3F8CFF] text-sm">忘记密码?</a>
