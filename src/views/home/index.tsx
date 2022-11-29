@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import Lottie from 'lottie-react'
 import json from '../../assets/lottie/cat.json'
 import SvgIcon from '../../components/SvgIcon'
+import emitter from '../../utils/ev'
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
@@ -28,7 +29,6 @@ function Home() {
     if (charging) {
       const timer = setInterval(() => {
         const process = step === 4 ? 1 : step + 1
-        console.log(process)
         setStep(process)
       }, 2000)
       return () => clearInterval(timer)
@@ -36,6 +36,7 @@ function Home() {
   }, [step, charging])
   const toggle = () => {
     const mode = theme === 'dark' ? 'light' : 'dark'
+    emitter.emit('theme', mode)
     document.documentElement.setAttribute('class', mode === 'light' ? '' : 'dark')
     localStorage.setItem('theme', mode)
     setTheme(mode === 'light' ? '' : 'dark')

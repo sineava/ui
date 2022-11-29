@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react'
 import Alert from '../../../components/Alert'
 import { hexToRgb } from '../../../utils'
+import Avatar from '../../../assets/avatar.png'
 
 export default function() {
   const [color, setColor] = useState('#00b894')
   const [error, setError] = useState(false)
-  const [url, setUrl] = useState('/api-img/picture-bed@1.0.7/common/avatar.png')
+  const [url, setUrl] = useState(Avatar)
   const [ctxUrl, setCtxUrl] = useState('')
   const colorRef: any = useRef()
   const fileRef: any = useRef()

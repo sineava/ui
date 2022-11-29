@@ -1,4 +1,4 @@
 /// <reference types="vite/client" />
 
 declare module 'dplayer'
-// declare module '@/*'
+declare module '../../../../assets/model/luka.glb'

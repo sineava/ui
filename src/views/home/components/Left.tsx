@@ -21,7 +21,9 @@ export default function() {
       { path: '/ui/lottie', name: 'lottie' }
     ] },
     { path: '/map', icon: 'map', name: '地图' },
-    { path: '/3d', icon: 'cube', name: '3D' },
+    { path: '/3d', icon: 'cube', name: '3D', children: [
+      { path: '/3d/three', name: 'Three.js' }
+    ] },
     { path: '/resource', icon: 'folder-minus', name: '流媒体', children: [
       { path: '/resource/img', name: '图像' },
       { path: '/resource/video', name: '视频' }

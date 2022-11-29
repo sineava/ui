@@ -11,6 +11,7 @@ const Lottie = lazy(() => import('../views/ui/lottie'))
 const Img = lazy(() => import('../views/resource/img'))
 const Video = lazy(() => import('../views/resource/video'))
 const NotFound = lazy(() => import('../views/404'))
+const Three = lazy(() => import('../views/3d/three'))
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,12 @@ const router = createBrowserRouter([
           { path: 'btn', element: <Btn /> },
           { path: 'lottie', element: <Lottie /> },
           { path: 'chart', element: <Chart /> }
+        ]
+      },
+      {
+        path: '3d',
+        children: [
+          { path: 'three', element: <Three /> }
         ]
       },
       {
