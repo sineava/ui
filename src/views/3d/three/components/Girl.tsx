@@ -3,12 +3,11 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
-const Luka = new URL('../../../../assets/model/luka.glb', import.meta.url)
-const scene = new THREE.Scene()
-const renderer = new THREE.WebGLRenderer()
-const loader = new GLTFLoader()
-const light = new THREE.AmbientLight(0xffffff)
-scene.add(light)
+let renderer: any = new THREE.WebGLRenderer()
+let Luka: any
+let scene: any
+let loader: any
+let light: any
 let camera: any
 let sword: any
 
@@ -23,9 +22,14 @@ export default function({ theme }: any) {
   }
   useEffect(() => {
     const dom: any = domRef.current
+    Luka = new URL('../../../../assets/model/luka.glb', import.meta.url)
+    scene = new THREE.Scene()
+    loader = new GLTFLoader()
+    light = new THREE.AmbientLight(0xffffff)
+    scene.add(light)
     renderer.setSize(dom.offsetWidth - 20, dom.offsetHeight - 20)
     domRef.current.appendChild(renderer.domElement)
-    loader.load(Luka.href, glb => {
+    loader.load(Luka.href, (glb: any) => {
       sword = glb.scene
       scene.add(sword)
       sword.scale.set(0.2, 0.2, 0.2)

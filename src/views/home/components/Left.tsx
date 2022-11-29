@@ -51,7 +51,7 @@ export default function() {
   }
   function toView(path: string) {
     setTrigger(false)
-    navigate(path)
+    navigate(path, {replace: true})
   }
   const menu = list.map((x: any, i: number) => 
     <li

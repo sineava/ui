@@ -3,9 +3,9 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Basketball from '../../../../assets/basketball.jpg'
 
-const textureLoader = new THREE.TextureLoader()
-const scene = new THREE.Scene()
-const renderer = new THREE.WebGLRenderer()
+let textureLoader: any
+let scene: any
+let renderer = new THREE.WebGLRenderer()
 let camera: any
 let ball: any
 let step: number = 0
@@ -14,6 +14,8 @@ export default function ({ theme }: any) {
   const domRef: any = useRef()
   useEffect(() => {
     const dom = domRef.current
+    textureLoader = new THREE.TextureLoader()
+    scene = new THREE.Scene()
     renderer.shadowMap.enabled = true
     renderer.setSize(dom.offsetWidth - 20, dom.offsetHeight - 20)
     renderer.setClearColor(0xFFFFFF)
