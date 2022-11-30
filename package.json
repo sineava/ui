@@ -9,9 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.1",
     "@heroicons/react": "^2.0.13",
     "@react-three/fiber": "^8.9.1",
     "@types/node": "^18.11.9",
+    "@uiw/codemirror-theme-dracula": "^4.15.1",
+    "@uiw/react-codemirror": "^4.15.1",
     "axios": "^1.2.0",
     "daisyui": "^2.42.1",
     "dplayer": "^1.27.0",

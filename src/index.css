@@ -137,6 +137,13 @@
 .t-alert {
   animation: alert 3s ease-in forwards;
 }
+/* 卡片 */
+.t-card {
+  @apply dark:bg-gray-700 w-[400px] h-[400px] p-[10px] bg-[#3f8cff] rounded-lg overflow-hidden relative;
+}
+.t-card:hover > div {
+  opacity: 100;
+}
 /* 滚动条 */
 ::-webkit-scrollbar-track {
   background-color: transparent;
