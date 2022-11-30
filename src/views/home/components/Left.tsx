@@ -18,7 +18,8 @@ export default function() {
     { path: '/ui', icon: 'swatch', name: 'UI库', children: [
       { path: '/ui/icon', name: '图标' },
       { path: '/ui/chart', name: '图表' },
-      { path: '/ui/lottie', name: 'lottie' }
+      { path: '/ui/lottie', name: 'lottie' },
+      { path: '/ui/awesome', name: 'awesome' }
     ] },
     { path: '/map', icon: 'map', name: '地图' },
     { path: '/3d', icon: 'cube', name: '3D', children: [
