@@ -21,12 +21,12 @@ export default function() {
   return (
     <div className="flex gap-2">
       <Map theme={theme} show={show}>
-        <div className="opacity-0 absolute top-[10px] right-[10px] cursor-pointer" onClick={() => setText(MapTxt)}>
+        <div className="opacity-0 absolute top-[10px] right-[10px] cursor-pointer hover:opacity-100" onClick={() => setText(MapTxt)}>
           <SvgIcon icon="command-line" color={theme === 'dark' ? '#fff' : '#3f8cff'} />
         </div>
       </Map>
       <Girl theme={theme} show={show}>
-        <div className="opacity-0 absolute top-[10px] right-[10px] cursor-pointer" onClick={() => setText(GirlTxt)}>
+        <div className="opacity-0 absolute top-[10px] right-[10px] cursor-pointer hover:opacity-100" onClick={() => setText(GirlTxt)}>
           <SvgIcon icon="command-line" color={theme === 'dark' ? '#fff' : '#3f8cff'} />
         </div>
       </Girl>

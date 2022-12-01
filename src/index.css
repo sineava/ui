@@ -139,10 +139,7 @@
 }
 /* 卡片 */
 .t-card {
-  @apply dark:bg-gray-700 w-[400px] h-[400px] p-[10px] bg-[#3f8cff] rounded-lg overflow-hidden relative;
-}
-.t-card:hover > div {
-  opacity: 100;
+  @apply border-[10px] dark:border-gray-700 w-[400px] h-[400px] border-[#3f8cff] rounded-lg overflow-hidden relative;
 }
 /* 秀儿蔡徐坤 */
 .t-shower {
@@ -150,6 +147,21 @@
   mix-blend-mode: hard-light;
   background-image: url('./assets/shower.gif');
   @apply text-transparent bg-clip-text;
+}
+/* 大屏球 */
+.t-earth {
+  background: url('./assets/earth-bg.png') center/cover no-repeat;
+  @apply w-4/5 h-4/5 opacity-50;
+}
+.t-earth-ball {
+  background: url('./assets/ball-bg.png')  center/cover no-repeat;
+  animation: rotate 20s linear infinite;
+  @apply w-full h-full opacity-40;
+}
+.t-earth-airplane {
+  background: url('./assets/airplane.png')  center/cover no-repeat;
+  animation: rotateOther 20s linear infinite;
+  @apply z-30 w-[328px] h-[328px];
 }
 /* 滚动条 */
 ::-webkit-scrollbar-track {
@@ -185,5 +197,23 @@
   100% {
     transform: translateY(-80px);
     opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateOther {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
   }
 }
