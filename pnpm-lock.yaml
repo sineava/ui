@@ -18,6 +18,7 @@ specifiers:
   echarts: ^5.4.0
   echarts-for-react: ^3.0.2
   echarts-liquidfill: ^3.1.0
+  echarts4.2.1: npm:echarts@4.2.1
   events: ^3.3.0
   hls.js: ^1.2.7
   lottie-react: ^2.3.1
@@ -48,6 +49,7 @@ dependencies:
   echarts: registry.npmmirror.com/echarts/5.4.0
   echarts-for-react: registry.npmmirror.com/echarts-for-react/3.0.2_echarts@5.4.0+react@18.2.0
   echarts-liquidfill: registry.npmmirror.com/echarts-liquidfill/3.1.0_echarts@5.4.0
+  echarts4.2.1: registry.npmmirror.com/echarts/4.2.1
   events: registry.npmmirror.com/events/3.3.0
   hls.js: registry.npmmirror.com/hls.js/1.2.7
   lottie-react: registry.npmmirror.com/lottie-react/2.3.1_react-dom@18.2.0+react@18.2.0
@@ -1680,6 +1682,14 @@ packages:
       echarts: registry.npmmirror.com/echarts/5.4.0
     dev: false
 
+  registry.npmmirror.com/echarts/4.2.1:
+    resolution: {integrity: sha512-pw4xScRPsLegD/cqEcoXRKeA2SD4+s+Kyo0Na166NamOWhzNl2yI5RZ2rE97tBlAopNmhyMeBVpAeD5qb+ee1A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/echarts/-/echarts-4.2.1.tgz}
+    name: echarts
+    version: 4.2.1
+    dependencies:
+      zrender: registry.npmmirror.com/zrender/4.0.7
+    dev: false
+
   registry.npmmirror.com/echarts/5.4.0:
     resolution: {integrity: sha512-uPsO9VRUIKAdFOoH3B0aNg7NRVdN7aM39/OjovjO9MwmWsAkfGyeXJhK+dbRi51iDrQWliXV60/XwLA7kg3z0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/echarts/-/echarts-5.4.0.tgz}
     name: echarts
@@ -3300,6 +3310,12 @@ packages:
     name: yaml
     version: 1.10.2
     engines: {node: '>= 6'}
+
+  registry.npmmirror.com/zrender/4.0.7:
+    resolution: {integrity: sha512-TNloHe0ums6zxbHfnaCryM61J4IWDajZwNq6dHk9vfWhhysO/OeFvvR0drBs/nbXha2YxSzfQj2FiCd6RVBe+Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zrender/-/zrender-4.0.7.tgz}
+    name: zrender
+    version: 4.0.7
+    dev: false
 
   registry.npmmirror.com/zrender/5.4.0:
     resolution: {integrity: sha512-rOS09Z2HSVGFs2dn/TuYk5BlCaZcVe8UDLLjj1ySYF828LATKKdxuakSZMvrDz54yiKPDYVfjdKqcX8Jky3BIA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/zrender/-/zrender-5.4.0.tgz}

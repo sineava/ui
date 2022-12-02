@@ -21,6 +21,7 @@
     "echarts": "^5.4.0",
     "echarts-for-react": "^3.0.2",
     "echarts-liquidfill": "^3.1.0",
+    "echarts4.2.1": "npm:echarts@4.2.1",
     "events": "^3.3.0",
     "hls.js": "^1.2.7",
     "lottie-react": "^2.3.1",

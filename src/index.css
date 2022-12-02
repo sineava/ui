@@ -139,7 +139,7 @@
 }
 /* 卡片 */
 .t-card {
-  @apply border-[10px] dark:border-gray-700 w-[400px] h-[400px] border-[#3f8cff] rounded-lg overflow-hidden relative;
+  @apply border-[10px] dark:border-gray-900 w-[400px] h-[400px] border-[#3f8cff] rounded-lg overflow-hidden relative;
 }
 /* 秀儿蔡徐坤 */
 .t-shower {
@@ -151,7 +151,7 @@
 /* 大屏球 */
 .t-earth {
   background: url('./assets/earth-bg.png') center/cover no-repeat;
-  @apply w-4/5 h-4/5 opacity-50;
+  @apply z-10 w-4/5 h-4/5 opacity-70;
 }
 .t-earth-ball {
   background: url('./assets/ball-bg.png')  center/cover no-repeat;
@@ -161,7 +161,7 @@
 .t-earth-airplane {
   background: url('./assets/airplane.png')  center/cover no-repeat;
   animation: rotateOther 20s linear infinite;
-  @apply z-30 w-[328px] h-[328px];
+  @apply w-[328px] h-[328px];
 }
 /* 滚动条 */
 ::-webkit-scrollbar-track {
