@@ -1,13 +1,17 @@
 import { useRef, useState } from 'react'
+import QRCode from 'qrcode'
 import Alert from '../../../components/Alert'
 import { hexToRgb } from '../../../utils'
 import Avatar from '../../../assets/avatar.png'
 
 export default function() {
   const [color, setColor] = useState('#00b894')
+  const [color2, setColor2] = useState('#2E365C')
   const [error, setError] = useState(false)
   const [url, setUrl] = useState(Avatar)
+  const [val, setVal] = useState('base')
   const [ctxUrl, setCtxUrl] = useState('')
+  const [canvasUrl, setCanvasUrl] = useState('')
   const colorRef: any = useRef()
   const fileRef: any = useRef()
   const imgRef: any = useRef()
@@ -54,21 +58,77 @@ export default function() {
     ctx.putImageData(imgData, 0, 0)
     setCtxUrl(canvas.toDataURL())
   }
+  const code = () => {
+    QRCode.toDataURL('https://sineava-ui.netlify.app/', {
+      color: {
+        dark: color,
+        light: color2
+      }
+    }).then((url: string) => {
+      setCanvasUrl(url)
+    })
+  }
+  const handle = (e: any) => {
+    setVal('')
+    setVal(e.target.value)
+  }
+  const handleSure = () => {
+    switch (val) {
+      case 'base':
+        cutout()
+        break
+      case 'code':
+        code()
+        break
+    }
+  }
   return (
     <div>
       { error && <Alert /> }
-      <div className="inline-flex justify-center items-center p-2">
-        <button className="dark:bg-gray-900 px-4 py-2 t-button t-shadow-blue bg-[#3F8CFF] text-[14px]" type="button" onClick={trigger}>选择图片</button>
-        <button className="dark:shadow-none px-4 py-2 t-button t-shadow-gray ml-2 bg-[#7f8fa6] text-[14px]" type="button" onClick={cutout}>
-          <span className="ml-1">换底色</span>
-        </button>
-        <input className="ml-2 rounded" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.value)} />
+      <div className="flex p-2 text-sm">
+        <div className="flex items-center">
+          <select className="dark:bg-gray-900 dark:text-[#fff] w-[200px] outline-none rounded select-sm h-[37px] font-normal" defaultValue={val} onChange={handle}>
+            <option value="base">更换底色</option>
+            <option value="code">二维码</option>
+          </select>
+        </div>
+        <div className="dark:bg-gray-900 bg-white dark:text-[#fff] flex items-center rounded ml-2 py-1 px-2">
+          {
+            val === 'base' && <div className="flex items-center gap-2 text-sm">
+              <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
+            </div>
+          }
+          {
+            val === 'code' && (
+              <div className="flex items-center gap-2 text-sm">
+                c1: <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
+                c2: <input className="cursor-pointer" type="color" value={color2} ref={colorRef} onChange={(e: any) => setColor2(e.target.value)} />
+              </div>
+            )
+          }
+        </div>
+        <div className="flex items-center">
+          <button className="dark:bg-gray-900 bg-white dark:text-white px-4 py-2 rounded ml-2" onClick={handleSure}>确定</button>
+        </div>
       </div>
       <input ref={fileRef} type="file" hidden accept="image/*" onChange={sure} />
-      <div className="flex">
-        { url && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2 ml-2"><img className="w-[300px]" ref={imgRef} src={url} /></div> }
-        { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2"><img ref={ctxImgRef} src={ctxUrl} /></div> }
-      </div>
+      {
+        val === 'base' && url && (
+          <div className="flex">
+            <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mx-2"><img className="w-[300px]" ref={imgRef} src={url} /></div>
+            { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded"><img ref={ctxImgRef} src={ctxUrl} /></div> }
+          </div>
+        )
+      }
+      {
+        val === 'code' && canvasUrl && (
+          <div className="flex">
+            <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2 qrcode-container ml-2 relative">
+              <img className="w-[300px] h-[300px]" src={canvasUrl} />
+            </div>
+          </div>
+        )
+      }
     </div>
   )
 }
