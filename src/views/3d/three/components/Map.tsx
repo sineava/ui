@@ -18,12 +18,12 @@ export default function ({ theme, children }: any) {
     textureLoader = new THREE.TextureLoader()
     scene = new THREE.Scene()
     renderer.shadowMap.enabled = true
-    renderer.setSize(dom.offsetWidth - 20, dom.offsetHeight - 20)
+    renderer.setSize(dom.offsetWidth - 8, dom.offsetHeight - 8)
     renderer.setClearColor(0xFFFFFF)
     domRef.current.appendChild(renderer.domElement)
     camera = new THREE.PerspectiveCamera(
       75,
-      (dom.offsetWidth - 20) / (dom.offsetHeight - 20),
+      (dom.offsetWidth - 8) / (dom.offsetHeight - 8),
       1,
       1000
     )

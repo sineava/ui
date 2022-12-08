@@ -25,7 +25,7 @@ export default function({ theme, children }: any) {
     loader = new GLTFLoader()
     light = new THREE.AmbientLight(0xffffff)
     scene.add(light)
-    renderer.setSize(dom.offsetWidth - 20, dom.offsetHeight - 20)
+    renderer.setSize(dom.offsetWidth - 8, dom.offsetHeight - 8)
     domRef.current.appendChild(renderer.domElement)
     loader.load(Luka.href, (glb: any) => {
       sword = glb.scene
@@ -36,7 +36,7 @@ export default function({ theme, children }: any) {
     })
     camera = new THREE.PerspectiveCamera(
       75,
-      (dom.offsetWidth - 20) / (dom.offsetHeight - 20),
+      (dom.offsetWidth - 8) / (dom.offsetHeight - 8),
       1,
       1000
     )
