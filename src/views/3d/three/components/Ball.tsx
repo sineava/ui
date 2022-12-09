@@ -2,7 +2,12 @@ import { useEffect, useRef } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import Basketball from '../../../../assets/basketball.jpg'
-import SvgIcon from '../../../../components/SvgIcon'
+import Code from '../../../../components/Code'
+
+interface Type {
+  html: string
+  css?: string
+}
 
 let textureLoader: any
 let scene: any
@@ -11,19 +16,20 @@ let camera: any
 let ball: any
 let step: number = 0
 
-export default function ({ theme, children }: any) {
+function Wrapper({ theme, children }: any) {
+  console.log(theme)
   const domRef: any = useRef()
   useEffect(() => {
     const dom = domRef.current
     textureLoader = new THREE.TextureLoader()
     scene = new THREE.Scene()
     renderer.shadowMap.enabled = true
-    renderer.setSize(dom.offsetWidth - 8, dom.offsetHeight - 8)
+    renderer.setSize(dom.offsetWidth, dom.offsetHeight)
     renderer.setClearColor(0xFFFFFF)
     domRef.current.appendChild(renderer.domElement)
     camera = new THREE.PerspectiveCamera(
       75,
-      (dom.offsetWidth - 8) / (dom.offsetHeight - 8),
+      dom.offsetWidth / dom.offsetHeight,
       1,
       1000
     )
@@ -80,8 +86,10 @@ export default function ({ theme, children }: any) {
     renderer.setClearColor(theme === 'dark' ? '#111827' : '#fff')
   }, [theme])
   return (
-    <div className="t-card" ref={domRef}>
+    <div className="w-full h-full" ref={domRef}>
       {children}
     </div>
   )
 }
+
+export default ({ html, css }: Type) => Code(Wrapper, { html, css })

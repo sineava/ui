@@ -169,6 +169,18 @@
   animation: loop var(--duration) linear var(--reverse) infinite;
   @apply flex;
 }
+.t-inner:hover {
+  animation-play-state: paused;
+}
+/* 打字机效果,汉字ch要*2,英文不用,最后一个字符停顿太短可以补空格 */
+.t-type {
+  width: 23ch;
+  animation: typing 10s steps(23) infinite, blink .5s step-end infinite alternate;
+  border-right: 2px solid;
+  font: 200% monospace;
+  @apply overflow-hidden whitespace-nowrap rounded-l;
+}
+
 /* 阴影遮罩 */
 .t-fade {
   pointer-events: none;
@@ -238,4 +250,14 @@
   100% {
     transform: translateX(-36%);
   }
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }

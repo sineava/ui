@@ -1,8 +1,14 @@
 import { useRef, useEffect } from 'react'
 import * as echarts from 'echarts4.2.1'
 import china from 'echarts4.2.1/map/json/china.json'
+import Code from '../../../../components/Code'
 
-export default function () {
+interface Type {
+  html: string
+  css?: string
+}
+
+function Wrapper() {
   const chartRef: any = useRef()
   const geoCoordMap: any = {
     '上海': [121.4648, 31.2891],
@@ -287,3 +293,5 @@ export default function () {
   }, [])
   return <div className="w-full h-full cursor-pointer" ref={chartRef}></div>
 }
+
+export default ({ html, css }: Type) => Code(Wrapper, { html, css })

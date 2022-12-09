@@ -1,8 +1,14 @@
 import { useRef, useState, useEffect } from 'react'
 import * as echarts from 'echarts'
 import 'echarts-liquidfill'
+import Code from '../../../../components/Code'
 
-export default function() {
+interface Type {
+  html: string
+  css?: string
+}
+
+function Wrapper() {
   const chartRef: any = useRef()
   const [value] = useState(0.42)
   const [option] = useState({
@@ -34,5 +40,8 @@ export default function() {
   useEffect(() => {
     echarts.init(chartRef.current).setOption(option)
   }, [])
-  return <div className="w-full h-full  cursor-pointer" ref={chartRef}></div>
+  return <div className="w-full h-full cursor-pointer" ref={chartRef}></div>
 }
+
+
+export default ({ html, css }: Type) => Code(Wrapper, { html, css })

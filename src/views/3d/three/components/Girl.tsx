@@ -2,6 +2,12 @@ import { useEffect, useRef } from "react"
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import Code from '../../../../components/Code'
+
+interface Type {
+  html: string
+  css?: string
+}
 
 let Luka: any
 let scene: any
@@ -11,7 +17,7 @@ let camera: any
 let sword: any
 let renderer: any = new THREE.WebGLRenderer()
 
-export default function({ theme, children }: any) {
+function Wrapper({ theme, children }: any) {
   const domRef: any = useRef()
   const animate = () => {
     requestAnimationFrame( animate )
@@ -25,7 +31,7 @@ export default function({ theme, children }: any) {
     loader = new GLTFLoader()
     light = new THREE.AmbientLight(0xffffff)
     scene.add(light)
-    renderer.setSize(dom.offsetWidth - 8, dom.offsetHeight - 8)
+    renderer.setSize(dom.offsetWidth, dom.offsetHeight)
     domRef.current.appendChild(renderer.domElement)
     loader.load(Luka.href, (glb: any) => {
       sword = glb.scene
@@ -36,7 +42,7 @@ export default function({ theme, children }: any) {
     })
     camera = new THREE.PerspectiveCamera(
       75,
-      (dom.offsetWidth - 8) / (dom.offsetHeight - 8),
+      dom.offsetWidth / dom.offsetHeight,
       1,
       1000
     )
@@ -49,9 +55,10 @@ export default function({ theme, children }: any) {
     renderer.setClearColor(theme === 'dark' ? '#111827' : '#fff')
   }, [theme])
   return (
-    <div className="t-card" ref={domRef}>
+    <div className="w-full h-full" ref={domRef}>
       { children }
     </div>
   )
 }
 
+export default ({ html, css }: Type) => Code(Wrapper, { html, css })
