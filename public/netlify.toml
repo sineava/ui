@@ -5,8 +5,8 @@
   force = true
 
 [[redirects]]
-  from = "/api-user/*"
-  to = "https://api.github.com/user/:splat"
+  from = "/api-user"
+  to = "https://api.github.com/user"
   status = 200
   force = true
 
