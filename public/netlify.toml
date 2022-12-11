@@ -1,20 +1,11 @@
 [[redirects]]
-  from = "/api-img/*"
-  to = "https://npm.elemecdn.com/:splat"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-
-[[redirects]]
   from = "/api-token/*"
   to = "https://github.com/login/oauth/access_token:splat"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/api-user/*"
   to = "https://api.github.com/user:splat"
   status = 200
   force = true
-  headers = {X-From = "Netlify"}
