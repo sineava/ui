@@ -68,7 +68,7 @@ function BasicLogin() {
   const auth = () => {
     const query = new URLSearchParams({
       client_id: '745df44f436c4e0d8c8d',
-      redirect_uri: 'http://127.0.0.1:5173/login'
+      redirect_uri: 'https://sineava-ui.netlify.app/login'
     })
     location.href = `https://github.com/login/oauth/authorize?${query}`
   }
