@@ -1,11 +1,16 @@
 [[redirects]]
   from = "/api-token/*"
-  to = "https://github.com/login/oauth/access_token:splat"
+  to = "https://github.com/login/oauth/access_token/:splat"
   status = 200
   force = true
 
 [[redirects]]
   from = "/api-user/*"
-  to = "https://api.github.com/user:splat"
+  to = "https://api.github.com/user/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
