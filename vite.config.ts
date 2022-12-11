@@ -6,11 +6,18 @@ export default defineConfig({
   plugins: [react(), svgr()],
   server: {
     proxy: {
-      '/api-img': {
-        target: 'https://npm.elemecdn.com',
+      '/api-token': {
+        target: 'https://github.com/login/oauth/access_token',
         changeOrigin: true,
-        rewrite: path => path.replace(/^\/api-img/, '')
-      }
+        secure: false,
+        rewrite: path => path.replace(/^\/api-token/, '')
+      },
+      '/api-user': {
+        target: 'https://api.github.com/user',
+        changeOrigin: true,
+        secure: false,
+        rewrite: path => path.replace(/^\/api-user/, '')
+      },
     }
   },
   resolve: {

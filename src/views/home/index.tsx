@@ -10,7 +10,6 @@ import emitter from '../../utils/ev'
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
 
-
 function Home() {
   const [theme, setTheme] = useState(initialTheme)
   const [charging, setCharging] = useState(false)
@@ -72,7 +71,6 @@ function Home() {
 
 function Auth() {
   const [token] = useState(localStorage.getItem('token'))
-  console.log(token)
   return token ? <Home /> : <Routes><Route path="*" element={<Navigate to="/login" replace />} /></Routes>
 }
 

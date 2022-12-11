@@ -1,1 +1,16 @@
-GET https://www.yhdmp.cc/ HTTP/1.1
+## 请求
+# POST https://github.com/login/oauth/access_token HTTP/1.1
+# Content-Type: application/json
+# Accept: application/json
+
+# {
+#   "client_id": "745df44f436c4e0d8c8d",
+#   "client_secret": "eff7c6e9bbd83c5707818054a31314c55a78f2c0",
+#   "code": "33faf116478102a6c21e"
+# }
+
+## 请求1
+GET https://api.github.com/user HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Authorization: token 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

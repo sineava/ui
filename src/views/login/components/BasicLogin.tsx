@@ -5,6 +5,7 @@ import Logo from '../../../assets/logo.png'
 import { useNavigate } from "react-router-dom"
 import SvgIcon from '../../../components/SvgIcon'
 import Alert  from '@/components/Alert'
+import axios from 'axios'
 
 function BasicLogin() {
   const navigate = useNavigate()
@@ -16,7 +17,37 @@ function BasicLogin() {
   const [error, setError] = useState('')
   useEffect(() => {
     localStorage.removeItem('token')
+    localStorage.removeItem('user')
   }, [])
+  useEffect(() => {
+    async function token() {
+      const url = new URL(location.href)
+      const code = url.searchParams.get('code')
+      if (code) {
+        const params = {
+          client_id: '745df44f436c4e0d8c8d',
+          client_secret: 'eff7c6e9bbd83c5707818054a31314c55a78f2c0',
+          code
+        }
+        const headers = {
+          Accept: 'application/json'
+        }
+        try {
+          const token = (await axios.post('/api-token', params, { headers }))?.data?.access_token
+          const user = (await axios.get('/api-user', { headers: { ...headers, Authorization: `Bearer ${token}` } }))?.data
+          if (user) {
+            localStorage.setItem('user', JSON.stringify({ avatar: user.avatar_url, name: user.name }))
+            localStorage.setItem('token', token)
+          }
+        } catch(err) {
+          console.log(err)
+        }
+        navigate('/')
+      }
+    }
+    token()
+    
+  }, [location.href])
   const login = () => {
     let msg
     if (!username) msg = '用户名未填'
@@ -33,6 +64,13 @@ function BasicLogin() {
     }
     localStorage.setItem('token', 'daisyui')
     navigate("/")
+  }
+  const auth = () => {
+    const query = new URLSearchParams({
+      client_id: '745df44f436c4e0d8c8d',
+      redirect_uri: 'http://127.0.0.1:5173/login'
+    })
+    location.href = `https://github.com/login/oauth/authorize?${query}`
   }
   return (
     <div className="dark:bg-gray-800 w-full h-screen bg-[#F4F9FD] flex justify-center items-center">
@@ -83,10 +121,15 @@ function BasicLogin() {
               </div>
               <a className="link link-hover text-[#3F8CFF] text-sm">忘记密码?</a>
             </div>
-            <button type="button" onClick={login} className="dark:bg-gray-800 t-login mt-[30px] w-[170px] h-[48px] t-button t-shadow-blue bg-[#3F8CFF] flex justify-center items-center">
-              <span className="w-[40px] mr-2">登 录</span>
-              <SvgIcon icon="right-arrow" color="#fff" size={24} />
-            </button>
+            <div className="flex items-center mt-[30px]">
+              <button type="button" onClick={login} className="dark:bg-gray-800 t-login w-[170px] h-[48px] t-button t-shadow-blue bg-[#3F8CFF] flex justify-center items-center">
+                <span className="w-[40px] mr-2">登 录</span>
+                <SvgIcon icon="right-arrow" color="#fff" size={24} />
+              </button>
+              <div className="ml-4 cursor-pointer" onClick={auth}>
+                <SvgIcon icon="github" color="#fff" size={30} />
+              </div>
+            </div>
           </form>
         </div>
       </div>

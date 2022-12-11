@@ -14,6 +14,7 @@ export default function() {
   const location = useLocation()
   const navigate = useNavigate()
   const [current, setCurrent] = useState(0)
+  const [avatar] = useState(JSON.parse(localStorage.getItem('user')!)?.avatar || Logo)
   const [list, setList] = useState([
     { path: '/ui', icon: 'swatch', name: 'UI库', children: [
       { path: '/ui/icon', name: '图标' },
@@ -80,7 +81,7 @@ export default function() {
   return (
     <div className="px-[16px] relative">
       <div className="my-[50px] flex items-center">
-        <img className="w-[50px] h-[50px] mr-4 cursor-pointer" src={Logo} />
+        <img className="w-[50px] h-[50px] mr-4 cursor-pointer rounded" src={avatar} />
         <span className="text-[20px] font-semibold dark:text-[#fff]">daisyUI</span>
       </div>
       <ul className="bg-base-100 w-full relative text-[14px] dark:bg-gray-900">
