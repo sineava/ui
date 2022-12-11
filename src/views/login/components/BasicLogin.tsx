@@ -126,8 +126,8 @@ function BasicLogin() {
                 <span className="w-[40px] mr-2">登 录</span>
                 <SvgIcon icon="right-arrow" color="#fff" size={24} />
               </button>
-              <div className="ml-4 cursor-pointer" onClick={auth}>
-                <SvgIcon icon="github" color="#fff" size={30} />
+              <div className="ml-4 cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
+                <SvgIcon icon="github" size={30} />
               </div>
             </div>
           </form>
