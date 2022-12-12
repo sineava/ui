@@ -115,15 +115,15 @@ export default function() {
       {
         val === 'base' && url && (
           <div className="flex">
-            <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mx-2"><img className="w-[300px]" ref={imgRef} src={url} /></div>
-            { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded"><img ref={ctxImgRef} src={ctxUrl} /></div> }
+            <div className="dark:bg-gray-900 bg-[#fff] rounded mx-2 w-[300px]  t-img-container"><img className="w-[300px]" ref={imgRef} src={url} /></div>
+            { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded t-img-container"><img ref={ctxImgRef} src={ctxUrl} /></div> }
           </div>
         )
       }
       {
         val === 'code' && canvasUrl && (
           <div className="flex">
-            <div className="dark:bg-gray-900 bg-[#fff] w-[320px] p-[10px] rounded mr-2 qrcode-container ml-2 relative">
+            <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded mr-2 qrcode-container ml-2 relative t-img-container">
               <img className="w-[300px] h-[300px]" src={canvasUrl} />
             </div>
           </div>

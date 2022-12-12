@@ -7,7 +7,7 @@ interface Type {
 
 function Wrapper() {
   return (
-    <div className="w-full h-full overflow-hidden relative flex justify-center items-center">
+    <div className="w-full h-full overflow-hidden relative flex justify-center items-center bg-gray-900">
       <div className="t-earth absolute"></div>
       <div className="t-earth-ball absolute"></div>
       <div className="t-earth-airplane absolute"></div>

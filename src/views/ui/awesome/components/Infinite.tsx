@@ -22,7 +22,7 @@ function Wrapper() {
   return (
     <>
       <div className="w-full h-full overflow-hidden flex
-        justify-center items-center flex-col gap-y-6 relative">
+        justify-center items-center flex-col gap-y-6 relative bg-gray-900">
         {
           [...new Array(row)].map((_: null, i: number) => (
             <div
