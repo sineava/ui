@@ -215,6 +215,22 @@
   transition: transform .2s linear;
 }
 
+/* svg文字路径动画 */
+.t-svg-text {
+  animation: text-svg 3s linear infinite;
+}
+.t-svg-text:nth-of-type(1) {
+  stroke: #ff0000;
+}
+.t-svg-text:nth-of-type(2) {
+  stroke: #00ff00;
+  animation-delay: 1s;
+}
+.t-svg-text:nth-of-type(3) {
+  stroke: #0000ff;
+  animation-delay: 2s;
+}
+
 @keyframes move {
   0% {
     transform: translateX(0);
@@ -273,4 +289,10 @@
 
 @keyframes blink {
   50% { border-color: transparent; }
+}
+
+@keyframes text-svg {
+  to {
+    stroke-dashoffset: -44;
+  }
 }

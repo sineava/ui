@@ -12,7 +12,7 @@ function Wrapper() {
   const row: number = 5
   const card = (item: string, i: number) => (
     <div
-      key={i}
+      key={item + i}
       className="px-4 py-2 bg-[#334155] mr-4 rounded shadow-lg cursor-pointer flex justify-center items-center"
     >
       <span className="mx-1 text-gray-600 font-bold text-[20px]">#</span>

@@ -2,6 +2,7 @@ import Shower from './components/Shower'
 import Earth from './components/Earth'
 import Infinite from './components/Infinite'
 import Type from './components/Type'
+import FontSvg from './components/FontSvg'
 import { awesome } from '../../../utils/txt'
 
 export default function() {
@@ -11,6 +12,7 @@ export default function() {
       <Infinite {...awesome.infinite} />
       <Earth {...awesome.earth} />
       <Type {...awesome.type} />
+      <FontSvg {...awesome.fontsvg} />
     </div>
   )
 }

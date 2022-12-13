@@ -158,6 +158,69 @@ css:
   background-image: url('./assets/shower.gif');
   @apply text-transparent bg-clip-text;
 }`
+  },
+  fontsvg: {
+html:
+`import { useEffect, useState } from 'react'
+import Code from '../../../../components/Code'
+
+interface Type {
+  html: string
+  css?: string
+}
+
+function Wrapper() {
+  const [time, setTime] = useState('223')
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const time = new Date().toTimeString().substring(0, 8)
+      setTime(time)
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
+  return (
+    <div className="w-full h-full flex justify-center items-center">
+      {
+        time && (
+          <svg width="200" height="50">
+            <symbol id="text">
+              <text x="0" y="40" strokeDasharray="10 34" strokeWidth="2" fill="transparent" style={{fontSize: '50px'}}>{time}</text>
+            </symbol>
+            <use className="t-svg-text" href="#text"></use>
+            <use className="t-svg-text" href="#text"></use>
+            <use className="t-svg-text" href="#text"></use>
+          </svg>
+        )
+      }
+    </div>
+  )
+}
+
+export default ({ html, css }: Type) => Code(Wrapper, { html, css })`,
+css:
+`/* svg文字路径动画 */
+.t-svg-text {
+  animation: text-svg 3s linear infinite;
+}
+.t-svg-text:nth-of-type(1) {
+  stroke: #ff0000;
+}
+.t-svg-text:nth-of-type(2) {
+  stroke: #00ff00;
+  animation-delay: 1s;
+}
+.t-svg-text:nth-of-type(3) {
+  stroke: #0000ff;
+  animation-delay: 2s;
+}
+
+@keyframes text-svg {
+  to {
+    /** offset=线宽+空格宽,不然不流畅 */
+    stroke-dashoffset: -44;
+  }
+}
+`
   }
 }
 

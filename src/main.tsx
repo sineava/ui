@@ -6,10 +6,10 @@ import './index.css'
 import router from './router'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <RouterProvider
       router={router}
       fallbackElement={<>loading....</>}
     />
-  // </React.StrictMode>
+  </React.StrictMode>
 )
