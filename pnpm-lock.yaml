@@ -16,6 +16,7 @@ specifiers:
   '@vitejs/plugin-react': ^2.2.0
   autoprefixer: ^10.4.13
   axios: ^1.2.0
+  cesium: ^1.100.0
   daisyui: ^2.42.1
   dplayer: ^1.27.0
   echarts: ^5.4.0
@@ -26,6 +27,7 @@ specifiers:
   hls.js: ^1.2.7
   huebee: ^2.1.1
   lottie-react: ^2.3.1
+  mars3d: ^3.4.17
   postcss: ^8.4.19
   qrcode: ^1.5.1
   react: ^18.2.0
@@ -52,6 +54,7 @@ dependencies:
   '@uiw/codemirror-theme-dracula': registry.npmmirror.com/@uiw/codemirror-theme-dracula/4.15.1
   '@uiw/react-codemirror': registry.npmmirror.com/@uiw/react-codemirror/4.15.1_react-dom@18.2.0+react@18.2.0
   axios: registry.npmmirror.com/axios/1.2.0
+  cesium: registry.npmmirror.com/cesium/1.100.0
   daisyui: registry.npmmirror.com/daisyui/2.42.1_d2ecdd51edbebe3810de3c074fca1feb
   dplayer: registry.npmmirror.com/dplayer/1.27.0
   echarts: registry.npmmirror.com/echarts/5.4.0
@@ -62,6 +65,7 @@ dependencies:
   hls.js: registry.npmmirror.com/hls.js/1.2.7
   huebee: registry.npmmirror.com/huebee/2.1.1
   lottie-react: registry.npmmirror.com/lottie-react/2.3.1_react-dom@18.2.0+react@18.2.0
+  mars3d: registry.npmmirror.com/mars3d/3.4.17
   qrcode: registry.npmmirror.com/qrcode/1.5.1
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
@@ -402,6 +406,42 @@ packages:
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.19.1
       to-fast-properties: registry.npmmirror.com/to-fast-properties/2.0.0
 
+  registry.npmmirror.com/@cesium/engine/1.0.0:
+    resolution: {integrity: sha512-efbS9qzYxb6azQ2sz7FVJ8k1ae0qdDYBsv6qe3SC6vgB81x5kXqhqEbExyIbx22Z9NRbIV+iopP9M9rU+VwSCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@cesium/engine/-/engine-1.0.0.tgz}
+    name: '@cesium/engine'
+    version: 1.0.0
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@tweenjs/tween.js': registry.npmmirror.com/@tweenjs/tween.js/18.6.4
+      '@zip.js/zip.js': registry.npmmirror.com/@zip.js/zip.js/2.4.26
+      autolinker: registry.npmmirror.com/autolinker/3.16.2
+      bitmap-sdf: registry.npmmirror.com/bitmap-sdf/1.0.4
+      dompurify: registry.npmmirror.com/dompurify/2.4.1
+      earcut: registry.npmmirror.com/earcut/2.2.4
+      grapheme-splitter: registry.npmmirror.com/grapheme-splitter/1.0.4
+      jsep: registry.npmmirror.com/jsep/0.3.5
+      kdbush: registry.npmmirror.com/kdbush/3.0.0
+      ktx-parse: registry.npmmirror.com/ktx-parse/0.4.5
+      lerc: registry.npmmirror.com/lerc/2.0.0
+      mersenne-twister: registry.npmmirror.com/mersenne-twister/1.1.0
+      meshoptimizer: registry.npmmirror.com/meshoptimizer/0.18.1
+      pako: registry.npmmirror.com/pako/2.1.0
+      protobufjs: registry.npmmirror.com/protobufjs/7.1.2
+      rbush: registry.npmmirror.com/rbush/3.0.1
+      topojson-client: registry.npmmirror.com/topojson-client/3.1.0
+      urijs: registry.npmmirror.com/urijs/1.19.11
+    dev: false
+
+  registry.npmmirror.com/@cesium/widgets/1.0.0:
+    resolution: {integrity: sha512-tT/euGktMuOmKwiJvnWwh/9syTAs3sARXIVrOu9JyUAUx6aN12tZzwA9XSsDCRixL+IUtIFjDv6fq4+bvbDetA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@cesium/widgets/-/widgets-1.0.0.tgz}
+    name: '@cesium/widgets'
+    version: 1.0.0
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@cesium/engine': registry.npmmirror.com/@cesium/engine/1.0.0
+      nosleep.js: registry.npmmirror.com/nosleep.js/0.12.0
+    dev: false
+
   registry.npmmirror.com/@codemirror/autocomplete/6.3.4:
     resolution: {integrity: sha512-irxKsTSjS0OkfMWWt9YxtNK97++/E+XIHfKnRpSVfZyHzda/amYF0BR+T8mMkrGQWidx2zApxHx08GT13egyQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@codemirror/autocomplete/-/autocomplete-6.3.4.tgz}
     name: '@codemirror/autocomplete'
@@ -665,6 +705,69 @@ packages:
       '@nodelib/fs.scandir': registry.npmmirror.com/@nodelib/fs.scandir/2.1.5
       fastq: registry.npmmirror.com/fastq/1.13.0
 
+  registry.npmmirror.com/@protobufjs/aspromise/1.1.2:
+    resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/aspromise/-/aspromise-1.1.2.tgz}
+    name: '@protobufjs/aspromise'
+    version: 1.1.2
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/base64/1.1.2:
+    resolution: {integrity: sha512-AZkcAA5vnN/v4PDqKyMR5lx7hZttPDgClv83E//FMNhR2TMcLUhfRUBHCmSl0oi9zMgDDqRUJkSxO3wm85+XLg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/base64/-/base64-1.1.2.tgz}
+    name: '@protobufjs/base64'
+    version: 1.1.2
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/codegen/2.0.4:
+    resolution: {integrity: sha512-YyFaikqM5sH0ziFZCN3xDC7zeGaB/d0IUb9CATugHWbd1FRFwWwt4ld4OYMPWu5a3Xe01mGAULCdqhMlPl29Jg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/codegen/-/codegen-2.0.4.tgz}
+    name: '@protobufjs/codegen'
+    version: 2.0.4
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/eventemitter/1.1.0:
+    resolution: {integrity: sha512-j9ednRT81vYJ9OfVuXG6ERSTdEL1xVsNgqpkxMsbIabzSo3goCjDIveeGv5d03om39ML71RdmrGNjG5SReBP/Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/eventemitter/-/eventemitter-1.1.0.tgz}
+    name: '@protobufjs/eventemitter'
+    version: 1.1.0
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/fetch/1.1.0:
+    resolution: {integrity: sha512-lljVXpqXebpsijW71PZaCYeIcE5on1w5DlQy5WH6GLbFryLUrBD4932W/E2BSpfRJWseIL4v/KPgBFxDOIdKpQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/fetch/-/fetch-1.1.0.tgz}
+    name: '@protobufjs/fetch'
+    version: 1.1.0
+    dependencies:
+      '@protobufjs/aspromise': registry.npmmirror.com/@protobufjs/aspromise/1.1.2
+      '@protobufjs/inquire': registry.npmmirror.com/@protobufjs/inquire/1.1.0
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/float/1.0.2:
+    resolution: {integrity: sha512-Ddb+kVXlXst9d+R9PfTIxh1EdNkgoRe5tOX6t01f1lYWOvJnSPDBlG241QLzcyPdoNTsblLUdujGSE4RzrTZGQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/float/-/float-1.0.2.tgz}
+    name: '@protobufjs/float'
+    version: 1.0.2
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/inquire/1.1.0:
+    resolution: {integrity: sha512-kdSefcPdruJiFMVSbn801t4vFK7KB/5gd2fYvrxhuJYg8ILrmn9SKSX2tZdV6V+ksulWqS7aXjBcRXl3wHoD9Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/inquire/-/inquire-1.1.0.tgz}
+    name: '@protobufjs/inquire'
+    version: 1.1.0
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/path/1.1.2:
+    resolution: {integrity: sha512-6JOcJ5Tm08dOHAbdR3GrvP+yUUfkjG5ePsHYczMFLq3ZmMkAD98cDgcT2iA1lJ9NVwFd4tH/iSSoe44YWkltEA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/path/-/path-1.1.2.tgz}
+    name: '@protobufjs/path'
+    version: 1.1.2
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/pool/1.1.0:
+    resolution: {integrity: sha512-0kELaGSIDBKvcgS4zkjz1PeddatrjYcmMWOlAuAPwAeccUrPHdUqo/J6LiymHHEiJT5NrF1UVwxY14f+fy4WQw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/pool/-/pool-1.1.0.tgz}
+    name: '@protobufjs/pool'
+    version: 1.1.0
+    dev: false
+
+  registry.npmmirror.com/@protobufjs/utf8/1.1.0:
+    resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@protobufjs/utf8/-/utf8-1.1.0.tgz}
+    name: '@protobufjs/utf8'
+    version: 1.1.0
+    dev: false
+
   registry.npmmirror.com/@react-three/fiber/8.9.1_625668079b4799592d8db1b311d18e3f:
     resolution: {integrity: sha512-xRMO9RGp0DkxSFu5BmmkjCxJ4r0dEpLobtxXdZwI0h2rZZaCnkPM5zThRN8xaZNbZhzRSVICeNOFaZltr9xFyQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@react-three/fiber/-/fiber-8.9.1.tgz}
     id: registry.npmmirror.com/@react-three/fiber/8.9.1
@@ -892,10 +995,1266 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
+  registry.npmmirror.com/@turf/along/6.5.0:
+    resolution: {integrity: sha512-LLyWQ0AARqJCmMcIEAXF4GEu8usmd4Kbz3qk1Oy5HoRNpZX47+i5exQtmIWKdqJ1MMhW26fCTXgpsEs5zgJ5gw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/along/-/along-6.5.0.tgz}
+    name: '@turf/along'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/angle/6.5.0:
+    resolution: {integrity: sha512-4pXMbWhFofJJAOvTMCns6N4C8CMd5Ih4O2jSAG9b3dDHakj3O4yN1+Zbm+NUei+eVEZ9gFeVp9svE3aMDenIkw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/angle/-/angle-6.5.0.tgz}
+    name: '@turf/angle'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/area/6.5.0:
+    resolution: {integrity: sha512-xCZdiuojokLbQ+29qR6qoMD89hv+JAgWjLrwSEWL+3JV8IXKeNFl6XkEJz9HGkVpnXvQKJoRz4/liT+8ZZ5Jyg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/area/-/area-6.5.0.tgz}
+    name: '@turf/area'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/bbox-clip/6.5.0:
+    resolution: {integrity: sha512-F6PaIRF8WMp8EmgU/Ke5B1Y6/pia14UAYB5TiBC668w5rVVjy5L8rTm/m2lEkkDMHlzoP9vNY4pxpNthE7rLcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/bbox-clip/-/bbox-clip-6.5.0.tgz}
+    name: '@turf/bbox-clip'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/bbox-polygon/6.5.0:
+    resolution: {integrity: sha512-+/r0NyL1lOG3zKZmmf6L8ommU07HliP4dgYToMoTxqzsWzyLjaj/OzgQ8rBmv703WJX+aS6yCmLuIhYqyufyuw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/bbox-polygon/-/bbox-polygon-6.5.0.tgz}
+    name: '@turf/bbox-polygon'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/bbox/6.5.0:
+    resolution: {integrity: sha512-RBbLaao5hXTYyyg577iuMtDB8ehxMlUqHEJiMs8jT1GHkFhr6sYre3lmLsPeYEi/ZKj5TP5tt7fkzNdJ4GIVyw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/bbox/-/bbox-6.5.0.tgz}
+    name: '@turf/bbox'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/bearing/6.5.0:
+    resolution: {integrity: sha512-dxINYhIEMzgDOztyMZc20I7ssYVNEpSv04VbMo5YPQsqa80KO3TFvbuCahMsCAW5z8Tncc8dwBlEFrmRjJG33A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/bearing/-/bearing-6.5.0.tgz}
+    name: '@turf/bearing'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/bezier-spline/6.5.0:
+    resolution: {integrity: sha512-vokPaurTd4PF96rRgGVm6zYYC5r1u98ZsG+wZEv9y3kJTuJRX/O3xIY2QnTGTdbVmAJN1ouOsD0RoZYaVoXORQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/bezier-spline/-/bezier-spline-6.5.0.tgz}
+    name: '@turf/bezier-spline'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-clockwise/6.5.0:
+    resolution: {integrity: sha512-45+C7LC5RMbRWrxh3Z0Eihsc8db1VGBO5d9BLTOAwU4jR6SgsunTfRWR16X7JUwIDYlCVEmnjcXJNi/kIU3VIw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-clockwise/-/boolean-clockwise-6.5.0.tgz}
+    name: '@turf/boolean-clockwise'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-contains/6.5.0:
+    resolution: {integrity: sha512-4m8cJpbw+YQcKVGi8y0cHhBUnYT+QRfx6wzM4GI1IdtYH3p4oh/DOBJKrepQyiDzFDaNIjxuWXBh0ai1zVwOQQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-contains/-/boolean-contains-6.5.0.tgz}
+    name: '@turf/boolean-contains'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/boolean-point-on-line': registry.npmmirror.com/@turf/boolean-point-on-line/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-crosses/6.5.0:
+    resolution: {integrity: sha512-gvshbTPhAHporTlQwBJqyfW+2yV8q/mOTxG6PzRVl6ARsqNoqYQWkd4MLug7OmAqVyBzLK3201uAeBjxbGw0Ng==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-crosses/-/boolean-crosses-6.5.0.tgz}
+    name: '@turf/boolean-crosses'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/polygon-to-line': registry.npmmirror.com/@turf/polygon-to-line/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-disjoint/6.5.0:
+    resolution: {integrity: sha512-rZ2ozlrRLIAGo2bjQ/ZUu4oZ/+ZjGvLkN5CKXSKBcu6xFO6k2bgqeM8a1836tAW+Pqp/ZFsTA5fZHsJZvP2D5g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-disjoint/-/boolean-disjoint-6.5.0.tgz}
+    name: '@turf/boolean-disjoint'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/polygon-to-line': registry.npmmirror.com/@turf/polygon-to-line/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-equal/6.5.0:
+    resolution: {integrity: sha512-cY0M3yoLC26mhAnjv1gyYNQjn7wxIXmL2hBmI/qs8g5uKuC2hRWi13ydufE3k4x0aNRjFGlg41fjoYLwaVF+9Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-equal/-/boolean-equal-6.5.0.tgz}
+    name: '@turf/boolean-equal'
+    version: 6.5.0
+    dependencies:
+      '@turf/clean-coords': registry.npmmirror.com/@turf/clean-coords/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      geojson-equality: registry.npmmirror.com/geojson-equality/0.1.6
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-intersects/6.5.0:
+    resolution: {integrity: sha512-nIxkizjRdjKCYFQMnml6cjPsDOBCThrt+nkqtSEcxkKMhAQj5OO7o2CecioNTaX8EayqwMGVKcsz27oP4mKPTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-intersects/-/boolean-intersects-6.5.0.tgz}
+    name: '@turf/boolean-intersects'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-disjoint': registry.npmmirror.com/@turf/boolean-disjoint/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-overlap/6.5.0:
+    resolution: {integrity: sha512-8btMIdnbXVWUa1M7D4shyaSGxLRw6NjMcqKBcsTXcZdnaixl22k7ar7BvIzkaRYN3SFECk9VGXfLncNS3ckQUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-overlap/-/boolean-overlap-6.5.0.tgz}
+    name: '@turf/boolean-overlap'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/line-overlap': registry.npmmirror.com/@turf/line-overlap/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      geojson-equality: registry.npmmirror.com/geojson-equality/0.1.6
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-parallel/6.5.0:
+    resolution: {integrity: sha512-aSHJsr1nq9e5TthZGZ9CZYeXklJyRgR5kCLm5X4urz7+MotMOp/LsGOsvKvK9NeUl9+8OUmfMn8EFTT8LkcvIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-parallel/-/boolean-parallel-6.5.0.tgz}
+    name: '@turf/boolean-parallel'
+    version: 6.5.0
+    dependencies:
+      '@turf/clean-coords': registry.npmmirror.com/@turf/clean-coords/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/line-segment': registry.npmmirror.com/@turf/line-segment/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0:
+    resolution: {integrity: sha512-DtSuVFB26SI+hj0SjrvXowGTUCHlgevPAIsukssW6BG5MlNSBQAo70wpICBNJL6RjukXg8d2eXaAWuD/CqL00A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-point-in-polygon/-/boolean-point-in-polygon-6.5.0.tgz}
+    name: '@turf/boolean-point-in-polygon'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-point-on-line/6.5.0:
+    resolution: {integrity: sha512-A1BbuQ0LceLHvq7F/P7w3QvfpmZqbmViIUPHdNLvZimFNLo4e6IQunmzbe+8aSStH9QRZm3VOflyvNeXvvpZEQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-point-on-line/-/boolean-point-on-line-6.5.0.tgz}
+    name: '@turf/boolean-point-on-line'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/boolean-within/6.5.0:
+    resolution: {integrity: sha512-YQB3oU18Inx35C/LU930D36RAVe7LDXk1kWsQ8mLmuqYn9YdPsDQTMTkLJMhoQ8EbN7QTdy333xRQ4MYgToteQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/boolean-within/-/boolean-within-6.5.0.tgz}
+    name: '@turf/boolean-within'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/boolean-point-on-line': registry.npmmirror.com/@turf/boolean-point-on-line/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/buffer/6.5.0:
+    resolution: {integrity: sha512-qeX4N6+PPWbKqp1AVkBVWFerGjMYMUyencwfnkCesoznU6qvfugFHNAngNqIBVnJjZ5n8IFyOf+akcxnrt9sNg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/buffer/-/buffer-6.5.0.tgz}
+    name: '@turf/buffer'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/center': registry.npmmirror.com/@turf/center/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/projection': registry.npmmirror.com/@turf/projection/6.5.0
+      d3-geo: registry.npmmirror.com/d3-geo/1.7.1
+      turf-jsts: registry.npmmirror.com/turf-jsts/1.2.3
+    dev: false
+
+  registry.npmmirror.com/@turf/center-mean/6.5.0:
+    resolution: {integrity: sha512-AAX6f4bVn12pTVrMUiB9KrnV94BgeBKpyg3YpfnEbBpkN/znfVhL8dG8IxMAxAoSZ61Zt9WLY34HfENveuOZ7Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/center-mean/-/center-mean-6.5.0.tgz}
+    name: '@turf/center-mean'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/center-median/6.5.0:
+    resolution: {integrity: sha512-dT8Ndu5CiZkPrj15PBvslpuf01ky41DEYEPxS01LOxp5HOUHXp1oJxsPxvc+i/wK4BwccPNzU1vzJ0S4emd1KQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/center-median/-/center-median-6.5.0.tgz}
+    name: '@turf/center-median'
+    version: 6.5.0
+    dependencies:
+      '@turf/center-mean': registry.npmmirror.com/@turf/center-mean/6.5.0
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/center-of-mass/6.5.0:
+    resolution: {integrity: sha512-EWrriU6LraOfPN7m1jZi+1NLTKNkuIsGLZc2+Y8zbGruvUW+QV7K0nhf7iZWutlxHXTBqEXHbKue/o79IumAsQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/center-of-mass/-/center-of-mass-6.5.0.tgz}
+    name: '@turf/center-of-mass'
+    version: 6.5.0
+    dependencies:
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/convex': registry.npmmirror.com/@turf/convex/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/center/6.5.0:
+    resolution: {integrity: sha512-T8KtMTfSATWcAX088rEDKjyvQCBkUsLnK/Txb6/8WUXIeOZyHu42G7MkdkHRoHtwieLdduDdmPLFyTdG5/e7ZQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/center/-/center-6.5.0.tgz}
+    name: '@turf/center'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/centroid/6.5.0:
+    resolution: {integrity: sha512-MwE1oq5E3isewPprEClbfU5pXljIK/GUOMbn22UM3IFPDJX0KeoyLNwghszkdmFp/qMGL/M13MMWvU+GNLXP/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/centroid/-/centroid-6.5.0.tgz}
+    name: '@turf/centroid'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/circle/6.5.0:
+    resolution: {integrity: sha512-oU1+Kq9DgRnoSbWFHKnnUdTmtcRUMmHoV9DjTXu9vOLNV5OWtAAh1VZ+mzsioGGzoDNT/V5igbFOkMfBQc0B6A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/circle/-/circle-6.5.0.tgz}
+    name: '@turf/circle'
+    version: 6.5.0
+    dependencies:
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/clean-coords/6.5.0:
+    resolution: {integrity: sha512-EMX7gyZz0WTH/ET7xV8MyrExywfm9qUi0/MY89yNffzGIEHuFfqwhcCqZ8O00rZIPZHUTxpmsxQSTfzJJA1CPw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/clean-coords/-/clean-coords-6.5.0.tgz}
+    name: '@turf/clean-coords'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/clone/6.5.0:
+    resolution: {integrity: sha512-mzVtTFj/QycXOn6ig+annKrM6ZlimreKYz6f/GSERytOpgzodbQyOgkfwru100O1KQhhjSudKK4DsQ0oyi9cTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/clone/-/clone-6.5.0.tgz}
+    name: '@turf/clone'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/clusters-dbscan/6.5.0:
+    resolution: {integrity: sha512-SxZEE4kADU9DqLRiT53QZBBhu8EP9skviSyl+FGj08Y01xfICM/RR9ACUdM0aEQimhpu+ZpRVcUK+2jtiCGrYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/clusters-dbscan/-/clusters-dbscan-6.5.0.tgz}
+    name: '@turf/clusters-dbscan'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      density-clustering: registry.npmmirror.com/density-clustering/1.3.0
+    dev: false
+
+  registry.npmmirror.com/@turf/clusters-kmeans/6.5.0:
+    resolution: {integrity: sha512-DwacD5+YO8kwDPKaXwT9DV46tMBVNsbi1IzdajZu1JDSWoN7yc7N9Qt88oi+p30583O0UPVkAK+A10WAQv4mUw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/clusters-kmeans/-/clusters-kmeans-6.5.0.tgz}
+    name: '@turf/clusters-kmeans'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      skmeans: registry.npmmirror.com/skmeans/0.9.7
+    dev: false
+
+  registry.npmmirror.com/@turf/clusters/6.5.0:
+    resolution: {integrity: sha512-Y6gfnTJzQ1hdLfCsyd5zApNbfLIxYEpmDibHUqR5z03Lpe02pa78JtgrgUNt1seeO/aJ4TG1NLN8V5gOrHk04g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/clusters/-/clusters-6.5.0.tgz}
+    name: '@turf/clusters'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/collect/6.5.0:
+    resolution: {integrity: sha512-4dN/T6LNnRg099m97BJeOcTA5fSI8cu87Ydgfibewd2KQwBexO69AnjEFqfPX3Wj+Zvisj1uAVIZbPmSSrZkjg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/collect/-/collect-6.5.0.tgz}
+    name: '@turf/collect'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      rbush: registry.npmmirror.com/rbush/2.0.2
+    dev: false
+
+  registry.npmmirror.com/@turf/combine/6.5.0:
+    resolution: {integrity: sha512-Q8EIC4OtAcHiJB3C4R+FpB4LANiT90t17uOd851qkM2/o6m39bfN5Mv0PWqMZIHWrrosZqRqoY9dJnzz/rJxYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/combine/-/combine-6.5.0.tgz}
+    name: '@turf/combine'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/concave/6.5.0:
+    resolution: {integrity: sha512-I/sUmUC8TC5h/E2vPwxVht+nRt+TnXIPRoztDFvS8/Y0+cBDple9inLSo9nnPXMXidrBlGXZ9vQx/BjZUJgsRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/concave/-/concave-6.5.0.tgz}
+    name: '@turf/concave'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/tin': registry.npmmirror.com/@turf/tin/6.5.0
+      topojson-client: registry.npmmirror.com/topojson-client/3.1.0
+      topojson-server: registry.npmmirror.com/topojson-server/3.0.1
+    dev: false
+
+  registry.npmmirror.com/@turf/convex/6.5.0:
+    resolution: {integrity: sha512-x7ZwC5z7PJB0SBwNh7JCeCNx7Iu+QSrH7fYgK0RhhNop13TqUlvHMirMLRgf2db1DqUetrAO2qHJeIuasquUWg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/convex/-/convex-6.5.0.tgz}
+    name: '@turf/convex'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      concaveman: registry.npmmirror.com/concaveman/1.2.1
+    dev: false
+
+  registry.npmmirror.com/@turf/destination/6.5.0:
+    resolution: {integrity: sha512-4cnWQlNC8d1tItOz9B4pmJdWpXqS0vEvv65bI/Pj/genJnsL7evI0/Xw42RvEGROS481MPiU80xzvwxEvhQiMQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/destination/-/destination-6.5.0.tgz}
+    name: '@turf/destination'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/difference/6.5.0:
+    resolution: {integrity: sha512-l8iR5uJqvI+5Fs6leNbhPY5t/a3vipUF/3AeVLpwPQcgmedNXyheYuy07PcMGH5Jdpi5gItOiTqwiU/bUH4b3A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/difference/-/difference-6.5.0.tgz}
+    name: '@turf/difference'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      polygon-clipping: registry.npmmirror.com/polygon-clipping/0.15.3
+    dev: false
+
+  registry.npmmirror.com/@turf/dissolve/6.5.0:
+    resolution: {integrity: sha512-WBVbpm9zLTp0Bl9CE35NomTaOL1c4TQCtEoO43YaAhNEWJOOIhZMFJyr8mbvYruKl817KinT3x7aYjjCMjTAsQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/dissolve/-/dissolve-6.5.0.tgz}
+    name: '@turf/dissolve'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      polygon-clipping: registry.npmmirror.com/polygon-clipping/0.15.3
+    dev: false
+
+  registry.npmmirror.com/@turf/distance-weight/6.5.0:
+    resolution: {integrity: sha512-a8qBKkgVNvPKBfZfEJZnC3DV7dfIsC3UIdpRci/iap/wZLH41EmS90nM+BokAJflUHYy8PqE44wySGWHN1FXrQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/distance-weight/-/distance-weight-6.5.0.tgz}
+    name: '@turf/distance-weight'
+    version: 6.5.0
+    dependencies:
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/distance/6.5.0:
+    resolution: {integrity: sha512-xzykSLfoURec5qvQJcfifw/1mJa+5UwByZZ5TZ8iaqjGYN0vomhV9aiSLeYdUGtYRESZ+DYC/OzY+4RclZYgMg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/distance/-/distance-6.5.0.tgz}
+    name: '@turf/distance'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/ellipse/6.5.0:
+    resolution: {integrity: sha512-kuXtwFviw/JqnyJXF1mrR/cb496zDTSbGKtSiolWMNImYzGGkbsAsFTjwJYgD7+4FixHjp0uQPzo70KDf3AIBw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/ellipse/-/ellipse-6.5.0.tgz}
+    name: '@turf/ellipse'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/rhumb-destination': registry.npmmirror.com/@turf/rhumb-destination/6.5.0
+      '@turf/transform-rotate': registry.npmmirror.com/@turf/transform-rotate/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/envelope/6.5.0:
+    resolution: {integrity: sha512-9Z+FnBWvOGOU4X+fMZxYFs1HjFlkKqsddLuMknRaqcJd6t+NIv5DWvPtDL8ATD2GEExYDiFLwMdckfr1yqJgHA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/envelope/-/envelope-6.5.0.tgz}
+    name: '@turf/envelope'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/bbox-polygon': registry.npmmirror.com/@turf/bbox-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/explode/6.5.0:
+    resolution: {integrity: sha512-6cSvMrnHm2qAsace6pw9cDmK2buAlw8+tjeJVXMfMyY+w7ZUi1rprWMsY92J7s2Dar63Bv09n56/1V7+tcj52Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/explode/-/explode-6.5.0.tgz}
+    name: '@turf/explode'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/flatten/6.5.0:
+    resolution: {integrity: sha512-IBZVwoNLVNT6U/bcUUllubgElzpMsNoCw8tLqBw6dfYg9ObGmpEjf9BIYLr7a2Yn5ZR4l7YIj2T7kD5uJjZADQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/flatten/-/flatten-6.5.0.tgz}
+    name: '@turf/flatten'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/flip/6.5.0:
+    resolution: {integrity: sha512-oyikJFNjt2LmIXQqgOGLvt70RgE2lyzPMloYWM7OR5oIFGRiBvqVD2hA6MNw6JewIm30fWZ8DQJw1NHXJTJPbg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/flip/-/flip-6.5.0.tgz}
+    name: '@turf/flip'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/great-circle/6.5.0:
+    resolution: {integrity: sha512-7ovyi3HaKOXdFyN7yy1yOMa8IyOvV46RC1QOQTT+RYUN8ke10eyqExwBpL9RFUPvlpoTzoYbM/+lWPogQlFncg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/great-circle/-/great-circle-6.5.0.tgz}
+    name: '@turf/great-circle'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/helpers/6.5.0:
+    resolution: {integrity: sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/helpers/-/helpers-6.5.0.tgz}
+    name: '@turf/helpers'
+    version: 6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/hex-grid/6.5.0:
+    resolution: {integrity: sha512-Ln3tc2tgZT8etDOldgc6e741Smg1CsMKAz1/Mlel+MEL5Ynv2mhx3m0q4J9IB1F3a4MNjDeVvm8drAaf9SF33g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/hex-grid/-/hex-grid-6.5.0.tgz}
+    name: '@turf/hex-grid'
+    version: 6.5.0
+    dependencies:
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/intersect': registry.npmmirror.com/@turf/intersect/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/interpolate/6.5.0:
+    resolution: {integrity: sha512-LSH5fMeiGyuDZ4WrDJNgh81d2DnNDUVJtuFryJFup8PV8jbs46lQGfI3r1DJ2p1IlEJIz3pmAZYeTfMMoeeohw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/interpolate/-/interpolate-6.5.0.tgz}
+    name: '@turf/interpolate'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/hex-grid': registry.npmmirror.com/@turf/hex-grid/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/point-grid': registry.npmmirror.com/@turf/point-grid/6.5.0
+      '@turf/square-grid': registry.npmmirror.com/@turf/square-grid/6.5.0
+      '@turf/triangle-grid': registry.npmmirror.com/@turf/triangle-grid/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/intersect/6.5.0:
+    resolution: {integrity: sha512-2legGJeKrfFkzntcd4GouPugoqPUjexPZnOvfez+3SfIMrHvulw8qV8u7pfVyn2Yqs53yoVCEjS5sEpvQ5YRQg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/intersect/-/intersect-6.5.0.tgz}
+    name: '@turf/intersect'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      polygon-clipping: registry.npmmirror.com/polygon-clipping/0.15.3
+    dev: false
+
+  registry.npmmirror.com/@turf/invariant/6.5.0:
+    resolution: {integrity: sha512-Wv8PRNCtPD31UVbdJE/KVAWKe7l6US+lJItRR/HOEW3eh+U/JwRCSUl/KZ7bmjM/C+zLNoreM2TU6OoLACs4eg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/invariant/-/invariant-6.5.0.tgz}
+    name: '@turf/invariant'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/isobands/6.5.0:
+    resolution: {integrity: sha512-4h6sjBPhRwMVuFaVBv70YB7eGz+iw0bhPRnp+8JBdX1UPJSXhoi/ZF2rACemRUr0HkdVB/a1r9gC32vn5IAEkw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/isobands/-/isobands-6.5.0.tgz}
+    name: '@turf/isobands'
+    version: 6.5.0
+    dependencies:
+      '@turf/area': registry.npmmirror.com/@turf/area/6.5.0
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/explode': registry.npmmirror.com/@turf/explode/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+    dev: false
+
+  registry.npmmirror.com/@turf/isolines/6.5.0:
+    resolution: {integrity: sha512-6ElhiLCopxWlv4tPoxiCzASWt/jMRvmp6mRYrpzOm3EUl75OhHKa/Pu6Y9nWtCMmVC/RcWtiiweUocbPLZLm0A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/isolines/-/isolines-6.5.0.tgz}
+    name: '@turf/isolines'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+    dev: false
+
+  registry.npmmirror.com/@turf/kinks/6.5.0:
+    resolution: {integrity: sha512-ViCngdPt1eEL7hYUHR2eHR662GvCgTc35ZJFaNR6kRtr6D8plLaDju0FILeFFWSc+o8e3fwxZEJKmFj9IzPiIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/kinks/-/kinks-6.5.0.tgz}
+    name: '@turf/kinks'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/length/6.5.0:
+    resolution: {integrity: sha512-5pL5/pnw52fck3oRsHDcSGrj9HibvtlrZ0QNy2OcW8qBFDNgZ4jtl6U7eATVoyWPKBHszW3dWETW+iLV7UARig==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/length/-/length-6.5.0.tgz}
+    name: '@turf/length'
+    version: 6.5.0
+    dependencies:
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-arc/6.5.0:
+    resolution: {integrity: sha512-I6c+V6mIyEwbtg9P9zSFF89T7QPe1DPTG3MJJ6Cm1MrAY0MdejwQKOpsvNl8LDU2ekHOlz2kHpPVR7VJsoMllA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-arc/-/line-arc-6.5.0.tgz}
+    name: '@turf/line-arc'
+    version: 6.5.0
+    dependencies:
+      '@turf/circle': registry.npmmirror.com/@turf/circle/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-chunk/6.5.0:
+    resolution: {integrity: sha512-i1FGE6YJaaYa+IJesTfyRRQZP31QouS+wh/pa6O3CC0q4T7LtHigyBSYjrbjSLfn2EVPYGlPCMFEqNWCOkC6zg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-chunk/-/line-chunk-6.5.0.tgz}
+    name: '@turf/line-chunk'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/length': registry.npmmirror.com/@turf/length/6.5.0
+      '@turf/line-slice-along': registry.npmmirror.com/@turf/line-slice-along/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-intersect/6.5.0:
+    resolution: {integrity: sha512-CS6R1tZvVQD390G9Ea4pmpM6mJGPWoL82jD46y0q1KSor9s6HupMIo1kY4Ny+AEYQl9jd21V3Scz20eldpbTVA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-intersect/-/line-intersect-6.5.0.tgz}
+    name: '@turf/line-intersect'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-segment': registry.npmmirror.com/@turf/line-segment/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      geojson-rbush: registry.npmmirror.com/geojson-rbush/3.2.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-offset/6.5.0:
+    resolution: {integrity: sha512-CEXZbKgyz8r72qRvPchK0dxqsq8IQBdH275FE6o4MrBkzMcoZsfSjghtXzKaz9vvro+HfIXal0sTk2mqV1lQTw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-offset/-/line-offset-6.5.0.tgz}
+    name: '@turf/line-offset'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-overlap/6.5.0:
+    resolution: {integrity: sha512-xHOaWLd0hkaC/1OLcStCpfq55lPHpPNadZySDXYiYjEz5HXr1oKmtMYpn0wGizsLwrOixRdEp+j7bL8dPt4ojQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-overlap/-/line-overlap-6.5.0.tgz}
+    name: '@turf/line-overlap'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-on-line': registry.npmmirror.com/@turf/boolean-point-on-line/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-segment': registry.npmmirror.com/@turf/line-segment/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/nearest-point-on-line': registry.npmmirror.com/@turf/nearest-point-on-line/6.5.0
+      deep-equal: registry.npmmirror.com/deep-equal/1.1.1
+      geojson-rbush: registry.npmmirror.com/geojson-rbush/3.2.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-segment/6.5.0:
+    resolution: {integrity: sha512-jI625Ho4jSuJESNq66Mmi290ZJ5pPZiQZruPVpmHkUw257Pew0alMmb6YrqYNnLUuiVVONxAAKXUVeeUGtycfw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-segment/-/line-segment-6.5.0.tgz}
+    name: '@turf/line-segment'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-slice-along/6.5.0:
+    resolution: {integrity: sha512-KHJRU6KpHrAj+BTgTNqby6VCTnDzG6a1sJx/I3hNvqMBLvWVA2IrkR9L9DtsQsVY63IBwVdQDqiwCuZLDQh4Ng==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-slice-along/-/line-slice-along-6.5.0.tgz}
+    name: '@turf/line-slice-along'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-slice/6.5.0:
+    resolution: {integrity: sha512-vDqJxve9tBHhOaVVFXqVjF5qDzGtKWviyjbyi2QnSnxyFAmLlLnBfMX8TLQCAf2GxHibB95RO5FBE6I2KVPRuw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-slice/-/line-slice-6.5.0.tgz}
+    name: '@turf/line-slice'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/nearest-point-on-line': registry.npmmirror.com/@turf/nearest-point-on-line/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-split/6.5.0:
+    resolution: {integrity: sha512-/rwUMVr9OI2ccJjw7/6eTN53URtGThNSD5I0GgxyFXMtxWiloRJ9MTff8jBbtPWrRka/Sh2GkwucVRAEakx9Sw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-split/-/line-split-6.5.0.tgz}
+    name: '@turf/line-split'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/line-segment': registry.npmmirror.com/@turf/line-segment/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/nearest-point-on-line': registry.npmmirror.com/@turf/nearest-point-on-line/6.5.0
+      '@turf/square': registry.npmmirror.com/@turf/square/6.5.0
+      '@turf/truncate': registry.npmmirror.com/@turf/truncate/6.5.0
+      geojson-rbush: registry.npmmirror.com/geojson-rbush/3.2.0
+    dev: false
+
+  registry.npmmirror.com/@turf/line-to-polygon/6.5.0:
+    resolution: {integrity: sha512-qYBuRCJJL8Gx27OwCD1TMijM/9XjRgXH/m/TyuND4OXedBpIWlK5VbTIO2gJ8OCfznBBddpjiObLBrkuxTpN4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/line-to-polygon/-/line-to-polygon-6.5.0.tgz}
+    name: '@turf/line-to-polygon'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/mask/6.5.0:
+    resolution: {integrity: sha512-RQha4aU8LpBrmrkH8CPaaoAfk0Egj5OuXtv6HuCQnHeGNOQt3TQVibTA3Sh4iduq4EPxnZfDjgsOeKtrCA19lg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/mask/-/mask-6.5.0.tgz}
+    name: '@turf/mask'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      polygon-clipping: registry.npmmirror.com/polygon-clipping/0.15.3
+    dev: false
+
+  registry.npmmirror.com/@turf/meta/6.5.0:
+    resolution: {integrity: sha512-RrArvtsV0vdsCBegoBtOalgdSOfkBrTJ07VkpiCnq/491W67hnMWmDu7e6Ztw0C3WldRYTXkg3SumfdzZxLBHA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/meta/-/meta-6.5.0.tgz}
+    name: '@turf/meta'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/midpoint/6.5.0:
+    resolution: {integrity: sha512-MyTzV44IwmVI6ec9fB2OgZ53JGNlgOpaYl9ArKoF49rXpL84F9rNATndbe0+MQIhdkw8IlzA6xVP4lZzfMNVCw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/midpoint/-/midpoint-6.5.0.tgz}
+    name: '@turf/midpoint'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/moran-index/6.5.0:
+    resolution: {integrity: sha512-ItsnhrU2XYtTtTudrM8so4afBCYWNaB0Mfy28NZwLjB5jWuAsvyV+YW+J88+neK/ougKMTawkmjQqodNJaBeLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/moran-index/-/moran-index-6.5.0.tgz}
+    name: '@turf/moran-index'
+    version: 6.5.0
+    dependencies:
+      '@turf/distance-weight': registry.npmmirror.com/@turf/distance-weight/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/nearest-point-on-line/6.5.0:
+    resolution: {integrity: sha512-WthrvddddvmymnC+Vf7BrkHGbDOUu6Z3/6bFYUGv1kxw8tiZ6n83/VG6kHz4poHOfS0RaNflzXSkmCi64fLBlg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/nearest-point-on-line/-/nearest-point-on-line-6.5.0.tgz}
+    name: '@turf/nearest-point-on-line'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/nearest-point-to-line/6.5.0:
+    resolution: {integrity: sha512-PXV7cN0BVzUZdjj6oeb/ESnzXSfWmEMrsfZSDRgqyZ9ytdiIj/eRsnOXLR13LkTdXVOJYDBuf7xt1mLhM4p6+Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/nearest-point-to-line/-/nearest-point-to-line-6.5.0.tgz}
+    name: '@turf/nearest-point-to-line'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/point-to-line-distance': registry.npmmirror.com/@turf/point-to-line-distance/6.5.0
+      object-assign: registry.npmmirror.com/object-assign/4.1.1
+    dev: false
+
+  registry.npmmirror.com/@turf/nearest-point/6.5.0:
+    resolution: {integrity: sha512-fguV09QxilZv/p94s8SMsXILIAMiaXI5PATq9d7YWijLxWUj6Q/r43kxyoi78Zmwwh1Zfqz9w+bCYUAxZ5+euA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/nearest-point/-/nearest-point-6.5.0.tgz}
+    name: '@turf/nearest-point'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/planepoint/6.5.0:
+    resolution: {integrity: sha512-R3AahA6DUvtFbka1kcJHqZ7DMHmPXDEQpbU5WaglNn7NaCQg9HB0XM0ZfqWcd5u92YXV+Gg8QhC8x5XojfcM4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/planepoint/-/planepoint-6.5.0.tgz}
+    name: '@turf/planepoint'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/point-grid/6.5.0:
+    resolution: {integrity: sha512-Iq38lFokNNtQJnOj/RBKmyt6dlof0yhaHEDELaWHuECm1lIZLY3ZbVMwbs+nXkwTAHjKfS/OtMheUBkw+ee49w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/point-grid/-/point-grid-6.5.0.tgz}
+    name: '@turf/point-grid'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-within': registry.npmmirror.com/@turf/boolean-within/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/point-on-feature/6.5.0:
+    resolution: {integrity: sha512-bDpuIlvugJhfcF/0awAQ+QI6Om1Y1FFYE8Y/YdxGRongivix850dTeXCo0mDylFdWFPGDo7Mmh9Vo4VxNwW/TA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/point-on-feature/-/point-on-feature-6.5.0.tgz}
+    name: '@turf/point-on-feature'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/center': registry.npmmirror.com/@turf/center/6.5.0
+      '@turf/explode': registry.npmmirror.com/@turf/explode/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/nearest-point': registry.npmmirror.com/@turf/nearest-point/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/point-to-line-distance/6.5.0:
+    resolution: {integrity: sha512-opHVQ4vjUhNBly1bob6RWy+F+hsZDH9SA0UW36pIRzfpu27qipU18xup0XXEePfY6+wvhF6yL/WgCO2IbrLqEA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/point-to-line-distance/-/point-to-line-distance-6.5.0.tgz}
+    name: '@turf/point-to-line-distance'
+    version: 6.5.0
+    dependencies:
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/projection': registry.npmmirror.com/@turf/projection/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+      '@turf/rhumb-distance': registry.npmmirror.com/@turf/rhumb-distance/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/points-within-polygon/6.5.0:
+    resolution: {integrity: sha512-YyuheKqjliDsBDt3Ho73QVZk1VXX1+zIA2gwWvuz8bR1HXOkcuwk/1J76HuFMOQI3WK78wyAi+xbkx268PkQzQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/points-within-polygon/-/points-within-polygon-6.5.0.tgz}
+    name: '@turf/points-within-polygon'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/polygon-smooth/6.5.0:
+    resolution: {integrity: sha512-LO/X/5hfh/Rk4EfkDBpLlVwt3i6IXdtQccDT9rMjXEP32tRgy0VMFmdkNaXoGlSSKf/1mGqLl4y4wHd86DqKbg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/polygon-smooth/-/polygon-smooth-6.5.0.tgz}
+    name: '@turf/polygon-smooth'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/polygon-tangents/6.5.0:
+    resolution: {integrity: sha512-sB4/IUqJMYRQH9jVBwqS/XDitkEfbyqRy+EH/cMRJURTg78eHunvJ708x5r6umXsbiUyQU4eqgPzEylWEQiunw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/polygon-tangents/-/polygon-tangents-6.5.0.tgz}
+    name: '@turf/polygon-tangents'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/boolean-within': registry.npmmirror.com/@turf/boolean-within/6.5.0
+      '@turf/explode': registry.npmmirror.com/@turf/explode/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/nearest-point': registry.npmmirror.com/@turf/nearest-point/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/polygon-to-line/6.5.0:
+    resolution: {integrity: sha512-5p4n/ij97EIttAq+ewSnKt0ruvuM+LIDzuczSzuHTpq4oS7Oq8yqg5TQ4nzMVuK41r/tALCk7nAoBuw3Su4Gcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/polygon-to-line/-/polygon-to-line-6.5.0.tgz}
+    name: '@turf/polygon-to-line'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/polygonize/6.5.0:
+    resolution: {integrity: sha512-a/3GzHRaCyzg7tVYHo43QUChCspa99oK4yPqooVIwTC61npFzdrmnywMv0S+WZjHZwK37BrFJGFrZGf6ocmY5w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/polygonize/-/polygonize-6.5.0.tgz}
+    name: '@turf/polygonize'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/envelope': registry.npmmirror.com/@turf/envelope/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/projection/6.5.0:
+    resolution: {integrity: sha512-/Pgh9mDvQWWu8HRxqpM+tKz8OzgauV+DiOcr3FCjD6ubDnrrmMJlsf6fFJmggw93mtVPrZRL6yyi9aYCQBOIvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/projection/-/projection-6.5.0.tgz}
+    name: '@turf/projection'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/random/6.5.0:
+    resolution: {integrity: sha512-8Q25gQ/XbA7HJAe+eXp4UhcXM9aOOJFaxZ02+XSNwMvY8gtWSCBLVqRcW4OhqilgZ8PeuQDWgBxeo+BIqqFWFQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/random/-/random-6.5.0.tgz}
+    name: '@turf/random'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/rectangle-grid/6.5.0:
+    resolution: {integrity: sha512-yQZ/1vbW68O2KsSB3OZYK+72aWz/Adnf7m2CMKcC+aq6TwjxZjAvlbCOsNUnMAuldRUVN1ph6RXMG4e9KEvKvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/rectangle-grid/-/rectangle-grid-6.5.0.tgz}
+    name: '@turf/rectangle-grid'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-intersects': registry.npmmirror.com/@turf/boolean-intersects/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/rewind/6.5.0:
+    resolution: {integrity: sha512-IoUAMcHWotBWYwSYuYypw/LlqZmO+wcBpn8ysrBNbazkFNkLf3btSDZMkKJO/bvOzl55imr/Xj4fi3DdsLsbzQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/rewind/-/rewind-6.5.0.tgz}
+    name: '@turf/rewind'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-clockwise': registry.npmmirror.com/@turf/boolean-clockwise/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/rhumb-bearing/6.5.0:
+    resolution: {integrity: sha512-jMyqiMRK4hzREjQmnLXmkJ+VTNTx1ii8vuqRwJPcTlKbNWfjDz/5JqJlb5NaFDcdMpftWovkW5GevfnuzHnOYA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/rhumb-bearing/-/rhumb-bearing-6.5.0.tgz}
+    name: '@turf/rhumb-bearing'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/rhumb-destination/6.5.0:
+    resolution: {integrity: sha512-RHNP1Oy+7xTTdRrTt375jOZeHceFbjwohPHlr9Hf68VdHHPMAWgAKqiX2YgSWDcvECVmiGaBKWus1Df+N7eE4Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/rhumb-destination/-/rhumb-destination-6.5.0.tgz}
+    name: '@turf/rhumb-destination'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/rhumb-distance/6.5.0:
+    resolution: {integrity: sha512-oKp8KFE8E4huC2Z1a1KNcFwjVOqa99isxNOwfo4g3SUABQ6NezjKDDrnvC4yI5YZ3/huDjULLBvhed45xdCrzg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/rhumb-distance/-/rhumb-distance-6.5.0.tgz}
+    name: '@turf/rhumb-distance'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/sample/6.5.0:
+    resolution: {integrity: sha512-kSdCwY7el15xQjnXYW520heKUrHwRvnzx8ka4eYxX9NFeOxaFITLW2G7UtXb6LJK8mmPXI8Aexv23F2ERqzGFg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/sample/-/sample-6.5.0.tgz}
+    name: '@turf/sample'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/sector/6.5.0:
+    resolution: {integrity: sha512-cYUOkgCTWqa23SOJBqxoFAc/yGCUsPRdn/ovbRTn1zNTm/Spmk6hVB84LCKOgHqvSF25i0d2kWqpZDzLDdAPbw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/sector/-/sector-6.5.0.tgz}
+    name: '@turf/sector'
+    version: 6.5.0
+    dependencies:
+      '@turf/circle': registry.npmmirror.com/@turf/circle/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/line-arc': registry.npmmirror.com/@turf/line-arc/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/shortest-path/6.5.0:
+    resolution: {integrity: sha512-4de5+G7+P4hgSoPwn+SO9QSi9HY5NEV/xRJ+cmoFVRwv2CDsuOPDheHKeuIAhKyeKDvPvPt04XYWbac4insJMg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/shortest-path/-/shortest-path-6.5.0.tgz}
+    name: '@turf/shortest-path'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/bbox-polygon': registry.npmmirror.com/@turf/bbox-polygon/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/clean-coords': registry.npmmirror.com/@turf/clean-coords/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/transform-scale': registry.npmmirror.com/@turf/transform-scale/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/simplify/6.5.0:
+    resolution: {integrity: sha512-USas3QqffPHUY184dwQdP8qsvcVH/PWBYdXY5am7YTBACaQOMAlf6AKJs9FT8jiO6fQpxfgxuEtwmox+pBtlOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/simplify/-/simplify-6.5.0.tgz}
+    name: '@turf/simplify'
+    version: 6.5.0
+    dependencies:
+      '@turf/clean-coords': registry.npmmirror.com/@turf/clean-coords/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/square-grid/6.5.0:
+    resolution: {integrity: sha512-mlR0ayUdA+L4c9h7p4k3pX6gPWHNGuZkt2c5II1TJRmhLkW2557d6b/Vjfd1z9OVaajb1HinIs1FMSAPXuuUrA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/square-grid/-/square-grid-6.5.0.tgz}
+    name: '@turf/square-grid'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/rectangle-grid': registry.npmmirror.com/@turf/rectangle-grid/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/square/6.5.0:
+    resolution: {integrity: sha512-BM2UyWDmiuHCadVhHXKIx5CQQbNCpOxB6S/aCNOCLbhCeypKX5Q0Aosc5YcmCJgkwO5BERCC6Ee7NMbNB2vHmQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/square/-/square-6.5.0.tgz}
+    name: '@turf/square'
+    version: 6.5.0
+    dependencies:
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/standard-deviational-ellipse/6.5.0:
+    resolution: {integrity: sha512-02CAlz8POvGPFK2BKK8uHGUk/LXb0MK459JVjKxLC2yJYieOBTqEbjP0qaWhiBhGzIxSMaqe8WxZ0KvqdnstHA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/standard-deviational-ellipse/-/standard-deviational-ellipse-6.5.0.tgz}
+    name: '@turf/standard-deviational-ellipse'
+    version: 6.5.0
+    dependencies:
+      '@turf/center-mean': registry.npmmirror.com/@turf/center-mean/6.5.0
+      '@turf/ellipse': registry.npmmirror.com/@turf/ellipse/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/points-within-polygon': registry.npmmirror.com/@turf/points-within-polygon/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/tag/6.5.0:
+    resolution: {integrity: sha512-XwlBvrOV38CQsrNfrxvBaAPBQgXMljeU0DV8ExOyGM7/hvuGHJw3y8kKnQ4lmEQcmcrycjDQhP7JqoRv8vFssg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/tag/-/tag-6.5.0.tgz}
+    name: '@turf/tag'
+    version: 6.5.0
+    dependencies:
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/tesselate/6.5.0:
+    resolution: {integrity: sha512-M1HXuyZFCfEIIKkglh/r5L9H3c5QTEsnMBoZOFQiRnGPGmJWcaBissGb7mTFX2+DKE7FNWXh4TDnZlaLABB0dQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/tesselate/-/tesselate-6.5.0.tgz}
+    name: '@turf/tesselate'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      earcut: registry.npmmirror.com/earcut/2.2.4
+    dev: false
+
+  registry.npmmirror.com/@turf/tin/6.5.0:
+    resolution: {integrity: sha512-YLYikRzKisfwj7+F+Tmyy/LE3d2H7D4kajajIfc9mlik2+esG7IolsX/+oUz1biguDYsG0DUA8kVYXDkobukfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/tin/-/tin-6.5.0.tgz}
+    name: '@turf/tin'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/transform-rotate/6.5.0:
+    resolution: {integrity: sha512-A2Ip1v4246ZmpssxpcL0hhiVBEf4L8lGnSPWTgSv5bWBEoya2fa/0SnFX9xJgP40rMP+ZzRaCN37vLHbv1Guag==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/transform-rotate/-/transform-rotate-6.5.0.tgz}
+    name: '@turf/transform-rotate'
+    version: 6.5.0
+    dependencies:
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+      '@turf/rhumb-destination': registry.npmmirror.com/@turf/rhumb-destination/6.5.0
+      '@turf/rhumb-distance': registry.npmmirror.com/@turf/rhumb-distance/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/transform-scale/6.5.0:
+    resolution: {integrity: sha512-VsATGXC9rYM8qTjbQJ/P7BswKWXHdnSJ35JlV4OsZyHBMxJQHftvmZJsFbOqVtQnIQIzf2OAly6rfzVV9QLr7g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/transform-scale/-/transform-scale-6.5.0.tgz}
+    name: '@turf/transform-scale'
+    version: 6.5.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/center': registry.npmmirror.com/@turf/center/6.5.0
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+      '@turf/rhumb-destination': registry.npmmirror.com/@turf/rhumb-destination/6.5.0
+      '@turf/rhumb-distance': registry.npmmirror.com/@turf/rhumb-distance/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/transform-translate/6.5.0:
+    resolution: {integrity: sha512-NABLw5VdtJt/9vSstChp93pc6oel4qXEos56RBMsPlYB8hzNTEKYtC146XJvyF4twJeeYS8RVe1u7KhoFwEM5w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/transform-translate/-/transform-translate-6.5.0.tgz}
+    name: '@turf/transform-translate'
+    version: 6.5.0
+    dependencies:
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/rhumb-destination': registry.npmmirror.com/@turf/rhumb-destination/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/triangle-grid/6.5.0:
+    resolution: {integrity: sha512-2jToUSAS1R1htq4TyLQYPTIsoy6wg3e3BQXjm2rANzw4wPQCXGOxrur1Fy9RtzwqwljlC7DF4tg0OnWr8RjmfA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/triangle-grid/-/triangle-grid-6.5.0.tgz}
+    name: '@turf/triangle-grid'
+    version: 6.5.0
+    dependencies:
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/intersect': registry.npmmirror.com/@turf/intersect/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/truncate/6.5.0:
+    resolution: {integrity: sha512-pFxg71pLk+eJj134Z9yUoRhIi8vqnnKvCYwdT4x/DQl/19RVdq1tV3yqOT3gcTQNfniteylL5qV1uTBDV5sgrg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/truncate/-/truncate-6.5.0.tgz}
+    name: '@turf/truncate'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/turf/6.5.0:
+    resolution: {integrity: sha512-ipMCPnhu59bh92MNt8+pr1VZQhHVuTMHklciQURo54heoxRzt1neNYZOBR6jdL+hNsbDGAECMuIpAutX+a3Y+w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/turf/-/turf-6.5.0.tgz}
+    name: '@turf/turf'
+    version: 6.5.0
+    dependencies:
+      '@turf/along': registry.npmmirror.com/@turf/along/6.5.0
+      '@turf/angle': registry.npmmirror.com/@turf/angle/6.5.0
+      '@turf/area': registry.npmmirror.com/@turf/area/6.5.0
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/bbox-clip': registry.npmmirror.com/@turf/bbox-clip/6.5.0
+      '@turf/bbox-polygon': registry.npmmirror.com/@turf/bbox-polygon/6.5.0
+      '@turf/bearing': registry.npmmirror.com/@turf/bearing/6.5.0
+      '@turf/bezier-spline': registry.npmmirror.com/@turf/bezier-spline/6.5.0
+      '@turf/boolean-clockwise': registry.npmmirror.com/@turf/boolean-clockwise/6.5.0
+      '@turf/boolean-contains': registry.npmmirror.com/@turf/boolean-contains/6.5.0
+      '@turf/boolean-crosses': registry.npmmirror.com/@turf/boolean-crosses/6.5.0
+      '@turf/boolean-disjoint': registry.npmmirror.com/@turf/boolean-disjoint/6.5.0
+      '@turf/boolean-equal': registry.npmmirror.com/@turf/boolean-equal/6.5.0
+      '@turf/boolean-intersects': registry.npmmirror.com/@turf/boolean-intersects/6.5.0
+      '@turf/boolean-overlap': registry.npmmirror.com/@turf/boolean-overlap/6.5.0
+      '@turf/boolean-parallel': registry.npmmirror.com/@turf/boolean-parallel/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/boolean-point-on-line': registry.npmmirror.com/@turf/boolean-point-on-line/6.5.0
+      '@turf/boolean-within': registry.npmmirror.com/@turf/boolean-within/6.5.0
+      '@turf/buffer': registry.npmmirror.com/@turf/buffer/6.5.0
+      '@turf/center': registry.npmmirror.com/@turf/center/6.5.0
+      '@turf/center-mean': registry.npmmirror.com/@turf/center-mean/6.5.0
+      '@turf/center-median': registry.npmmirror.com/@turf/center-median/6.5.0
+      '@turf/center-of-mass': registry.npmmirror.com/@turf/center-of-mass/6.5.0
+      '@turf/centroid': registry.npmmirror.com/@turf/centroid/6.5.0
+      '@turf/circle': registry.npmmirror.com/@turf/circle/6.5.0
+      '@turf/clean-coords': registry.npmmirror.com/@turf/clean-coords/6.5.0
+      '@turf/clone': registry.npmmirror.com/@turf/clone/6.5.0
+      '@turf/clusters': registry.npmmirror.com/@turf/clusters/6.5.0
+      '@turf/clusters-dbscan': registry.npmmirror.com/@turf/clusters-dbscan/6.5.0
+      '@turf/clusters-kmeans': registry.npmmirror.com/@turf/clusters-kmeans/6.5.0
+      '@turf/collect': registry.npmmirror.com/@turf/collect/6.5.0
+      '@turf/combine': registry.npmmirror.com/@turf/combine/6.5.0
+      '@turf/concave': registry.npmmirror.com/@turf/concave/6.5.0
+      '@turf/convex': registry.npmmirror.com/@turf/convex/6.5.0
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/difference': registry.npmmirror.com/@turf/difference/6.5.0
+      '@turf/dissolve': registry.npmmirror.com/@turf/dissolve/6.5.0
+      '@turf/distance': registry.npmmirror.com/@turf/distance/6.5.0
+      '@turf/distance-weight': registry.npmmirror.com/@turf/distance-weight/6.5.0
+      '@turf/ellipse': registry.npmmirror.com/@turf/ellipse/6.5.0
+      '@turf/envelope': registry.npmmirror.com/@turf/envelope/6.5.0
+      '@turf/explode': registry.npmmirror.com/@turf/explode/6.5.0
+      '@turf/flatten': registry.npmmirror.com/@turf/flatten/6.5.0
+      '@turf/flip': registry.npmmirror.com/@turf/flip/6.5.0
+      '@turf/great-circle': registry.npmmirror.com/@turf/great-circle/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/hex-grid': registry.npmmirror.com/@turf/hex-grid/6.5.0
+      '@turf/interpolate': registry.npmmirror.com/@turf/interpolate/6.5.0
+      '@turf/intersect': registry.npmmirror.com/@turf/intersect/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      '@turf/isobands': registry.npmmirror.com/@turf/isobands/6.5.0
+      '@turf/isolines': registry.npmmirror.com/@turf/isolines/6.5.0
+      '@turf/kinks': registry.npmmirror.com/@turf/kinks/6.5.0
+      '@turf/length': registry.npmmirror.com/@turf/length/6.5.0
+      '@turf/line-arc': registry.npmmirror.com/@turf/line-arc/6.5.0
+      '@turf/line-chunk': registry.npmmirror.com/@turf/line-chunk/6.5.0
+      '@turf/line-intersect': registry.npmmirror.com/@turf/line-intersect/6.5.0
+      '@turf/line-offset': registry.npmmirror.com/@turf/line-offset/6.5.0
+      '@turf/line-overlap': registry.npmmirror.com/@turf/line-overlap/6.5.0
+      '@turf/line-segment': registry.npmmirror.com/@turf/line-segment/6.5.0
+      '@turf/line-slice': registry.npmmirror.com/@turf/line-slice/6.5.0
+      '@turf/line-slice-along': registry.npmmirror.com/@turf/line-slice-along/6.5.0
+      '@turf/line-split': registry.npmmirror.com/@turf/line-split/6.5.0
+      '@turf/line-to-polygon': registry.npmmirror.com/@turf/line-to-polygon/6.5.0
+      '@turf/mask': registry.npmmirror.com/@turf/mask/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@turf/midpoint': registry.npmmirror.com/@turf/midpoint/6.5.0
+      '@turf/moran-index': registry.npmmirror.com/@turf/moran-index/6.5.0
+      '@turf/nearest-point': registry.npmmirror.com/@turf/nearest-point/6.5.0
+      '@turf/nearest-point-on-line': registry.npmmirror.com/@turf/nearest-point-on-line/6.5.0
+      '@turf/nearest-point-to-line': registry.npmmirror.com/@turf/nearest-point-to-line/6.5.0
+      '@turf/planepoint': registry.npmmirror.com/@turf/planepoint/6.5.0
+      '@turf/point-grid': registry.npmmirror.com/@turf/point-grid/6.5.0
+      '@turf/point-on-feature': registry.npmmirror.com/@turf/point-on-feature/6.5.0
+      '@turf/point-to-line-distance': registry.npmmirror.com/@turf/point-to-line-distance/6.5.0
+      '@turf/points-within-polygon': registry.npmmirror.com/@turf/points-within-polygon/6.5.0
+      '@turf/polygon-smooth': registry.npmmirror.com/@turf/polygon-smooth/6.5.0
+      '@turf/polygon-tangents': registry.npmmirror.com/@turf/polygon-tangents/6.5.0
+      '@turf/polygon-to-line': registry.npmmirror.com/@turf/polygon-to-line/6.5.0
+      '@turf/polygonize': registry.npmmirror.com/@turf/polygonize/6.5.0
+      '@turf/projection': registry.npmmirror.com/@turf/projection/6.5.0
+      '@turf/random': registry.npmmirror.com/@turf/random/6.5.0
+      '@turf/rewind': registry.npmmirror.com/@turf/rewind/6.5.0
+      '@turf/rhumb-bearing': registry.npmmirror.com/@turf/rhumb-bearing/6.5.0
+      '@turf/rhumb-destination': registry.npmmirror.com/@turf/rhumb-destination/6.5.0
+      '@turf/rhumb-distance': registry.npmmirror.com/@turf/rhumb-distance/6.5.0
+      '@turf/sample': registry.npmmirror.com/@turf/sample/6.5.0
+      '@turf/sector': registry.npmmirror.com/@turf/sector/6.5.0
+      '@turf/shortest-path': registry.npmmirror.com/@turf/shortest-path/6.5.0
+      '@turf/simplify': registry.npmmirror.com/@turf/simplify/6.5.0
+      '@turf/square': registry.npmmirror.com/@turf/square/6.5.0
+      '@turf/square-grid': registry.npmmirror.com/@turf/square-grid/6.5.0
+      '@turf/standard-deviational-ellipse': registry.npmmirror.com/@turf/standard-deviational-ellipse/6.5.0
+      '@turf/tag': registry.npmmirror.com/@turf/tag/6.5.0
+      '@turf/tesselate': registry.npmmirror.com/@turf/tesselate/6.5.0
+      '@turf/tin': registry.npmmirror.com/@turf/tin/6.5.0
+      '@turf/transform-rotate': registry.npmmirror.com/@turf/transform-rotate/6.5.0
+      '@turf/transform-scale': registry.npmmirror.com/@turf/transform-scale/6.5.0
+      '@turf/transform-translate': registry.npmmirror.com/@turf/transform-translate/6.5.0
+      '@turf/triangle-grid': registry.npmmirror.com/@turf/triangle-grid/6.5.0
+      '@turf/truncate': registry.npmmirror.com/@turf/truncate/6.5.0
+      '@turf/union': registry.npmmirror.com/@turf/union/6.5.0
+      '@turf/unkink-polygon': registry.npmmirror.com/@turf/unkink-polygon/6.5.0
+      '@turf/voronoi': registry.npmmirror.com/@turf/voronoi/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/union/6.5.0:
+    resolution: {integrity: sha512-igYWCwP/f0RFHIlC2c0SKDuM/ObBaqSljI3IdV/x71805QbIvY/BYGcJdyNcgEA6cylIGl/0VSlIbpJHZ9ldhw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/union/-/union-6.5.0.tgz}
+    name: '@turf/union'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      polygon-clipping: registry.npmmirror.com/polygon-clipping/0.15.3
+    dev: false
+
+  registry.npmmirror.com/@turf/unkink-polygon/6.5.0:
+    resolution: {integrity: sha512-8QswkzC0UqKmN1DT6HpA9upfa1HdAA5n6bbuzHy8NJOX8oVizVAqfEPY0wqqTgboDjmBR4yyImsdPGUl3gZ8JQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/unkink-polygon/-/unkink-polygon-6.5.0.tgz}
+    name: '@turf/unkink-polygon'
+    version: 6.5.0
+    dependencies:
+      '@turf/area': registry.npmmirror.com/@turf/area/6.5.0
+      '@turf/boolean-point-in-polygon': registry.npmmirror.com/@turf/boolean-point-in-polygon/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      rbush: registry.npmmirror.com/rbush/2.0.2
+    dev: false
+
+  registry.npmmirror.com/@turf/voronoi/6.5.0:
+    resolution: {integrity: sha512-C/xUsywYX+7h1UyNqnydHXiun4UPjK88VDghtoRypR9cLlb7qozkiLRphQxxsCM0KxyxpVPHBVQXdAL3+Yurow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/voronoi/-/voronoi-6.5.0.tgz}
+    name: '@turf/voronoi'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+      d3-voronoi: registry.npmmirror.com/d3-voronoi/1.1.2
+    dev: false
+
+  registry.npmmirror.com/@tweenjs/tween.js/18.6.4:
+    resolution: {integrity: sha512-lB9lMjuqjtuJrx7/kOkqQBtllspPIN+96OvTCeJ2j5FEzinoAXTdAMFnDAQT1KVPRlnYfBrqxtqP66vDM40xxQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tweenjs/tween.js/-/tween.js-18.6.4.tgz}
+    name: '@tweenjs/tween.js'
+    version: 18.6.4
+    dev: false
+
   registry.npmmirror.com/@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/estree/-/estree-1.0.0.tgz}
     name: '@types/estree'
     version: 1.0.0
+    dev: false
+
+  registry.npmmirror.com/@types/geojson/7946.0.8:
+    resolution: {integrity: sha512-1rkryxURpr6aWP7R786/UQOkJ3PcpQiWkAXBmdWc7ryFWqN6a4xfK7BtjXvFBKO9LjQ+MWQSWxYeZX1OApnArA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/geojson/-/geojson-7946.0.8.tgz}
+    name: '@types/geojson'
+    version: 7946.0.8
     dev: false
 
   registry.npmmirror.com/@types/node/18.11.9:
@@ -1104,6 +2463,12 @@ packages:
     version: 3.2.45
     dev: false
 
+  registry.npmmirror.com/@zip.js/zip.js/2.4.26:
+    resolution: {integrity: sha512-I9HBO3BHIxEMQmltmHM3iqUW6IHqi3gsL9wTSXvHTRpOrA6q2OxtR58EDSaOGjHhDVJ+wIOAxZyKq2x00AVmqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@zip.js/zip.js/-/zip.js-2.4.26.tgz}
+    name: '@zip.js/zip.js'
+    version: 2.4.26
+    dev: false
+
   registry.npmmirror.com/acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-node/-/acorn-node-1.8.2.tgz}
     name: acorn-node
@@ -1174,6 +2539,14 @@ packages:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/asynckit/-/asynckit-0.4.0.tgz}
     name: asynckit
     version: 0.4.0
+    dev: false
+
+  registry.npmmirror.com/autolinker/3.16.2:
+    resolution: {integrity: sha512-JiYl7j2Z19F9NdTmirENSUUIIL/9MytEWtmzhfmsKPCp9E+G35Y0UNCMoM9tFigxT59qSc8Ml2dlZXOCVTYwuA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/autolinker/-/autolinker-3.16.2.tgz}
+    name: autolinker
+    version: 3.16.2
+    dependencies:
+      tslib: registry.npmmirror.com/tslib/2.4.1
     dev: false
 
   registry.npmmirror.com/autoprefixer/10.4.13_postcss@8.4.19:
@@ -1260,6 +2633,12 @@ packages:
     version: 2.2.0
     engines: {node: '>=8'}
 
+  registry.npmmirror.com/bitmap-sdf/1.0.4:
+    resolution: {integrity: sha512-1G3U4n5JE6RAiALMxu0p1XmeZkTeCwGKykzsLTCqVzfSDaN6S7fKnkIkfejogz+iwqBWc0UYAIKnKHNN7pSfDg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/bitmap-sdf/-/bitmap-sdf-1.0.4.tgz}
+    name: bitmap-sdf
+    version: 1.0.4
+    dev: false
+
   registry.npmmirror.com/boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/boolbase/-/boolbase-1.0.0.tgz}
     name: boolbase
@@ -1302,6 +2681,15 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  registry.npmmirror.com/call-bind/1.0.2:
+    resolution: {integrity: sha512-7O+FbCihrB5WGbFYesctwmTKae6rOiIzmz1icreWJ+0aA7LJfuqhEso2T9ncpcFtzMQtzXf2QGGueWJGTYsqrA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/call-bind/-/call-bind-1.0.2.tgz}
+    name: call-bind
+    version: 1.0.2
+    dependencies:
+      function-bind: registry.npmmirror.com/function-bind/1.1.1
+      get-intrinsic: registry.npmmirror.com/get-intrinsic/1.1.3
+    dev: false
+
   registry.npmmirror.com/callsites/3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/callsites/-/callsites-3.1.0.tgz}
     name: callsites
@@ -1333,6 +2721,16 @@ packages:
     resolution: {integrity: sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001434.tgz}
     name: caniuse-lite
     version: 1.0.30001434
+
+  registry.npmmirror.com/cesium/1.100.0:
+    resolution: {integrity: sha512-f9pBg6DBY4LoRzpOLPhtmUAi0V7FJVrI/fXYLFri3xtK/aEwwmY/+slH82sOXx7Ynt3PRVCsM/4L/Xe/x5Asvg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/cesium/-/cesium-1.100.0.tgz}
+    name: cesium
+    version: 1.100.0
+    engines: {node: '>=14.0.0'}
+    dependencies:
+      '@cesium/engine': registry.npmmirror.com/@cesium/engine/1.0.0
+      '@cesium/widgets': registry.npmmirror.com/@cesium/widgets/1.0.0
+    dev: false
 
   registry.npmmirror.com/chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chalk/-/chalk-2.4.2.tgz}
@@ -1457,6 +2855,12 @@ packages:
       delayed-stream: registry.npmmirror.com/delayed-stream/1.0.0
     dev: false
 
+  registry.npmmirror.com/commander/2.20.3:
+    resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-2.20.3.tgz}
+    name: commander
+    version: 2.20.3
+    dev: false
+
   registry.npmmirror.com/commander/5.1.0:
     resolution: {integrity: sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/commander/-/commander-5.1.0.tgz}
     name: commander
@@ -1488,6 +2892,17 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz}
     name: concat-map
     version: 0.0.1
+    dev: false
+
+  registry.npmmirror.com/concaveman/1.2.1:
+    resolution: {integrity: sha512-PwZYKaM/ckQSa8peP5JpVr7IMJ4Nn/MHIaWUjP4be+KoZ7Botgs8seAZGpmaOM+UZXawcdYRao/px9ycrCihHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/concaveman/-/concaveman-1.2.1.tgz}
+    name: concaveman
+    version: 1.2.1
+    dependencies:
+      point-in-polygon: registry.npmmirror.com/point-in-polygon/1.1.0
+      rbush: registry.npmmirror.com/rbush/3.0.1
+      robust-predicates: registry.npmmirror.com/robust-predicates/2.0.4
+      tinyqueue: registry.npmmirror.com/tinyqueue/2.0.3
     dev: false
 
   registry.npmmirror.com/consola/2.15.3:
@@ -1599,6 +3014,26 @@ packages:
     name: csstype
     version: 3.1.1
 
+  registry.npmmirror.com/d3-array/1.2.4:
+    resolution: {integrity: sha512-KHW6M86R+FUPYGb3R5XiYjXPq7VzwxZ22buHhAEVG5ztoEcZZMLov530mmccaqA1GghZArjQV46fuc8kUqhhHw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-array/-/d3-array-1.2.4.tgz}
+    name: d3-array
+    version: 1.2.4
+    dev: false
+
+  registry.npmmirror.com/d3-geo/1.7.1:
+    resolution: {integrity: sha512-O4AempWAr+P5qbk2bC2FuN/sDW4z+dN2wDf9QV3bxQt4M5HfOEeXLgJ/UKQW0+o1Dj8BE+L5kiDbdWUMjsmQpw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-geo/-/d3-geo-1.7.1.tgz}
+    name: d3-geo
+    version: 1.7.1
+    dependencies:
+      d3-array: registry.npmmirror.com/d3-array/1.2.4
+    dev: false
+
+  registry.npmmirror.com/d3-voronoi/1.1.2:
+    resolution: {integrity: sha512-RhGS1u2vavcO7ay7ZNAPo4xeDh/VYeGof3x5ZLJBQgYhLegxr3s5IykvWmJ94FTU6mcbtp4sloqZ54mP6R4Utw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/d3-voronoi/-/d3-voronoi-1.1.2.tgz}
+    name: d3-voronoi
+    version: 1.1.2
+    dev: false
+
   registry.npmmirror.com/daisyui/2.42.1_d2ecdd51edbebe3810de3c074fca1feb:
     resolution: {integrity: sha512-IVeEvP8gvOzHR47fMrOp2YocQJMRmYskhdt7OsuhKJNn+YzLRGOpVpY7AGXt/56pYeYy7h03THHXRTW5cVU9rQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/daisyui/-/daisyui-2.42.1.tgz}
     id: registry.npmmirror.com/daisyui/2.42.1
@@ -1644,6 +3079,29 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
+  registry.npmmirror.com/deep-equal/1.1.1:
+    resolution: {integrity: sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/deep-equal/-/deep-equal-1.1.1.tgz}
+    name: deep-equal
+    version: 1.1.1
+    dependencies:
+      is-arguments: registry.npmmirror.com/is-arguments/1.1.1
+      is-date-object: registry.npmmirror.com/is-date-object/1.0.5
+      is-regex: registry.npmmirror.com/is-regex/1.1.4
+      object-is: registry.npmmirror.com/object-is/1.1.5
+      object-keys: registry.npmmirror.com/object-keys/1.1.1
+      regexp.prototype.flags: registry.npmmirror.com/regexp.prototype.flags/1.4.3
+    dev: false
+
+  registry.npmmirror.com/define-properties/1.1.4:
+    resolution: {integrity: sha512-uckOqKcfaVvtBdsVkdPv3XjveQJsNQqmhXgRi8uhvWWuPYZCNlzT8qAyblUgNoXdHdjMTzAqeGjAoli8f+bzPA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/define-properties/-/define-properties-1.1.4.tgz}
+    name: define-properties
+    version: 1.1.4
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-property-descriptors: registry.npmmirror.com/has-property-descriptors/1.0.0
+      object-keys: registry.npmmirror.com/object-keys/1.1.1
+    dev: false
+
   registry.npmmirror.com/defined/1.0.1:
     resolution: {integrity: sha512-hsBd2qSVCRE+5PmNdHt1uzyrFu5d3RwmFDKzyNZMFq/EwDNJF7Ee5+D5oEKF0hU6LhtoUF1macFvOe4AskQC1Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/defined/-/defined-1.0.1.tgz}
     name: defined
@@ -1654,6 +3112,12 @@ packages:
     name: delayed-stream
     version: 1.0.0
     engines: {node: '>=0.4.0'}
+    dev: false
+
+  registry.npmmirror.com/density-clustering/1.3.0:
+    resolution: {integrity: sha512-icpmBubVTwLnsaor9qH/4tG5+7+f61VcqMN3V3pm9sxxSCt2Jcs0zWOgwZW9ARJYaKD3FumIgHiMOcIMRRAzFQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/density-clustering/-/density-clustering-1.3.0.tgz}
+    name: density-clustering
+    version: 1.3.0
     dev: false
 
   registry.npmmirror.com/detective/5.2.1:
@@ -1708,6 +3172,12 @@ packages:
       domelementtype: registry.npmmirror.com/domelementtype/2.3.0
     dev: false
 
+  registry.npmmirror.com/dompurify/2.4.1:
+    resolution: {integrity: sha512-ewwFzHzrrneRjxzmK6oVz/rZn9VWspGFRDb4/rRtIsM1n36t9AKma/ye8syCpcw+XJ25kOK/hOG7t1j2I2yBqA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dompurify/-/dompurify-2.4.1.tgz}
+    name: dompurify
+    version: 2.4.1
+    dev: false
+
   registry.npmmirror.com/domutils/2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/domutils/-/domutils-2.8.0.tgz}
     name: domutils
@@ -1729,6 +3199,12 @@ packages:
       rxjs: registry.npmmirror.com/rxjs/7.5.7
     transitivePeerDependencies:
       - debug
+    dev: false
+
+  registry.npmmirror.com/earcut/2.2.4:
+    resolution: {integrity: sha512-/pjZsA1b4RPHbeWZQn66SWS8nZZWLQQ23oE3Eam7aroEFGEvwKAsJfZ9ytiEMycfzXWpca4FA9QIOehf7PocBQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/earcut/-/earcut-2.2.4.tgz}
+    name: earcut
+    version: 2.2.4
     dev: false
 
   registry.npmmirror.com/echarts-for-react/3.0.2_echarts@5.4.0+react@18.2.0:
@@ -2191,17 +3667,53 @@ packages:
     name: function-bind
     version: 1.1.1
 
+  registry.npmmirror.com/functions-have-names/1.2.3:
+    resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/functions-have-names/-/functions-have-names-1.2.3.tgz}
+    name: functions-have-names
+    version: 1.2.3
+    dev: false
+
   registry.npmmirror.com/gensync/1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/gensync/-/gensync-1.0.0-beta.2.tgz}
     name: gensync
     version: 1.0.0-beta.2
     engines: {node: '>=6.9.0'}
 
+  registry.npmmirror.com/geojson-equality/0.1.6:
+    resolution: {integrity: sha512-TqG8YbqizP3EfwP5Uw4aLu6pKkg6JQK9uq/XZ1lXQntvTHD1BBKJWhNpJ2M0ax6TuWMP3oyx6Oq7FCIfznrgpQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/geojson-equality/-/geojson-equality-0.1.6.tgz}
+    name: geojson-equality
+    version: 0.1.6
+    dependencies:
+      deep-equal: registry.npmmirror.com/deep-equal/1.1.1
+    dev: false
+
+  registry.npmmirror.com/geojson-rbush/3.2.0:
+    resolution: {integrity: sha512-oVltQTXolxvsz1sZnutlSuLDEcQAKYC/uXt9zDzJJ6bu0W+baTI8LZBaTup5afzibEH4N3jlq2p+a152wlBJ7w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/geojson-rbush/-/geojson-rbush-3.2.0.tgz}
+    name: geojson-rbush
+    version: 3.2.0
+    dependencies:
+      '@turf/bbox': registry.npmmirror.com/@turf/bbox/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/meta': registry.npmmirror.com/@turf/meta/6.5.0
+      '@types/geojson': registry.npmmirror.com/@types/geojson/7946.0.8
+      rbush: registry.npmmirror.com/rbush/3.0.1
+    dev: false
+
   registry.npmmirror.com/get-caller-file/2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/get-caller-file/-/get-caller-file-2.0.5.tgz}
     name: get-caller-file
     version: 2.0.5
     engines: {node: 6.* || 8.* || >= 10.*}
+    dev: false
+
+  registry.npmmirror.com/get-intrinsic/1.1.3:
+    resolution: {integrity: sha512-QJVz1Tj7MS099PevUG5jvnt9tSkXN8K14dxQlikJuPt4uD9hHAHjLyLBiLR5zELelBdD9QNRAXZzsJx0WaDL9A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/get-intrinsic/-/get-intrinsic-1.1.3.tgz}
+    name: get-intrinsic
+    version: 1.1.3
+    dependencies:
+      function-bind: registry.npmmirror.com/function-bind/1.1.1
+      has: registry.npmmirror.com/has/1.0.3
+      has-symbols: registry.npmmirror.com/has-symbols/1.0.3
     dev: false
 
   registry.npmmirror.com/glob-parent/5.1.2:
@@ -2245,6 +3757,12 @@ packages:
     version: 4.2.10
     dev: false
 
+  registry.npmmirror.com/grapheme-splitter/1.0.4:
+    resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz}
+    name: grapheme-splitter
+    version: 1.0.4
+    dev: false
+
   registry.npmmirror.com/has-flag/3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/has-flag/-/has-flag-3.0.0.tgz}
     name: has-flag
@@ -2263,6 +3781,30 @@ packages:
     name: has-own-prop
     version: 2.0.0
     engines: {node: '>=8'}
+    dev: false
+
+  registry.npmmirror.com/has-property-descriptors/1.0.0:
+    resolution: {integrity: sha512-62DVLZGoiEBDHQyqG4w9xCuZ7eJEwNmJRWw2VY84Oedb7WFcA27fiEVe8oUQx9hAUJ4ekurquucTGwsyO1XGdQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/has-property-descriptors/-/has-property-descriptors-1.0.0.tgz}
+    name: has-property-descriptors
+    version: 1.0.0
+    dependencies:
+      get-intrinsic: registry.npmmirror.com/get-intrinsic/1.1.3
+    dev: false
+
+  registry.npmmirror.com/has-symbols/1.0.3:
+    resolution: {integrity: sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/has-symbols/-/has-symbols-1.0.3.tgz}
+    name: has-symbols
+    version: 1.0.3
+    engines: {node: '>= 0.4'}
+    dev: false
+
+  registry.npmmirror.com/has-tostringtag/1.0.0:
+    resolution: {integrity: sha512-kFjcSNhnlGV1kyoGk7OXKSawH5JOb/LzUc5w9B02hOTO0dfFRjbHQKvg1d6cf3HbeUmtU9VbbV3qzZ2Teh97WQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/has-tostringtag/-/has-tostringtag-1.0.0.tgz}
+    name: has-tostringtag
+    version: 1.0.0
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-symbols: registry.npmmirror.com/has-symbols/1.0.3
     dev: false
 
   registry.npmmirror.com/has/1.0.3:
@@ -2320,6 +3862,16 @@ packages:
     version: 2.0.4
     dev: false
 
+  registry.npmmirror.com/is-arguments/1.1.1:
+    resolution: {integrity: sha512-8Q7EARjzEnKpt/PCD7e1cgUS0a6X8u5tdSiMqXhojOdoV9TsMsiO+9VLC5vAmO8N7/GmXn7yjR8qnA6bVAEzfA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-arguments/-/is-arguments-1.1.1.tgz}
+    name: is-arguments
+    version: 1.1.1
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind/1.0.2
+      has-tostringtag: registry.npmmirror.com/has-tostringtag/1.0.0
+    dev: false
+
   registry.npmmirror.com/is-arrayish/0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-arrayish/-/is-arrayish-0.2.1.tgz}
     name: is-arrayish
@@ -2346,6 +3898,15 @@ packages:
     version: 2.11.0
     dependencies:
       has: registry.npmmirror.com/has/1.0.3
+
+  registry.npmmirror.com/is-date-object/1.0.5:
+    resolution: {integrity: sha512-9YQaSxsAiSwcvS33MBk3wTCVnWK+HhF8VZR2jRxehM16QcVOdHqPn4VPHmRK4lSr38n9JriurInLcP90xsYNfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-date-object/-/is-date-object-1.0.5.tgz}
+    name: is-date-object
+    version: 1.0.5
+    engines: {node: '>= 0.4'}
+    dependencies:
+      has-tostringtag: registry.npmmirror.com/has-tostringtag/1.0.0
+    dev: false
 
   registry.npmmirror.com/is-extglob/2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-extglob/-/is-extglob-2.1.1.tgz}
@@ -2374,6 +3935,16 @@ packages:
     version: 7.0.0
     engines: {node: '>=0.12.0'}
 
+  registry.npmmirror.com/is-regex/1.1.4:
+    resolution: {integrity: sha512-kvRdxDsxZjhzUX07ZnLydzS1TU/TJlTUHHY4YLL87e37oUA49DfkLqgy+VjFocowy29cKvcSiu+kIv728jTTVg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-regex/-/is-regex-1.1.4.tgz}
+    name: is-regex
+    version: 1.1.4
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind/1.0.2
+      has-tostringtag: registry.npmmirror.com/has-tostringtag/1.0.0
+    dev: false
+
   registry.npmmirror.com/its-fine/1.0.6_react@18.2.0:
     resolution: {integrity: sha512-VZJZPwVT2kxe5KQv+TxCjojfLiUIut8zXDNLTxcM7gJ/xQ/bSPk5M0neZ+j3myy45KKkltY1mm1jyJgx3Fxsdg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/its-fine/-/its-fine-1.0.6.tgz}
     id: registry.npmmirror.com/its-fine/1.0.6
@@ -2390,6 +3961,13 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/js-tokens/-/js-tokens-4.0.0.tgz}
     name: js-tokens
     version: 4.0.0
+
+  registry.npmmirror.com/jsep/0.3.5:
+    resolution: {integrity: sha512-AoRLBDc6JNnKjNcmonituEABS5bcfqDhQAWWXNTFrqu6nVXBpBAGfcoTGZMFlIrh9FjmE1CQyX9CTNwZrXMMDA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jsep/-/jsep-0.3.5.tgz}
+    name: jsep
+    version: 0.3.5
+    engines: {node: '>= 6.0.0'}
+    dev: false
 
   registry.npmmirror.com/jsesc/2.5.2:
     resolution: {integrity: sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/jsesc/-/jsesc-2.5.2.tgz}
@@ -2419,6 +3997,24 @@ packages:
       graceful-fs: registry.npmmirror.com/graceful-fs/4.2.10
     dev: false
 
+  registry.npmmirror.com/kdbush/3.0.0:
+    resolution: {integrity: sha512-hRkd6/XW4HTsA9vjVpY9tuXJYLSlelnkTmVFu4M9/7MIYQtFcHpbugAU7UbOfjOiVSVYl2fqgBuJ32JUmRo5Ew==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/kdbush/-/kdbush-3.0.0.tgz}
+    name: kdbush
+    version: 3.0.0
+    dev: false
+
+  registry.npmmirror.com/ktx-parse/0.4.5:
+    resolution: {integrity: sha512-MK3FOody4TXbFf8Yqv7EBbySw7aPvEcPX++Ipt6Sox+/YMFvR5xaTyhfNSk1AEmMy+RYIw81ctN4IMxCB8OAlg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ktx-parse/-/ktx-parse-0.4.5.tgz}
+    name: ktx-parse
+    version: 0.4.5
+    dev: false
+
+  registry.npmmirror.com/lerc/2.0.0:
+    resolution: {integrity: sha512-7qo1Mq8ZNmaR4USHHm615nEW2lPeeWJ3bTyoqFbd35DLx0LUH7C6ptt5FDCTAlbIzs3+WKrk5SkJvw8AFDE2hg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lerc/-/lerc-2.0.0.tgz}
+    name: lerc
+    version: 2.0.0
+    dev: false
+
   registry.npmmirror.com/lilconfig/2.0.6:
     resolution: {integrity: sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lilconfig/-/lilconfig-2.0.6.tgz}
     name: lilconfig
@@ -2444,6 +4040,12 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
+    dev: false
+
+  registry.npmmirror.com/long/5.2.1:
+    resolution: {integrity: sha512-GKSNGeNAtw8IryjjkhZxuKB3JzlcLTwjtiQCHKvqQet81I93kXslhDQruGI/QsddO83mcDToBVy7GqGS/zYf/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/long/-/long-5.2.1.tgz}
+    name: long
+    version: 5.2.1
     dev: false
 
   registry.npmmirror.com/loose-envify/1.4.0:
@@ -2492,6 +4094,21 @@ packages:
       sourcemap-codec: registry.npmmirror.com/sourcemap-codec/1.4.8
     dev: true
 
+  registry.npmmirror.com/mars3d-cesium/1.95.1:
+    resolution: {integrity: sha512-Mw17xJAkvbrCLg3K2O2Wa8AzKeNMkq9vI82DNh4Z35TjKRfgekUQVGwbw12fMn5lipSdpWb64IO70p4z83tDTQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mars3d-cesium/-/mars3d-cesium-1.95.1.tgz}
+    name: mars3d-cesium
+    version: 1.95.1
+    dev: false
+
+  registry.npmmirror.com/mars3d/3.4.17:
+    resolution: {integrity: sha512-dV4PX3ofhS+snBkOmg7hGgHhx+DEUaVpelxsDTx8k/PBXbWqDTPqjRwm8DvGebOOj9+raa83j5NNLH44aJpPMA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mars3d/-/mars3d-3.4.17.tgz}
+    name: mars3d
+    version: 3.4.17
+    dependencies:
+      '@turf/turf': registry.npmmirror.com/@turf/turf/6.5.0
+      mars3d-cesium: registry.npmmirror.com/mars3d-cesium/1.95.1
+    dev: false
+
   registry.npmmirror.com/mdn-data/2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mdn-data/-/mdn-data-2.0.14.tgz}
     name: mdn-data
@@ -2503,6 +4120,18 @@ packages:
     name: merge2
     version: 1.4.1
     engines: {node: '>= 8'}
+
+  registry.npmmirror.com/mersenne-twister/1.1.0:
+    resolution: {integrity: sha512-mUYWsMKNrm4lfygPkL3OfGzOPTR2DBlTkBNHM//F6hGp8cLThY897crAlk3/Jo17LEOOjQUrNAx6DvgO77QJkA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mersenne-twister/-/mersenne-twister-1.1.0.tgz}
+    name: mersenne-twister
+    version: 1.1.0
+    dev: false
+
+  registry.npmmirror.com/meshoptimizer/0.18.1:
+    resolution: {integrity: sha512-ZhoIoL7TNV4s5B6+rx5mC//fw8/POGyNxS/DZyCJeiZ12ScLfVwRE/GfsxwiTkMYYD5DmK2/JXnEVXqL4rF+Sw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/meshoptimizer/-/meshoptimizer-0.18.1.tgz}
+    name: meshoptimizer
+    version: 0.18.1
+    dev: false
 
   registry.npmmirror.com/micromatch/4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/micromatch/-/micromatch-4.0.5.tgz}
@@ -2585,6 +4214,12 @@ packages:
     version: 8.0.1
     dev: false
 
+  registry.npmmirror.com/nosleep.js/0.12.0:
+    resolution: {integrity: sha512-9d1HbpKLh3sdWlhXMhU6MMH+wQzKkrgfRkYV0EBdvt99YJfj0ilCJrWRDYG2130Tm4GXbEoTCx5b34JSaP+HhA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/nosleep.js/-/nosleep.js-0.12.0.tgz}
+    name: nosleep.js
+    version: 0.12.0
+    dev: false
+
   registry.npmmirror.com/nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/nth-check/-/nth-check-2.1.1.tgz}
     name: nth-check
@@ -2619,6 +4254,23 @@ packages:
     version: 3.0.0
     engines: {node: '>= 6'}
 
+  registry.npmmirror.com/object-is/1.1.5:
+    resolution: {integrity: sha512-3cyDsyHgtmi7I7DfSSI2LDp6SK2lwvtbg0p0R1e0RvTqF5ceGx+K2dfSjm1bKDMVCFEDAQvy+o8c6a7VujOddw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/object-is/-/object-is-1.1.5.tgz}
+    name: object-is
+    version: 1.1.5
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind/1.0.2
+      define-properties: registry.npmmirror.com/define-properties/1.1.4
+    dev: false
+
+  registry.npmmirror.com/object-keys/1.1.1:
+    resolution: {integrity: sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/object-keys/-/object-keys-1.1.1.tgz}
+    name: object-keys
+    version: 1.1.1
+    engines: {node: '>= 0.4'}
+    dev: false
+
   registry.npmmirror.com/once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/once/-/once-1.4.0.tgz}
     name: once
@@ -2650,6 +4302,12 @@ packages:
     name: p-try
     version: 2.2.0
     engines: {node: '>=6'}
+    dev: false
+
+  registry.npmmirror.com/pako/2.1.0:
+    resolution: {integrity: sha512-w+eufiZ1WuJYgPXbV/PO3NCMEc3xqylkKHzp8bxp1uW4qaSNQUkwmLLEc3kKsfz8lpV1F8Ht3U1Cm+9Srog2ug==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pako/-/pako-2.1.0.tgz}
+    name: pako
+    version: 2.1.0
     dev: false
 
   registry.npmmirror.com/parent-module/1.0.1:
@@ -2727,6 +4385,20 @@ packages:
     name: pngjs
     version: 5.0.0
     engines: {node: '>=10.13.0'}
+    dev: false
+
+  registry.npmmirror.com/point-in-polygon/1.1.0:
+    resolution: {integrity: sha512-3ojrFwjnnw8Q9242TzgXuTD+eKiutbzyslcq1ydfu82Db2y+Ogbmyrkpv0Hgj31qwT3lbS9+QAAO/pIQM35XRw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/point-in-polygon/-/point-in-polygon-1.1.0.tgz}
+    name: point-in-polygon
+    version: 1.1.0
+    dev: false
+
+  registry.npmmirror.com/polygon-clipping/0.15.3:
+    resolution: {integrity: sha512-ho0Xx5DLkgxRx/+n4O74XyJ67DcyN3Tu9bGYKsnTukGAW6ssnuak6Mwcyb1wHy9MZc9xsUWqIoiazkZB5weECg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/polygon-clipping/-/polygon-clipping-0.15.3.tgz}
+    name: polygon-clipping
+    version: 0.15.3
+    dependencies:
+      splaytree: registry.npmmirror.com/splaytree/3.1.1
     dev: false
 
   registry.npmmirror.com/postcss-functions/3.0.0:
@@ -2890,6 +4562,27 @@ packages:
     version: 8.2.3
     dev: false
 
+  registry.npmmirror.com/protobufjs/7.1.2:
+    resolution: {integrity: sha512-4ZPTPkXCdel3+L81yw3dG6+Kq3umdWKh7Dc7GW/CpNk4SX3hK58iPCWeCyhVTDrbkNeKrYNZ7EojM5WDaEWTLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/protobufjs/-/protobufjs-7.1.2.tgz}
+    name: protobufjs
+    version: 7.1.2
+    engines: {node: '>=12.0.0'}
+    requiresBuild: true
+    dependencies:
+      '@protobufjs/aspromise': registry.npmmirror.com/@protobufjs/aspromise/1.1.2
+      '@protobufjs/base64': registry.npmmirror.com/@protobufjs/base64/1.1.2
+      '@protobufjs/codegen': registry.npmmirror.com/@protobufjs/codegen/2.0.4
+      '@protobufjs/eventemitter': registry.npmmirror.com/@protobufjs/eventemitter/1.1.0
+      '@protobufjs/fetch': registry.npmmirror.com/@protobufjs/fetch/1.1.0
+      '@protobufjs/float': registry.npmmirror.com/@protobufjs/float/1.0.2
+      '@protobufjs/inquire': registry.npmmirror.com/@protobufjs/inquire/1.1.0
+      '@protobufjs/path': registry.npmmirror.com/@protobufjs/path/1.1.2
+      '@protobufjs/pool': registry.npmmirror.com/@protobufjs/pool/1.1.0
+      '@protobufjs/utf8': registry.npmmirror.com/@protobufjs/utf8/1.1.0
+      '@types/node': registry.npmmirror.com/@types/node/18.11.9
+      long: registry.npmmirror.com/long/5.2.1
+    dev: false
+
   registry.npmmirror.com/proxy-from-env/1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz}
     name: proxy-from-env
@@ -2931,6 +4624,34 @@ packages:
     name: quick-lru
     version: 5.1.1
     engines: {node: '>=10'}
+
+  registry.npmmirror.com/quickselect/1.1.1:
+    resolution: {integrity: sha512-qN0Gqdw4c4KGPsBOQafj6yj/PA6c/L63f6CaZ/DCF/xF4Esu3jVmKLUDYxghFx8Kb/O7y9tI7x2RjTSXwdK1iQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/quickselect/-/quickselect-1.1.1.tgz}
+    name: quickselect
+    version: 1.1.1
+    dev: false
+
+  registry.npmmirror.com/quickselect/2.0.0:
+    resolution: {integrity: sha512-RKJ22hX8mHe3Y6wH/N3wCM6BWtjaxIyyUIkpHOvfFnxdI4yD4tBXEBKSbriGujF6jnSVkJrffuo6vxACiSSxIw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/quickselect/-/quickselect-2.0.0.tgz}
+    name: quickselect
+    version: 2.0.0
+    dev: false
+
+  registry.npmmirror.com/rbush/2.0.2:
+    resolution: {integrity: sha512-XBOuALcTm+O/H8G90b6pzu6nX6v2zCKiFG4BJho8a+bY6AER6t8uQUZdi5bomQc0AprCWhEGa7ncAbbRap0bRA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rbush/-/rbush-2.0.2.tgz}
+    name: rbush
+    version: 2.0.2
+    dependencies:
+      quickselect: registry.npmmirror.com/quickselect/1.1.1
+    dev: false
+
+  registry.npmmirror.com/rbush/3.0.1:
+    resolution: {integrity: sha512-XRaVO0YecOpEuIvbhbpTrZgoiI6xBlz6hnlr6EHhd+0x9ase6EmeN+hdwwUaJvLcsFFQ8iWVF1GAK1yB0BWi0w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rbush/-/rbush-3.0.1.tgz}
+    name: rbush
+    version: 3.0.1
+    dependencies:
+      quickselect: registry.npmmirror.com/quickselect/2.0.0
+    dev: false
 
   registry.npmmirror.com/react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-dom/-/react-dom-18.2.0.tgz}
@@ -3068,6 +4789,17 @@ packages:
     version: 0.13.11
     dev: false
 
+  registry.npmmirror.com/regexp.prototype.flags/1.4.3:
+    resolution: {integrity: sha512-fjggEOO3slI6Wvgjwflkc4NFRCTZAu5CnNfBd5qOMYhWdn67nJBBu34/TkD++eeFmd8C9r9jfXJ27+nSiRkSUA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/regexp.prototype.flags/-/regexp.prototype.flags-1.4.3.tgz}
+    name: regexp.prototype.flags
+    version: 1.4.3
+    engines: {node: '>= 0.4'}
+    dependencies:
+      call-bind: registry.npmmirror.com/call-bind/1.0.2
+      define-properties: registry.npmmirror.com/define-properties/1.1.4
+      functions-have-names: registry.npmmirror.com/functions-have-names/1.2.3
+    dev: false
+
   registry.npmmirror.com/repeat-string/1.6.1:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/repeat-string/-/repeat-string-1.6.1.tgz}
     name: repeat-string
@@ -3110,6 +4842,12 @@ packages:
     name: reusify
     version: 1.0.4
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+
+  registry.npmmirror.com/robust-predicates/2.0.4:
+    resolution: {integrity: sha512-l4NwboJM74Ilm4VKfbAtFeGq7aEjWL+5kVFcmgFA2MrdnQWx9iE/tUGvxY5HyMI7o/WpSIUFLbC5fbeaHgSCYg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/robust-predicates/-/robust-predicates-2.0.4.tgz}
+    name: robust-predicates
+    version: 2.0.4
+    dev: false
 
   registry.npmmirror.com/rollup/2.79.1:
     resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rollup/-/rollup-2.79.1.tgz}
@@ -3177,6 +4915,12 @@ packages:
     version: 1.0.1
     dev: false
 
+  registry.npmmirror.com/skmeans/0.9.7:
+    resolution: {integrity: sha512-hNj1/oZ7ygsfmPZ7ZfN5MUBRoGg1gtpnImuJBgLO0ljQ67DtJuiQaiYdS4lUA6s0KCwnPhGivtC/WRwIZLkHyg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/skmeans/-/skmeans-0.9.7.tgz}
+    name: skmeans
+    version: 0.9.7
+    dev: false
+
   registry.npmmirror.com/source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz}
     name: source-map-js
@@ -3194,6 +4938,12 @@ packages:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz}
     name: sourcemap-codec
     version: 1.4.8
+
+  registry.npmmirror.com/splaytree/3.1.1:
+    resolution: {integrity: sha512-9FaQ18FF0+sZc/ieEeXHt+Jw2eSpUgUtTLDYB/HXKWvhYVyOc7h1hzkn5MMO3GPib9MmXG1go8+OsBBzs/NMww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/splaytree/-/splaytree-3.1.1.tgz}
+    name: splaytree
+    version: 3.1.1
+    dev: false
 
   registry.npmmirror.com/stable/0.1.8:
     resolution: {integrity: sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/stable/-/stable-0.1.8.tgz}
@@ -3372,6 +5122,12 @@ packages:
     version: 0.146.0
     dev: false
 
+  registry.npmmirror.com/tinyqueue/2.0.3:
+    resolution: {integrity: sha512-ppJZNDuKGgxzkHihX8v9v9G5f+18gzaTfrukGrq6ueg0lmH4nqVnA2IPG0AEH3jKEk2GRJCUhDoqpoiw3PHLBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tinyqueue/-/tinyqueue-2.0.3.tgz}
+    name: tinyqueue
+    version: 2.0.3
+    dev: false
+
   registry.npmmirror.com/to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/to-fast-properties/-/to-fast-properties-2.0.0.tgz}
     name: to-fast-properties
@@ -3386,6 +5142,24 @@ packages:
     dependencies:
       is-number: registry.npmmirror.com/is-number/7.0.0
 
+  registry.npmmirror.com/topojson-client/3.1.0:
+    resolution: {integrity: sha512-605uxS6bcYxGXw9qi62XyrV6Q3xwbndjachmNxu8HWTtVPxZfEJN9fd/SZS1Q54Sn2y0TMyMxFj/cJINqGHrKw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/topojson-client/-/topojson-client-3.1.0.tgz}
+    name: topojson-client
+    version: 3.1.0
+    hasBin: true
+    dependencies:
+      commander: registry.npmmirror.com/commander/2.20.3
+    dev: false
+
+  registry.npmmirror.com/topojson-server/3.0.1:
+    resolution: {integrity: sha512-/VS9j/ffKr2XAOjlZ9CgyyeLmgJ9dMwq6Y0YEON8O7p/tGGk+dCWnrE03zEdu7i4L7YsFZLEPZPzCvcB7lEEXw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/topojson-server/-/topojson-server-3.0.1.tgz}
+    name: topojson-server
+    version: 3.0.1
+    hasBin: true
+    dependencies:
+      commander: registry.npmmirror.com/commander/2.20.3
+    dev: false
+
   registry.npmmirror.com/tslib/2.3.0:
     resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.3.0.tgz}
     name: tslib
@@ -3396,6 +5170,12 @@ packages:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tslib/-/tslib-2.4.1.tgz}
     name: tslib
     version: 2.4.1
+    dev: false
+
+  registry.npmmirror.com/turf-jsts/1.2.3:
+    resolution: {integrity: sha512-Ja03QIJlPuHt4IQ2FfGex4F4JAr8m3jpaHbFbQrgwr7s7L6U8ocrHiF3J1+wf9jzhGKxvDeaCAnGDot8OjGFyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/turf-jsts/-/turf-jsts-1.2.3.tgz}
+    name: turf-jsts
+    version: 1.2.3
     dev: false
 
   registry.npmmirror.com/typescript/4.9.3:
@@ -3433,6 +5213,12 @@ packages:
       browserslist: registry.npmmirror.com/browserslist/4.21.4
       escalade: registry.npmmirror.com/escalade/3.1.1
       picocolors: registry.npmmirror.com/picocolors/1.0.0
+
+  registry.npmmirror.com/urijs/1.19.11:
+    resolution: {integrity: sha512-HXgFDgDommxn5/bIv0cnQZsPhHDA90NPHD6+c/v21U5+Sx5hoP8+dP9IZXBU1gIfvdRfhG8cel9QNPeionfcCQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/urijs/-/urijs-1.19.11.tgz}
+    name: urijs
+    version: 1.19.11
+    dev: false
 
   registry.npmmirror.com/util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/util-deprecate/-/util-deprecate-1.0.2.tgz}

@@ -19,6 +19,7 @@
     "@uiw/codemirror-theme-dracula": "^4.15.1",
     "@uiw/react-codemirror": "^4.15.1",
     "axios": "^1.2.0",
+    "cesium": "^1.100.0",
     "daisyui": "^2.42.1",
     "dplayer": "^1.27.0",
     "echarts": "^5.4.0",

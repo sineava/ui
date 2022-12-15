@@ -13,6 +13,7 @@ const Video = lazy(() => import('../views/resource/video'))
 const NotFound = lazy(() => import('../views/404'))
 const Three = lazy(() => import('../views/3d/three'))
 const Awesome = lazy(() => import('../views/ui/awesome'))
+const Cesium = lazy(() => import('../views/map/cesium'))
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
           { path: 'lottie', element: <Lottie /> },
           { path: 'chart', element: <Chart /> },
           { path: 'awesome', element: <Awesome /> }
+        ]
+      },
+      {
+        path: 'map',
+        children: [
+          { path: 'cesium', element: <Cesium /> }
         ]
       },
       {

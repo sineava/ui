@@ -22,7 +22,9 @@ export default function() {
       { path: '/ui/lottie', name: 'lottie' },
       { path: '/ui/awesome', name: 'awesome' }
     ] },
-    { path: '/map', icon: 'map', name: '地图' },
+    { path: '/map', icon: 'map', name: '地图', children: [
+      { path: '/map/cesium', name: 'Cesium' }
+    ] },
     { path: '/3d', icon: 'cube', name: '3D', children: [
       { path: '/3d/three', name: 'Three.js' }
     ] },

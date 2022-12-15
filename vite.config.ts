@@ -18,6 +18,11 @@ export default defineConfig({
         secure: false,
         rewrite: path => path.replace(/^\/api-user/, '')
       },
+      '/api-terrain': {
+        target: 'https://data.mars3d.cn/terrain',
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/api-terrain/, '')
+      }
     }
   },
   resolve: {
