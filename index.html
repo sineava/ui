@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="content-security-policy" content="upgrade-insecure-requests" />
     <title>React组件库</title>
-    <!--引入cesium基础lib--> 
-    <link rel="stylesheet" href="https://unpkg.com/mars3d-cesium/Build/Cesium/Widgets/widgets.css" />
-    <script src="https://unpkg.com/mars3d-cesium/Build/Cesium/Cesium.js" ></script>
-    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/mars3d/dist/mars3d.css" />
-    <script src="https://unpkg.com/mars3d/dist/mars3d.js"></script>
+    <link rel="stylesheet" href="/css/widgets.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script src="/js/hls.js"></script>
+    <script>
+      window.CESIUM_BASE_URL = "/cesium"
+    </script>
+    <script src="/js/cesium.js"></script>
+    <script src="/js/turf.min.js"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
