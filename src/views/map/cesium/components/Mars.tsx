@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { mapOptions } from '../../../../utils/map'
 import './graphic.css'
-import * as mars3d from "mars3d"
 
 interface HtmlType {
   coor: {
