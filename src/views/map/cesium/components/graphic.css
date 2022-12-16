@@ -21,7 +21,7 @@
   position: absolute;
   bottom: -39px;
   left: -22px;
-  background: url("../../../../assets/map//icon/popupLbl.png") 0px 0px no-repeat;
+  background: url("../../../../assets/map/icon/popupLbl.png") 0px 0px no-repeat;
   background-position: 0px 0px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .mars-spot {
-  background-image: url("../../../../assets/map//icon/lbl-circle.png");
+  /* background-image: url("../../../../assets/map/icon/lbl-circle.png"); */
   position: absolute;
   background-repeat: no-repeat;
   user-select: none;
@@ -95,11 +95,11 @@
 }
 
 .mars-spot:hover {
-  background-image: url("../../../../assets/map//icon/lbl-circle2.png");
+  /* background-image: url("../../../../assets/map/icon/lbl-circle2.png"); */
 }
 
 .mars-spot:hover .mars-spot-board{
-  background-image: url("../../../../assets/map//icon/lbl-extent2.png");
+  /* background-image: url("../../../../assets/map/icon/lbl-extent2.png"); */
 }
 
 .mars-spot:hover .mars-spot-line{
@@ -115,7 +115,7 @@
 }
 
   .mars-spot-board {
-    background-image: url("../../../../assets/map//icon/lbl-extent.png");
+    /* background-image: url("../../../../assets/map/icon/lbl-extent.png"); */
     top: -165px;
     transform: translateX(-30%);
     width: 180px;
@@ -129,7 +129,7 @@
   }
 
   .mars-spot-board:hover {
-    background-image: url("../../../../assets/map//icon/lbl-extent2.png");
+    /* background-image: url("../../../../assets/map/icon/lbl-extent2.png"); */
 
   }
 
@@ -235,7 +235,7 @@
   background: rgba(42, 42, 42, 0.8);
   border-radius: 4px;
 
-  background: url("../../../../assets/map//icon/div1.png");
+  background: url("../../../../assets/map/icon/div1.png");
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -270,7 +270,7 @@
   height: 157px;
   background: rgba(42, 42, 42, 0.8);
   border-radius: 4px;
-  background: url("../../../../assets/map//icon/div2.png");
+  /* background: url("../../../../assets/map/icon/div2.png"); */
   background-size: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
