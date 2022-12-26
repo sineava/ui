@@ -10,10 +10,11 @@ import SvgIcon from '@/components/SvgIcon'
 interface Type {
   html: string
   css?: string
+  direction?: 'vertical' | 'horizontal'
 }
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
-export default (Component: any, { html, css }: Type) => {
+export default (Component: any, { html, css, direction = 'horizontal' }: Type) => {
   const [theme, setTheme] = useState(initialTheme)
   const [htmlTxt, setHtmlTxt] = useState('')
   const [cssTxt, setCssTxt] = useState('')
@@ -32,10 +33,10 @@ export default (Component: any, { html, css }: Type) => {
     })
   }, [])
   return (
-    <div className="t-card dark:bg-gray-800 bg-white">
+    <div className={`t-card dark:bg-gray-800 bg-white ${direction === 'vertical' && '!w-[375px] !h-[812px] border-none'}`}>
       <Component theme={theme} />
       <div className="opacity-0 absolute top-[10px] right-[10px] cursor-pointer hover:opacity-100" onClick={() => toggle('show')}>
-        <SvgIcon icon="command-line" color={theme === 'dark' ? '#fff' : '#3f8cff'} />
+        <SvgIcon icon="command-line" color={theme === 'dark' ? '#3f8cff' : '#3f8cff'} />
       </div>
       {
         htmlTxt && (

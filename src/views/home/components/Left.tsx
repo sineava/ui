@@ -22,6 +22,9 @@ export default function() {
       { path: '/ui/lottie', name: 'lottie' },
       { path: '/ui/awesome', name: 'awesome' }
     ] },
+    { path: '/android', icon: 'android', name: '安卓', children: [
+      { path: '/android/uniapp', name: 'uniapp' }
+    ] },
     { path: '/map', icon: 'map', name: '地图', children: [
       { path: '/map/cesium', name: 'Cesium' }
     ] },
