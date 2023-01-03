@@ -15,19 +15,20 @@ export default function() {
   const navigate = useNavigate()
   const [current, setCurrent] = useState(0)
   const [avatar] = useState(JSON.parse(localStorage.getItem('user')!)?.avatar || Logo)
-  const [list, setList] = useState([
+  const list = [
     { path: '/ui', icon: 'swatch', name: 'UI库', children: [
       { path: '/ui/icon', name: '图标' },
       { path: '/ui/chart', name: '图表' },
       { path: '/ui/lottie', name: 'lottie' },
-      { path: '/ui/awesome', name: 'awesome' }
+      { path: '/ui/awesome', name: 'awesome' },
+      { path: '/ui/antd', name: 'antd' }
     ] },
     { path: '/android', icon: 'android', name: '安卓', children: [
       { path: '/android/uniapp', name: 'uniapp' }
     ] },
-    { path: '/map', icon: 'map', name: '地图', children: [
-      { path: '/map/cesium', name: 'Cesium' }
-    ] },
+    // { path: '/map', icon: 'map', name: '地图', children: [
+    //   { path: '/map/cesium', name: 'Cesium' }
+    // ] },
     { path: '/3d', icon: 'cube', name: '3D', children: [
       { path: '/3d/three', name: 'Three.js' }
     ] },
@@ -35,7 +36,7 @@ export default function() {
       { path: '/resource/img', name: '图像' },
       { path: '/resource/video', name: '视频' }
     ] }
-  ])
+  ]
   const [trigger, setTrigger] = useState(false)
 
   useEffect(() => {

@@ -10,6 +10,14 @@
   }
 }
 
+/* fix:解决tailwindcss与antd冲突 */
+.ant-btn-primary {
+  background-color: #1677ff !important;
+}
+.ant-btn-dangerous {
+  background-color: #ff4d4f !important;
+}
+
 /* 登录图标 */
 .t-login svg {
   transition: transform 1s linear;

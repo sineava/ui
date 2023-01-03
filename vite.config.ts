@@ -24,7 +24,8 @@ export default defineConfig({
         rewrite: path => path.replace(/^\/api-terrain/, '')
       }
     },
-    port: 10086
+    port: 10086,
+    open: true
   },
   resolve: {
     alias: {
