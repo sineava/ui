@@ -20,3 +20,24 @@
 - [x] 添加无限视差滚动
 - [x] svg文字渐变动画
 - [x] cesium地图
+
+## 源码修改
+### antd
+- lib/theme/themes/dark/index.js
+```js
+// 修改前
+return Object.assign(Object.assign(Object.assign({}, mergedMapToken), colorPalettes), genColorMapToken(token, {
+  generateColorPalettes,
+  generateNeutralColorPalettes
+}))
+// => 修改后(适配当前暗黑模式)
+const obj = Object.assign(Object.assign(Object.assign({}, mergedMapToken), colorPalettes), genColorMapToken(token, {
+  generateColorPalettes,
+  generateNeutralColorPalettes
+}))
+return {
+  ...obj,
+  colorBgElevated: '#111827',
+  colorBgContainer: '#111827'
+}
+```

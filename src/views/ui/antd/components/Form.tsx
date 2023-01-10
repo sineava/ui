@@ -26,7 +26,7 @@ const rules = {
   sex: [{ required: true, message: '请选择性别' }]
 }
 
-const AddOrEdit = ({ id, save, open, close }: any) => {
+const AddOrEdit = ({ id, save, open, close, primary }: any) => {
   const [form] = Form.useForm()
   const formRef: any = useRef(null)
   const submit = async () => {
@@ -41,7 +41,7 @@ const AddOrEdit = ({ id, save, open, close }: any) => {
     <Drawer width={400} title={id ? '编辑用户' : '新增用户'} placement="right" onClose={close} open={open} extra={
       <Space>
         <Button onClick={close}>取消</Button>
-        <Button type="primary" onClick={submit}>保存</Button>
+        <Button style={{backgroundColor: primary} as React.CSSProperties} type="primary" onClick={submit}>保存</Button>
       </Space>
     }>
       <Form initialValues={initial()} ref={formRef} layout="vertical" form={form} onFinish={submit}>
@@ -75,7 +75,7 @@ const AddOrEdit = ({ id, save, open, close }: any) => {
   )
 }
 
-export default () => {
+export default ({ primary }: { primary: string }) => {
   const columns: any = [
     { title: '姓名', dataIndex: 'name', key: 'name' },
     { title: '年龄', dataIndex: 'age', key: 'age' },
@@ -135,23 +135,17 @@ export default () => {
     setOpen(false)
   }
   return (
-    <Card>
+    <Card className="mr-2">
       <Form ref={formRef} form={form} layout="inline">
         <Item name="name" label="姓名：">
           <Input placeholder="请输入" />
         </Item>
-        <Item>
-          <Button type="primary" onClick={() => edit()}>新增</Button>
-        </Item>
-        <Item>
-          <Button type="primary" onClick={search}>搜索</Button>
-        </Item>
-        <Item>
-          <Button onClick={reset}>重置</Button>
-        </Item>
+        <Item><Button type="primary" onClick={() => edit()}>新增</Button></Item>
+        <Item><Button type="primary" onClick={search}>搜索</Button></Item>
+        <Item><Button onClick={reset}>重置</Button></Item>
       </Form>
       <Table className="mt-4" rowKey="id" dataSource={data} columns={columns} />
-      { open && <AddOrEdit id={id} open={true} save={save} close={close} destroyOnClose /> }
+      { open && <AddOrEdit primary={primary} id={id} open={true} save={save} close={close} destroyOnClose /> }
     </Card>
   )
 }

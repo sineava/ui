@@ -7,14 +7,15 @@
   :root {
     --color-text-base: #fff;
     --color-text-sub: #F4F9FD;
+    overflow-y: hidden;
   }
 }
 
 /* fix:解决tailwindcss与antd冲突 */
-.ant-btn-primary {
-  background-color: #1677ff !important;
+.m-antd .ant-btn-primary {
+  background-color: var(--primary) !important;
 }
-.ant-btn-dangerous {
+.m-antd .ant-btn-dangerous {
   background-color: #ff4d4f !important;
 }
 

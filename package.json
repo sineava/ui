@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx pnpm install && vite build",
+    "build": "npx pnpm install && cp ./a.js ./node_modules/antd/lib/theme/themes/dark/index.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -35,6 +35,7 @@
     "lottie-react": "^2.3.1",
     "mars3d": "^3.4.17",
     "mars3d-cesium": "^1.96.8",
+    "patch-package": "^6.5.1",
     "qrcode": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
