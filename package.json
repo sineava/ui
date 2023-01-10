@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx pnpm install && cp ./a.js ./node_modules/antd/lib/theme/themes/dark/index.js && vite build",
+    "build": "npx pnpm install && cp ./antd-theme.js ./node_modules/antd/lib/theme/themes/dark/index.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
