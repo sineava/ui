@@ -72,6 +72,9 @@ function BasicLogin() {
     })
     location.href = `https://github.com/login/oauth/authorize?${query}`
   }
+  const toBlog = () => {
+    window.open('https://sineava.netlify.app/', '_blank')
+  }
   return (
     <div className="dark:bg-gray-800 w-full h-screen bg-[#F4F9FD] flex justify-center items-center">
       <div className="w-[1360px] h-[770px] flex">
@@ -126,8 +129,11 @@ function BasicLogin() {
                 <span className="w-[40px] mr-2">登 录</span>
                 <SvgIcon icon="right-arrow" color="#fff" size={24} />
               </button>
-              <div className="ml-4 cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
+              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
                 <SvgIcon icon="github" size={30} />
+              </div>
+              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={toBlog}>
+                <SvgIcon icon="site" size={30} />
               </div>
             </div>
           </form>
