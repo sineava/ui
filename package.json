@@ -1,11 +1,11 @@
 {
-  "name": "yhdm",
+  "name": "ui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx pnpm install --no-frozen-lockfile && cp ./antd-theme.js ./node_modules/antd/es/theme/themes/dark/index.js && vite build",
+    "build": "npx pnpm install && cp ./antd-theme.js ./node_modules/antd/es/theme/themes/dark/index.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,7 +30,6 @@
     "echarts4.2.1": "npm:echarts@4.2.1",
     "events": "^3.3.0",
     "hls.js": "^1.2.7",
-    "huebee": "^2.1.1",
     "lodash": "^4.17.21",
     "lottie-react": "^2.3.1",
     "mars3d": "^3.4.17",
@@ -43,8 +42,6 @@
     "react-router-dom": "^6.4.3",
     "tailwindcss-dark-mode": "^1.1.7",
     "three": "^0.146.0",
-    "uuid": "^9.0.0",
-    "uuidv4": "^6.2.13",
     "vite-aliases": "^0.9.7",
     "vite-plugin-svgr": "^2.2.2",
     "vite-svg-loader": "^3.6.0"
