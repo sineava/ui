@@ -132,8 +132,8 @@ function BasicLogin() {
               <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
                 <SvgIcon icon="github" size={30} />
               </div>
-              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={toBlog}>
-                <SvgIcon icon="site" size={30} />
+              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white text-gray-800 hover:scale-110" onClick={toBlog}>
+                <SvgIcon icon="pencil" size={30} />
               </div>
             </div>
           </form>
