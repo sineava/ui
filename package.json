@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@7.21.0",
   "scripts": {
     "dev": "vite",
-    "build": "npm install --force && cp ./antd-theme.js ./node_modules/antd/es/theme/themes/dark/index.js && vite build",
+    "build": "cp ./antd-theme.js ./node_modules/antd/es/theme/themes/dark/index.js && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -38,7 +39,6 @@
     "qrcode": "^1.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-lottie": "^1.2.3",
     "react-router-dom": "^6.4.3",
     "tailwindcss-dark-mode": "^1.1.7",
     "three": "^0.146.0",
