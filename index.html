@@ -7,16 +7,12 @@
     <meta http-equiv="content-security-policy" content="upgrade-insecure-requests" />
     <title>React组件库</title>
     <link rel="stylesheet" href="http://npm.elemecdn.com/picture-bed@latest/css/widgets.css" />
-    <link rel="stylesheet" href="http://npm.elemecdn.com/picture-bed@latest/css/mars3d.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      window.CESIUM_BASE_URL = "/cesium"
-    </script>
-    <script src="/js/hls.js"></script>
-    <script src="http://npm.elemecdn.com/picture-bed@latest/js/cesium.min.js"></script>
-    <script src="http://npm.elemecdn.com/picture-bed@latest/js/mars3d.js"></script>
+    <script>window.CESIUM_BASE_URL = "/cesium"</script>
+    <script src="/js/hls.js" defer></script>
+    <script src="http://npm.elemecdn.com/picture-bed@latest/js/cesium.min.js" defer></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -58,6 +58,7 @@ const AddOrEdit = ({ id, save, open, close, primary }: any) => {
           <Select
             className="w-full"
             allowClear
+            placeholder="请选择"
             options={[
               {
                 value: 1,

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type { ReactNode } from 'react'
 import Left from './components/Left'
 import { Outlet, Route, Navigate, Routes } from 'react-router-dom'
 import { Suspense } from 'react'
@@ -9,7 +10,6 @@ import emitter from '../../utils/ev'
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
-
 function Home() {
   const [theme, setTheme] = useState(initialTheme)
   const [charging, setCharging] = useState(false)
@@ -56,15 +56,17 @@ function Home() {
           </div>
         </div>
         <div className="dark:bg-gray-800 t-layout bg-[#F4F9FD] pl-2 pt-2 scroll-smooth overflow-y-auto">
-          <Suspense fallback={
-            <div className="w-full h-full flex justify-center items-center">
-              <Lottie className="w-[500px] mt-10" animationData={json} />
-            </div>
-          }>
-            <Outlet />
-          </Suspense>
+          <Suspense fallback={mask()}><Outlet /></Suspense>
         </div>
       </div>
+    </div>
+  )
+}
+
+function mask(): ReactNode {
+  return (
+    <div className="w-full h-full flex justify-center items-center">
+      <Lottie className="w-[500px] mt-10" animationData={json} />
     </div>
   )
 }

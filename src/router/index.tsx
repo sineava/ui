@@ -34,8 +34,8 @@ const router = createBrowserRouter([
           { path: 'btn', element: <Btn /> },
           { path: 'lottie', element: <Lottie /> },
           { path: 'chart', element: <Chart /> },
-          { path: 'awesome', element: <Awesome /> },
           { path: 'antd', element: <AntD /> },
+          { path: 'awesome', element: <Awesome /> }
         ]
       },
       {
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
           { path: 'uniapp', element: <Uniapp /> },
         ]
       },
-      // {
-      //   path: 'map',
-      //   children: [
-      //     { path: 'cesium', element: <Cesium /> }
-      //   ]
-      // },
+      {
+        path: 'map',
+        children: [
+          { path: 'cesium', element: <Cesium /> }
+        ]
+      },
       {
         path: '3d',
         children: [

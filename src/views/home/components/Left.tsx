@@ -20,15 +20,15 @@ export default function() {
       { path: '/ui/icon', name: '图标' },
       { path: '/ui/chart', name: '图表' },
       { path: '/ui/lottie', name: 'lottie' },
-      { path: '/ui/awesome', name: 'awesome' },
-      { path: '/ui/antd', name: 'antd' }
+      { path: '/ui/antd', name: 'antd' },
+      { path: '/ui/awesome', name: 'awesome' }
     ] },
     { path: '/android', icon: 'android', name: '安卓', children: [
       { path: '/android/uniapp', name: 'uniapp' }
     ] },
-    // { path: '/map', icon: 'map', name: '地图', children: [
-    //   { path: '/map/cesium', name: 'Cesium' }
-    // ] },
+    { path: '/map', icon: 'map', name: '地图', children: [
+      { path: '/map/cesium', name: 'Cesium' }
+    ] },
     { path: '/3d', icon: 'cube', name: '3D', children: [
       { path: '/3d/three', name: 'Three.js' }
     ] },
