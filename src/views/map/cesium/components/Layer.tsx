@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { Viewer, createWorldTerrain, Cartesian3, Color, ScreenSpaceEventHandler, ScreenSpaceEventType, Math as CMath, GeoJsonDataSource, ImageMaterialProperty } from 'cesium'
+import { Viewer, createWorldTerrain, Cartesian3, Color, ScreenSpaceEventHandler, ScreenSpaceEventType, Math as CMath, GeoJsonDataSource, ImageMaterialProperty, HeightReference } from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { cesiumOption } from '../../../../utils/map'
 import roadJSON from './road.json'
@@ -39,8 +39,8 @@ export default function() {
     viewer.camera.flyTo({
       destination: Cartesian3.fromDegrees(lng, lat, height),
       orientation: {
-        heading: Cesium.Math.toRadians(heading),
-        pitch: Cesium.Math.toRadians(pitch)
+        heading: CMath.toRadians(heading),
+        pitch: CMath.toRadians(pitch)
       }
     })
   }
@@ -89,10 +89,22 @@ export default function() {
         entity.polygon.extrudedHeight = Math.round(Math.random() * 800) + 400
         entity.polygon.outline = false
         entity.polygon.material = new ImageMaterialProperty({
-          image: '/house.jpg',
-          repeat : new Cesium.Cartesian2(4, 4)
+          image: '/house.jpg'
         })
       })
+    })
+  }
+  const addPopup = () => {
+    viewer.entities.add({
+      position: Cartesian3.fromDegrees(104.325891, 30.594535, 120),
+      billboard: {
+        image: "/water.png",
+        width: 260,
+        height: 176,
+        heightReference: HeightReference.CLAMP_TO_GROUND,
+        horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+      }
     })
   }
   useEffect(() => {
@@ -100,6 +112,7 @@ export default function() {
     movePosition()
     draw('polygon')
     loadRoad()
+    addPopup()
   }, [])
   return (
     <div className="w-full h-full overflow-hidden relative" ref={mapRef}>
