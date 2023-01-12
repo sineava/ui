@@ -19,6 +19,15 @@
   background-color: #ff4d4f !important;
 }
 
+/* 地图div graphic */
+.t-divGraphic {
+  width: 285px;
+  height: 192px;
+  background-image: url('/water.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* 登录图标 */
 .t-login svg {
   transition: transform 1s linear;

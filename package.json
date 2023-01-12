@@ -24,6 +24,7 @@
     "cesium": "^1.100.0",
     "daisyui": "^2.42.1",
     "dayjs": "^1.11.7",
+    "dom-to-image": "^2.6.0",
     "dplayer": "^1.27.0",
     "echarts": "^5.4.0",
     "echarts-for-react": "^3.0.2",

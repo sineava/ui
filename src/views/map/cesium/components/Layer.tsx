@@ -1,5 +1,17 @@
 import { useRef, useEffect, useState } from 'react'
-import { Viewer, createWorldTerrain, Cartesian3, Color, ScreenSpaceEventHandler, ScreenSpaceEventType, Math as CMath, GeoJsonDataSource, ImageMaterialProperty, HeightReference } from 'cesium'
+import domtoimage from 'dom-to-image'
+import { Viewer,
+  createWorldTerrain,
+  Cartesian3,
+  Color,
+  DistanceDisplayCondition,
+  ScreenSpaceEventHandler,
+  ScreenSpaceEventType,
+  Math as CMath,
+  GeoJsonDataSource,
+  ImageMaterialProperty,
+  HeightReference
+} from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { cesiumOption } from '../../../../utils/map'
 import roadJSON from './road.json'
@@ -23,6 +35,7 @@ export default function() {
   const lnglat = { lng: 104.341738, lat: 30.593555, pitch: -10, heading: 280, height: 1000 }
   const [position, setPosition] = useState({...lnglat})
   const mapRef: any = useRef()
+  const divGraphicRef: any = useRef()
   let viewer: Viewer
   const initMap = () => {
     viewer = new Viewer(mapRef.current, {
@@ -94,18 +107,31 @@ export default function() {
       })
     })
   }
-  const addPopup = () => {
-    viewer.entities.add({
-      position: Cartesian3.fromDegrees(104.325891, 30.594535, 120),
+  const addPopup = async () => {
+    const url = await domtoimage.toPng(divGraphicRef.current)
+    const position = Cartesian3.fromDegrees(104.3298962, 30.592858)
+    const point = {
+      name: "点",
+      position,
+      point: {
+        show: true,
+        color: Color.RED,
+        pixelSize: 4,
+        heightReference: HeightReference.CLAMP_TO_GROUND
+      }
+    }
+    const graphic = {
+      position,
       billboard: {
-        image: "/water.png",
-        width: 260,
-        height: 176,
+        image: url,
         heightReference: HeightReference.CLAMP_TO_GROUND,
         horizontalOrigin: Cesium.HorizontalOrigin.LEFT,
-        verticalOrigin: Cesium.VerticalOrigin.BOTTOM
+        verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+        distanceDisplayCondition: new DistanceDisplayCondition(0, 60000)
       }
-    })
+    }
+    viewer.entities.add(point)
+    viewer.entities.add(graphic)
   }
   useEffect(() => {
     initMap()
@@ -116,6 +142,14 @@ export default function() {
   }, [])
   return (
     <div className="w-full h-full overflow-hidden relative" ref={mapRef}>
+      <div className="absolute -z-10 t-divGraphic" ref={divGraphicRef}>
+        <div className="absolute top-1 left-[130px] text-white font-bold text-sm">1号观景点</div>
+        <div className="absolute top-8 left-9 w-[140px] h-[120px] text-white text flex flex-col justify-evenly">
+          <div>经度: <span className="badge badge-primary badge-sm ml-1">104.325891</span></div>
+          <div>纬度: <span className="badge badge-secondary badge-sm ml-1">30.594535</span></div>
+          <div>高程: <span className="badge badge-accent badge-sm ml-1 text-white">42.84m</span></div>
+        </div>
+      </div>
       <Position position={position} />
     </div>
   )

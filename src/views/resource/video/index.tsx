@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import DPlayer from 'dplayer'
 
 export default function() {
-  const [url, setUrl] = useState('https://yun.ssdm.cc/SBDM/TheDailyLifeoftheImmotalKing301.m3u8')
+  const url = 'https://yun.ssdm.cc/SBDM/TheDailyLifeoftheImmotalKing301.m3u8'
   const dplayerRef: any = useRef()
   useEffect(() => {
     new DPlayer({
