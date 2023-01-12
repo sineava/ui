@@ -20,6 +20,10 @@
 }
 
 #leaflet-map .leaflet-tile {
+  filter: var(--hue) !important;
+}
+
+.dark #leaflet-map .leaflet-tile {
   filter: invert(1) var(--hue) !important;
 }
 
