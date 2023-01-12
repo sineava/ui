@@ -55,7 +55,7 @@ function Home() {
             <SvgIcon icon={ theme == 'dark' ? 'moon' : 'sun' } size={30} color={theme === 'dark' ? '#0ea5e9' : '#3f8cff'} fill="#0ea5e9" />
           </div>
         </div>
-        <div className="dark:bg-gray-800 t-layout bg-[#F4F9FD] pl-2 pt-2 scroll-smooth overflow-y-auto">
+        <div className="dark:bg-gray-800 t-layout bg-[#F4F9FD] p-2 scroll-smooth overflow-y-auto">
           <Suspense fallback={mask()}><Outlet /></Suspense>
         </div>
       </div>

@@ -19,6 +19,10 @@
   background-color: #ff4d4f !important;
 }
 
+#leaflet-map .leaflet-tile {
+  filter: invert(1) var(--hue) !important;
+}
+
 /* 地图div graphic */
 .t-divGraphic {
   width: 285px;

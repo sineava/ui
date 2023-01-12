@@ -23,11 +23,12 @@ export default function() {
       { path: '/ui/antd', name: 'antd' },
       { path: '/ui/awesome', name: 'awesome' }
     ] },
-    { path: '/android', icon: 'android', name: '安卓', children: [
-      { path: '/android/uniapp', name: 'uniapp' }
-    ] },
+    // { path: '/android', icon: 'android', name: '安卓', children: [
+    //   { path: '/android/uniapp', name: 'uniapp' }
+    // ] },
     { path: '/map', icon: 'map', name: '地图', children: [
-      { path: '/map/cesium', name: 'Cesium' }
+      { path: '/map/cesium', name: 'Cesium' },
+      { path: '/map/leaflet', name: 'Leaflet' }
     ] },
     { path: '/3d', icon: 'cube', name: '3D', children: [
       { path: '/3d/three', name: 'Three.js' }

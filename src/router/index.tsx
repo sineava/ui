@@ -15,6 +15,7 @@ const NotFound = lazy(() => import('../views/404'))
 const Three = lazy(() => import('../views/3d/three'))
 const Awesome = lazy(() => import('../views/ui/awesome'))
 const Cesium = lazy(() => import('../views/map/cesium'))
+const Leaflet = lazy(() => import('../views/map/leaflet'))
 const AntD = lazy(() => import('../views/ui/antd'))
 
 const router = createBrowserRouter([
@@ -38,16 +39,17 @@ const router = createBrowserRouter([
           { path: 'awesome', element: <Awesome /> }
         ]
       },
-      {
-        path: 'android',
-        children: [
-          { path: 'uniapp', element: <Uniapp /> },
-        ]
-      },
+      // {
+      //   path: 'android',
+      //   children: [
+      //     { path: 'uniapp', element: <Uniapp /> },
+      //   ]
+      // },
       {
         path: 'map',
         children: [
-          { path: 'cesium', element: <Cesium /> }
+          { path: 'cesium', element: <Cesium /> },
+          { path: 'leaflet', element: <Leaflet /> }
         ]
       },
       {

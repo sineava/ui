@@ -143,7 +143,7 @@ export default function() {
   return (
     <div className="w-full h-full overflow-hidden relative" ref={mapRef}>
       <div className="absolute -z-10 t-divGraphic" ref={divGraphicRef}>
-        <div className="absolute top-1 left-[130px] text-white font-bold text-sm">1号观景点</div>
+        <div className="absolute top-1 left-[122px] text-white font-bold text-sm">1号观景点</div>
         <div className="absolute top-8 left-9 w-[140px] h-[120px] text-white text flex flex-col justify-evenly">
           <div>经度: <span className="badge badge-primary badge-sm ml-1">104.325891</span></div>
           <div>纬度: <span className="badge badge-secondary badge-sm ml-1">30.594535</span></div>

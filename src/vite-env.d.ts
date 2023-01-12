@@ -5,4 +5,5 @@ declare module '../../../../assets/model/luka.glb'
 declare module 'echarts4.2.1'
 declare module 'qrcode'
 declare module 'dom-to-image'
+declare module 'leaflet'
 declare const Cesium: any
