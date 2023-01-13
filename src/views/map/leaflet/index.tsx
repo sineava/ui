@@ -5,8 +5,6 @@ import AMapLoader from '@amap/amap-jsapi-loader'
 import { Slider } from 'antd'
 import 'leaflet.chinatmsproviders'
 import 'leaflet.markercluster/dist/leaflet.markercluster'
-import './markercluster.css'
-import './markercluster.default.css'
 
 const Select = ({ start, end, address }: { start: string, end: string, address: [] }) => {
   return (

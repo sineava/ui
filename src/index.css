@@ -15,6 +15,7 @@
 .m-antd .ant-btn-primary {
   background-color: var(--primary) !important;
 }
+
 .m-antd .ant-btn-dangerous {
   background-color: #ff4d4f !important;
 }
@@ -40,61 +41,76 @@
 .t-login svg {
   transition: transform 1s linear;
 }
+
 .t-login:hover svg {
   transform: translateX(10px);
   transition: transform 1s linear;
   /* animation: move 1s forwards; */
 }
+
 .t-svg-container svg {
   width: 24px !important;
   height: 24px !important;
 }
+
 .dark .t-svg-container svg {
   stroke: #fff;
 }
+
 /* label */
 .t-label {
   @apply text-[#7D8592] font-bold;
 }
+
 .t-label:focus {
   display: none;
 }
+
 /* 输入框 */
 .t-input {
-  @apply h-[48px] block w-full rounded-md border border-[#D8E0F0] pl-[40px] pr-12 sm:text-sm focus:ring-2 focus:ring-blue-600 outline-none;
+  @apply h-[48px] block w-full rounded-md border border-[#D8E0F0] pl-[40px] pr-12 text-sm focus:ring-2 focus:ring-blue-600 outline-none;
 }
+
 /* 遮罩 */
 .t-shadow-gray {
   box-shadow: 0px 6px 12px 0px #7f8fa6;
 }
+
 .t-shadow-blue {
   box-shadow: 0px 6px 12px 0px #3F8CFF;
 }
+
 .dark .t-shadow-blue {
   box-shadow: 0px 6px 12px 0px #1f2937;
 }
+
 /* 按钮 */
 .t-button {
   @apply rounded-lg text-[#fff] flex justify-center items-center overflow-hidden;
 }
+
 /* 背景 */
 .t-bg:hover {
   background-color: rgba(63, 140, 255, 0.1);
   @apply text-[#3F8CFF];
 }
+
 /* 菜单 */
 .t-menu-item:hover {
   color: #3F8CFF;
   background-color: rgba(63, 140, 255, 0.2);
   @apply text-[#3F8CFF] rounded-lg relative;
 }
+
 .t-menu-item:hover svg {
   stroke: #3F8CFF;
 }
+
 .t-menu-item-select {
   background-color: rgba(63, 140, 255, 0.1);
   @apply text-[#3F8CFF] rounded-lg relative;
 }
+
 .t-menu-item-select::after {
   position: absolute;
   content: '';
@@ -105,10 +121,12 @@
   height: 100%;
   background-color: #3F8CFF;
 }
+
 /* 右侧高度适配 */
 .t-layout {
   height: calc(100vh - 60px);
 }
+
 /* 波浪线 */
 .t-wave {
   position: absolute;
@@ -119,54 +137,68 @@
   line-height: 0;
   transform: rotate(180deg);
 }
+
 .t-wave svg {
   position: relative;
   display: block;
   width: calc(110% + 1.3px);
   height: 70px;
 }
+
 .t-wave .shape-fill {
   fill: #7851EB;
 }
+
 /* 图标动画 */
 .t-icon-animation {
   animation: icon 1s forwards;
 }
+
 /* 滚动条 */
 ::-webkit-scrollbar {
   width: 20px;
 }
+
 /* 选项卡切换 */
 .t-tabs {
   box-shadow: 0 1px 4px rgba(63, 140, 255, 0.3);
 }
+
 .t-tab {
   @apply rounded-full cursor-pointer w-[100px] h-[30px] flex justify-center items-center text-[14px] font-medium;
 }
+
 .t-tab-active {
   transition: transform 2s linear;
   color: #3F8CFF;
   background: rgba(63, 140, 255, 0.1);
 }
+
 /* 拷贝文本 */
-.t-lottie-container:hover > .t-copy-mask, .t-svg-container:hover > .t-copy-mask {
+.t-lottie-container:hover>.t-copy-mask,
+.t-svg-container:hover>.t-copy-mask {
   @apply opacity-100;
 }
+
 .t-copy-mask {
   @apply w-full left-0 bottom-0 bg-[#55efc4] z-10 flex justify-center items-center rounded-b-lg opacity-0;
 }
-.t-copy-mask > .t-copy-text-success {
+
+.t-copy-mask>.t-copy-text-success {
   animation: move 2s linear forwards;
   @apply text-[12px] text-[#fff];
 }
+
 /* alert效果 */
 .t-alert {
   animation: alert 3s ease-in forwards;
 }
+
 /* 卡片 */
 .t-card {
   @apply border-[4px] w-[400px] h-[400px] border-[#3f8cff] rounded-lg overflow-hidden relative;
 }
+
 /* 秀儿蔡徐坤 */
 .t-shower {
   filter: grayscale(1) invert(1);
@@ -174,30 +206,36 @@
   background-image: url('./assets/shower.gif');
   @apply text-transparent bg-clip-text;
 }
+
 /* 大屏球 */
 .t-earth {
   background: url('./assets/earth-bg.png') center/cover no-repeat;
   @apply z-10 w-4/5 h-4/5 opacity-70;
 }
+
 .t-earth-ball {
-  background: url('./assets/ball-bg.png')  center/cover no-repeat;
+  background: url('./assets/ball-bg.png') center/cover no-repeat;
   animation: rotate 20s linear infinite;
   @apply w-full h-full opacity-40;
 }
+
 .t-earth-airplane {
-  background: url('./assets/airplane.png')  center/cover no-repeat;
+  background: url('./assets/airplane.png') center/cover no-repeat;
   animation: rotateOther 20s linear infinite;
   @apply w-[340px] h-[340px];
 }
+
 /* 无限滚动 */
 .t-inner {
   width: fit-content;
   animation: loop var(--duration) linear var(--reverse) infinite;
   @apply flex;
 }
+
 .t-inner:hover {
   animation-play-state: paused;
 }
+
 /* 打字机效果,汉字ch要*2,英文不用,最后一个字符停顿太短可以补空格 */
 .t-type {
   width: 23ch;
@@ -214,16 +252,19 @@
   position: absolute;
   inset: 0;
 }
+
 /* 滚动条 */
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: #d6dee1;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
 }
@@ -232,11 +273,13 @@
 .t-img-container {
   overflow: hidden;
 }
-.t-img-container > img {
+
+.t-img-container>img {
   transform: scale(1);
   transition: transform .2s linear;
 }
-.t-img-container > img:hover {
+
+.t-img-container>img:hover {
   transform: scale(1.2);
   transition: transform .2s linear;
 }
@@ -245,13 +288,16 @@
 .t-svg-text {
   animation: text-svg 3s linear infinite;
 }
+
 .t-svg-text:nth-of-type(1) {
   stroke: #ff0000;
 }
+
 .t-svg-text:nth-of-type(2) {
   stroke: #00ff00;
   animation-delay: 1s;
 }
+
 .t-svg-text:nth-of-type(3) {
   stroke: #0000ff;
   animation-delay: 2s;
@@ -261,6 +307,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(10px);
   }
@@ -271,9 +318,11 @@
     transform: translateY(0);
     opacity: 1;
   }
+
   80% {
     opacity: 1;
   }
+
   100% {
     transform: translateY(-80px);
     opacity: 0;
@@ -284,6 +333,7 @@
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -293,6 +343,7 @@
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(-360deg);
   }
@@ -302,6 +353,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-36%);
   }
@@ -314,11 +366,99 @@
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 @keyframes text-svg {
   to {
     stroke-dashoffset: -44;
   }
+}
+
+/* maker cluster */
+.marker-cluster-small {
+  background-color: rgba(181, 226, 140, 0.6);
+}
+
+.marker-cluster-small div {
+  background-color: rgba(110, 204, 57, 0.6);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(241, 211, 87, 0.6);
+}
+
+.marker-cluster-medium div {
+  background-color: rgba(240, 194, 12, 0.6);
+}
+
+.marker-cluster-large {
+  background-color: rgba(253, 156, 115, 0.6);
+}
+
+.marker-cluster-large div {
+  background-color: rgba(241, 128, 23, 0.6);
+}
+
+/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+  background-color: rgb(181, 226, 140);
+}
+
+.leaflet-oldie .marker-cluster-small div {
+  background-color: rgb(110, 204, 57);
+}
+
+.leaflet-oldie .marker-cluster-medium {
+  background-color: rgb(241, 211, 87);
+}
+
+.leaflet-oldie .marker-cluster-medium div {
+  background-color: rgb(240, 194, 12);
+}
+
+.leaflet-oldie .marker-cluster-large {
+  background-color: rgb(253, 156, 115);
+}
+
+.leaflet-oldie .marker-cluster-large div {
+  background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+  background-clip: padding-box;
+  border-radius: 20px;
+}
+
+.marker-cluster div {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+
+  text-align: center;
+  border-radius: 15px;
+  font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.marker-cluster span {
+  line-height: 30px;
+}
+
+.leaflet-cluster-anim .leaflet-marker-icon,
+.leaflet-cluster-anim .leaflet-marker-shadow {
+  -webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+  -o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+}
+
+.leaflet-cluster-spider-leg {
+  /* stroke-dashoffset (duration and function) should match with leaflet-marker-icon transform in order to track it exactly */
+  -webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+  -moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+  -o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+  transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
 }
