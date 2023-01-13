@@ -29,7 +29,7 @@ function Wrapper({ theme, children }: any) {
     const dom: any = domRef.current
     if (!dom) return
     // Luka = new URL('../../../../assets/model/luka.glb', import.meta.url)
-    Nilu = new URL('../../../../assets/model/zaoyou/tinali.pmx', import.meta.url)
+    Nilu = new URL('/zaoyou/tinali.pmx', import.meta.url)
     scene = new THREE.Scene()
     loader = new GLTFLoader()
     mmdLoader = new MMDLoader()
