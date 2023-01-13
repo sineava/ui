@@ -15,13 +15,13 @@ const Select = ({ start, end, address }: { start: string, end: string, address: 
     </div>
   )
 }
+let lock: boolean = false
+let placeSearch: any
 export default function() {
   let map: any
   let AMap: any
   const [address, setAddress] = useState([])
   const [hue, setHue] = useState(180)
-  const [lock, setLock] = useState(false)
-  const [placeSearch, setPlaceSearch]: any = useState(null)
   const [position, setPosition]: any = useState({ start: '', end: '' })
   // 初始化地图
   const initMap = async () => {
@@ -34,7 +34,7 @@ export default function() {
       center: [30.6574, 104.0658],
       zoom: 13
     })
-    setPlaceSearch(new AMap.PlaceSearch({city: '028'}))
+    placeSearch = new AMap.PlaceSearch({city: '028'})
     addStations()
     addListener()
     addLayer()
@@ -82,20 +82,22 @@ export default function() {
     }).addTo(map)
   }
   const search = (type: 'start' | 'end', e: any) => {
+    if (lock) return
     const keyword = e.target.value
     const data = {
       ...position,
       [type]: keyword || ''
     }
-    console.log(placeSearch)
     placeSearch?.search(keyword, function (status: string, result: any) {
       if (status === 'complete') {
         const pois = result?.poiList?.pois
-        console.log(pois)
         setAddress(JSON.parse(JSON.stringify(pois)))
       }
     })
     setPosition(data)
+  }
+  const dos = () => {
+    console.log(2233)
   }
   useEffect(() => {
     initMap()
@@ -103,13 +105,15 @@ export default function() {
   return (
     <div className="w-full h-full relative">
       <div className="absolute right-[12px] top-4 w-[200px] p-4 rounded z-10 flex flex-col dark:bg-gray-900 bg-white">
-        <input placeholder="起点" value={position.start} className="input input-accent input-xs rounded"
+        <input placeholder="起点" defaultValue={position.start} className="input input-accent input-xs rounded"
+          onCompositionStart={() => (lock = true)}
+          onCompositionEnd={(e: any) => {lock=false;search('start', e)}}
           onChange={(e: any) => search('start', e)}
-          onCompositionEnd={(e: any) => { search('start', e)}}
         />
-        <input placeholder="终点" value={position.end} className="input input-accent input-xs rounded mt-4 mb-2"
-          onChange={(e: any) => search('start', e)}
-          onCompositionEnd={(e: any) => { search('end', e)}}
+        <input placeholder="终点" defaultValue={position.end} className="input input-accent input-xs rounded mt-4 mb-2"
+          onCompositionStart={() => (lock = true)}
+          onCompositionEnd={(e: any) => {lock=false;search('end', e)}}
+          onChange={(e: any) => search('end', e)}
         />
         <Slider className="h-[20px]" defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
         {
