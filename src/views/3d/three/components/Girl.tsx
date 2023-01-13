@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader'
 import Code from '../../../../components/Code'
 
@@ -16,7 +16,7 @@ function Wrapper({ theme, children }: any) {
   let Luka: any
   let Nilu: any
   let scene: any
-  let loader: any
+  // let loader: any
   let mmdLoader: any
   let light: any
   let camera: any
@@ -31,7 +31,7 @@ function Wrapper({ theme, children }: any) {
     // Luka = new URL('../../../../assets/model/luka.glb', import.meta.url)
     Nilu = new URL('/zaoyou/tinali.pmx', import.meta.url)
     scene = new THREE.Scene()
-    loader = new GLTFLoader()
+    // loader = new GLTFLoader()
     mmdLoader = new MMDLoader()
     light = new THREE.AmbientLight(0xffffff)
     scene.add(light)

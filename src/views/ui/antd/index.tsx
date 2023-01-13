@@ -2,12 +2,9 @@ import { useState, useEffect } from 'react'
 import { ConfigProvider, FloatButton, Popover, theme as antdTheme } from 'antd'
 import zhCN from 'antd/locale/zh_CN'
 import dayjs from 'dayjs'
-import 'dayjs/locale/zh-cn'
 import Form from './components/Form'
 import SvgIcon from '../../../components/SvgIcon'
 import emitter from '../../../utils/ev'
-
-dayjs.locale('zh-cn')
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
@@ -33,7 +30,7 @@ export default () => {
     })
   }, [])
   return (
-    <ConfigProvider locale={zhCN} theme={{
+    <ConfigProvider theme={{
       token: {
         colorPrimary: primary
       },
