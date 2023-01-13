@@ -5,8 +5,8 @@ import AMapLoader from '@amap/amap-jsapi-loader'
 import { Slider } from 'antd'
 import 'leaflet.chinatmsproviders'
 import 'leaflet.markercluster/dist/leaflet.markercluster'
-import 'leaflet.markercluster/dist/markercluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+import './markercluster.css'
+import './MarkerCluster.Default.css'
 
 const Select = ({ start, end, address }: { start: string, end: string, address: [] }) => {
   return (
@@ -96,9 +96,6 @@ export default function() {
     })
     setPosition(data)
   }
-  const dos = () => {
-    console.log(2233)
-  }
   useEffect(() => {
     initMap()
   }, [])
@@ -110,15 +107,15 @@ export default function() {
           onCompositionEnd={(e: any) => {lock=false;search('start', e)}}
           onChange={(e: any) => search('start', e)}
         />
-        <input placeholder="终点" defaultValue={position.end} className="input input-accent input-xs rounded mt-4 mb-2"
+        <input placeholder="终点" defaultValue={position.end} className="input input-accent input-xs rounded mt-4 mb-1"
           onCompositionStart={() => (lock = true)}
           onCompositionEnd={(e: any) => {lock=false;search('end', e)}}
           onChange={(e: any) => search('end', e)}
         />
-        <Slider className="h-[20px]" defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
-        {
+        <Slider defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
+        {/* {
           address ? <Select {...position} address={address} /> : null
-        }
+        } */}
       </div>
       <div id="leaflet-map" className="!z-0 w-full h-full" style={{ '--hue': `hue-rotate(${hue}deg)` } as React.CSSProperties}></div>
     </div>
