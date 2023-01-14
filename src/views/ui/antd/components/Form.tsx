@@ -1,8 +1,9 @@
 import { Table, Tag, Form, Input, InputNumber, Card, Button, Space, Drawer, Select } from 'antd'
 import { useRef, useState } from 'react'
-import { tableData as dataSource } from '../../../../utils/mock'
+import { tableData } from '../../../../utils/mock'
 import _ from 'lodash'
 const Item = Form.Item
+let dataSource = tableData
 
 const rules = {
   name: [{ required: true, message: '请输入姓名' }],
