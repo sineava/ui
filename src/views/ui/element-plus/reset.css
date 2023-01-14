@@ -1,0 +1,7 @@
+html.dark {
+  --el-bg-color-overlay: #111827 !important;
+}
+
+html.dark .el-table {
+  --el-table-header-bg-color: #1b2130;
+}

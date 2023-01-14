@@ -1,24 +1,9 @@
 import { Table, Tag, Form, Input, InputNumber, Card, Button, Space, Drawer, Select } from 'antd'
 import { useRef, useState } from 'react'
+import { tableData as dataSource } from '../../../../utils/mock'
 import _ from 'lodash'
 const Item = Form.Item
 
-let dataSource = [
-  {
-    id: 1,
-    name: '胡彦斌',
-    age: 32,
-    address: '西湖区湖底公园1号',
-    sex: 1
-  },
-  {
-    id: 2,
-    name: '范冰冰',
-    age: 42,
-    address: '西湖区湖底公园1号',
-    sex: 0
-  }
-]
 const rules = {
   name: [{ required: true, message: '请输入姓名' }],
   age: [{ required: true, message: '请输入姓名' }],

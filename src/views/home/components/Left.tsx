@@ -21,6 +21,7 @@ export default function() {
       { path: '/ui/chart', name: '图表' },
       { path: '/ui/lottie', name: 'lottie' },
       { path: '/ui/antd', name: 'antd' },
+      { path: '/ui/element-plus', name: 'element-plus' },
       { path: '/ui/awesome', name: 'awesome' }
     ] },
     // { path: '/android', icon: 'android', name: '安卓', children: [

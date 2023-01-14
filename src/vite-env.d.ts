@@ -6,4 +6,6 @@ declare module 'echarts4.2.1'
 declare module 'qrcode'
 declare module 'dom-to-image'
 declare module 'leaflet'
+declare module '*.vue'
+declare module 'element-plus/dist/locale/zh-cn.mjs'
 declare const Cesium: any

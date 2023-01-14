@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
 import { ConfigProvider, FloatButton, Popover, theme as antdTheme } from 'antd'
-import zhCN from 'antd/locale/zh_CN'
-import dayjs from 'dayjs'
 import Form from './components/Form'
 import SvgIcon from '../../../components/SvgIcon'
 import emitter from '../../../utils/ev'
