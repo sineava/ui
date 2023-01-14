@@ -8,13 +8,11 @@ import { Viewer,
   ScreenSpaceEventHandler,
   ScreenSpaceEventType,
   Math as CMath,
-  GeoJsonDataSource,
-  ImageMaterialProperty,
   HeightReference
 } from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { cesiumOption } from '../../../../utils/map'
-import roadJSON from './road.json'
+// import roadJSON from './road.json'
 
 const Position = ({ position }: any) => {
   return (
@@ -49,13 +47,20 @@ export default function() {
   }
   const flyTo = () => {
     const { lng, lat, pitch, heading, height } = lnglat
-    viewer.camera.flyTo({
+    viewer.camera.setView({
       destination: Cartesian3.fromDegrees(lng, lat, height),
       orientation: {
         heading: CMath.toRadians(heading),
         pitch: CMath.toRadians(pitch)
       }
     })
+    // viewer.camera.flyTo({
+    //   destination: Cartesian3.fromDegrees(lng, lat, height),
+    //   orientation: {
+    //     heading: CMath.toRadians(heading),
+    //     pitch: CMath.toRadians(pitch)
+    //   }
+    // })
   }
   // 获取实时坐标
   const movePosition = () => {
@@ -91,22 +96,22 @@ export default function() {
     }
   }
   // 加载道路
-  const loadRoad = () => {
-    const promise = GeoJsonDataSource.load(roadJSON, {
-      clampToGround: true
-    })
-    promise.then((datasource) => {
-      viewer.dataSources.add(datasource)
-      const entities = datasource.entities.values
-      entities.forEach((entity: any) => {
-        entity.polygon.extrudedHeight = Math.round(Math.random() * 800) + 400
-        entity.polygon.outline = false
-        entity.polygon.material = new ImageMaterialProperty({
-          image: '/house.jpg'
-        })
-      })
-    })
-  }
+  // const loadRoad = () => {
+  //   const promise = GeoJsonDataSource.load(roadJSON, {
+  //     clampToGround: true
+  //   })
+  //   promise.then((datasource) => {
+  //     viewer.dataSources.add(datasource)
+  //     const entities = datasource.entities.values
+  //     entities.forEach((entity: any) => {
+  //       entity.polygon.extrudedHeight = Math.round(Math.random() * 800) + 400
+  //       entity.polygon.outline = false
+  //       entity.polygon.material = new ImageMaterialProperty({
+  //         image: '/house.jpg'
+  //       })
+  //     })
+  //   })
+  // }
   const addPopup = async () => {
     const url = await domtoimage.toPng(divGraphicRef.current)
     const position = Cartesian3.fromDegrees(104.3298962, 30.592858)
@@ -137,7 +142,7 @@ export default function() {
     initMap()
     movePosition()
     draw('polygon')
-    loadRoad()
+    // loadRoad()
     addPopup()
   }, [])
   return (

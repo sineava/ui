@@ -1,23 +1,37 @@
 import { useEffect, useState } from 'react'
 import 'leaflet/dist/leaflet.css'
 import * as L from 'leaflet'
+import { antPath } from 'leaflet-ant-path';
 import AMapLoader from '@amap/amap-jsapi-loader'
 import { Slider } from 'antd'
 import 'leaflet.chinatmsproviders'
 import 'leaflet.markercluster/dist/leaflet.markercluster'
+import { parseRouteToPath } from '../../../utils/map'
 
-const Select = ({ start, end, address }: { start: string, end: string, address: [] }) => {
+interface Coors {
+  type: string
+  name: string
+  lng: number
+  lat: number
+}
+
+const Select = ({ type, address, setValue }: { type: string, address: any, setValue: ({type, name, lng, lat}: Coors) => void }) => {
+  console.log(address)
   return (
-    <div>
-      { JSON.stringify(address) }
+    <div className={`absolute ${type === 'start' ? 'top-[48px]' : 'top-[88px]'} left-[16px] w-[204px] min-h-[20px] max-h-[180px] overflow-x-hidden overflow-y-auto flex-col text-xs bg-[#fff] text-[#808080] rounded`}>
+      {
+        address.map((item: any, i: number) => <div key={i} className="cursor-pointer overflow overflow-hidden py-[4px] px-[8px] hover:bg-[#eee]" onClick={() => setValue({ type, name: item.name, lng: item.location.lng, lat: item.location.lat })}>{item.name}</div>)
+      }
     </div>
   )
 }
 let lock: boolean = false
 let placeSearch: any
+let AMap: any
+let map: any
+let path: any
 export default function() {
-  let map: any
-  let AMap: any
+  const [type, setType] = useState('')
   const [address, setAddress] = useState([])
   const [hue, setHue] = useState(180)
   const [position, setPosition]: any = useState({ start: '', end: '' })
@@ -26,7 +40,7 @@ export default function() {
     AMap = await AMapLoader.load({
       key: '9bbc890a65e9963640417b3a609d7dbf',
       version: '2.0',
-      plugins: ['AMap.StationSearch', 'AMap.PlaceSearch']
+      plugins: ['AMap.StationSearch', 'AMap.PlaceSearch', 'AMap.Driving']
     })
     map = L.map('leaflet-map', {
       center: [30.6574, 104.0658],
@@ -86,34 +100,76 @@ export default function() {
       ...position,
       [type]: keyword || ''
     }
-    placeSearch?.search(keyword, function (status: string, result: any) {
-      if (status === 'complete') {
-        const pois = result?.poiList?.pois
-        setAddress(JSON.parse(JSON.stringify(pois)))
-      }
-    })
     setPosition(data)
+  }
+  const down = (type: 'start' | 'end', e: any) => {
+    if (e.nativeEvent.keyCode === 13) {
+      placeSearch?.search(position[type], function (status: string, result: any) {
+        if (status === 'complete') {
+          const pois = result?.poiList?.pois
+          setAddress(pois)
+          setType(type)
+        }
+      })
+    }
+  }
+  const setValue = ({type, name,lng, lat}: Coors) => {
+    const data = {
+      ...position,
+      [type]: name || '',
+      [`coor-${type}`]: [lng, lat]
+    }
+    setPosition(data)
+    setType('')
+  }
+  const generate = () => {
+    if (path) map.removeLayer(path)
+    AMap.plugin('AMap.Driving', () => {
+      const driving = new AMap.Driving({
+        policy: AMap.DrivingPolicy.LEAST_TIME
+      })
+      driving.search(position['coor-start'], position['coor-end'], function (status: string, result: any) {
+        if (status === 'complete') {
+          path = antPath(parseRouteToPath(result.routes[0]), {
+            delay: 400,
+            dashArray: [10, 20],
+            weight: 5,
+            color: '#0000FF',
+            pulseColor: '#FFFFFF',
+            paused: false,
+            reverse: false,
+            hardwareAccelerated: true
+          })
+          map.addLayer(path)
+          map.fitBounds(path.getBounds())
+        }
+      })
+    })
   }
   useEffect(() => {
     initMap()
+    document.addEventListener('click', function(){
+      setType('')
+    })
   }, [])
   return (
     <div className="w-full h-full relative">
-      <div className="absolute right-[12px] top-4 w-[200px] p-4 rounded z-10 flex flex-col dark:bg-gray-900 bg-white">
-        <input placeholder="起点" defaultValue={position.start} className="input input-accent input-xs rounded"
-          onCompositionStart={() => (lock = true)}
-          onCompositionEnd={(e: any) => {lock=false;search('start', e)}}
+      <div className="absolute right-[12px] top-3 w-[250px] p-4 rounded z-10 flex flex-col dark:bg-gray-900 bg-[#eee]">
+        <input placeholder="起点: Enter查询目标点" value={position.start} className="input input-accent input-xs rounded w-[200px]"
           onChange={(e: any) => search('start', e)}
+          onKeyDown={(e: any) => down('start', e)}
         />
-        <input placeholder="终点" defaultValue={position.end} className="input input-accent input-xs rounded mt-4 mb-1"
-          onCompositionStart={() => (lock = true)}
-          onCompositionEnd={(e: any) => {lock=false;search('end', e)}}
+        <input placeholder="终点: Enter查询目标点" value={position.end} className="input input-accent input-xs rounded my-4 w-[200px]"
           onChange={(e: any) => search('end', e)}
+          onKeyDown={(e: any) => down('end', e)}
         />
-        <Slider defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
-        {/* {
-          address ? <Select {...position} address={address} /> : null
-        } */}
+        <button type="button" onClick={generate} className="dark:bg-gray-800 t-login w-[200px] h-[28px] !rounded-none t-button t-shadow-blue text-xs bg-[#3F8CFF] hover:bg-[#3F8CD1] flex justify-center items-center">
+          生成驾车路线
+        </button>
+        <Slider className="absolute right-0 top-4 h-[104px]" vertical defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
+        {
+          type ? <Select type={type} address={address} setValue={setValue} /> : null
+        }
       </div>
       <div id="leaflet-map" className="!z-0 w-full h-full" style={{ '--hue': `hue-rotate(${hue}deg)` } as React.CSSProperties}></div>
     </div>

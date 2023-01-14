@@ -11,3 +11,17 @@ export const cesiumOption = {
   infoBox: true, //信息面板
   selectionIndicator: false // 取消绿色指示器
 }
+
+/**
+ * @param route result.routes[0]
+ */
+export const parseRouteToPath = (route: any) => {
+  let path = []
+  for (let i = 0, l = route.steps.length; i < l; i++) {
+    let step = route.steps[i]
+    for (let j = 0, n = step.path.length; j < n; j++) {
+      path.push(step.path[j])
+    }
+  }
+  return path
+}

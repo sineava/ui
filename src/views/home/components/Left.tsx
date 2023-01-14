@@ -45,7 +45,7 @@ export default function() {
     document.addEventListener('click', function(){
       setTrigger(false)
     })
-  })
+  }, [])
 
   useEffect(() => {
     const path = `/${location.pathname.split('/')[1]}`
