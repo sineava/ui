@@ -42,9 +42,9 @@ export default function() {
   const [trigger, setTrigger] = useState(false)
 
   useEffect(() => {
-    document.addEventListener('click', function(){
-      setTrigger(false)
-    })
+    const close = () => setTrigger(false)
+    document.addEventListener('click', close)
+    return () => document.removeEventListener('click', close)
   }, [])
 
   useEffect(() => {

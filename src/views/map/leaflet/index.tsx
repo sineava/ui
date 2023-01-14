@@ -50,6 +50,7 @@ export default function() {
     addStations()
     addListener()
     addLayer()
+    addCurrent()
   }
   // 添加公交站点
   const addStations = () => {
@@ -92,6 +93,21 @@ export default function() {
       maxZoom: 18,
       minZoom: 5
     }).addTo(map)
+  }
+  // 添加当前位置hightlight maker
+  const addCurrent = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: any) => {
+        const { coords: { latitude: lat, longitude: lng } } = position
+        L.marker(new L.LatLng(lat, lng), {
+          icon: L.divIcon({
+            html: '<div class="wave-circle hover-circle"><div class="pulse"></div></div>',
+            iconSize: [96, 96],
+            className: 'marker-wrapper'
+          })
+        }).addTo(map)
+      })
+    }
   }
   const search = (type: 'start' | 'end', e: any) => {
     if (lock) return
@@ -148,9 +164,9 @@ export default function() {
   }
   useEffect(() => {
     initMap()
-    document.addEventListener('click', function(){
-      setType('')
-    })
+    const close = () => setType('')
+    document.addEventListener('click', close)
+    return () => document.removeEventListener('click', close)
   }, [])
   return (
     <div className="w-full h-full relative">

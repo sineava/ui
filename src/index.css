@@ -11,6 +11,59 @@
   }
 }
 
+/* 地图maker */
+.marker-wrapper {
+  width: 64px !important;
+  height: 64px !important;
+  background-color: transparent !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.wave-circle {
+  display: inline-block !important;
+  position: relative !important;
+  width: 2rem !important;
+  height: 2rem !important;
+  background-color: transparent !important;
+}
+.wave-circle:before {  
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;      
+  right: 0 !important;
+  border: .5rem solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 50% !important;
+  background-color: #10ac84 !important;
+  z-index: 10 !important;
+}
+.wave-circle > .pulse {
+  position: relative !important;
+  top: -1rem !important;
+  left: -1rem !important;
+  width: 4rem !important;
+  height: 4rem !important;
+}
+.wave-circle > .pulse:after {
+  content: '' !important;
+  position: absolute !important;
+  border: 0 solid #10ac84 !important;
+  background: transparent !important;
+  border-radius: 50% !important;
+  height: 4rem !important;
+  width: 4rem !important;
+  animation: pulse 2s ease-out !important;
+  animation-iteration-count: infinite !important;
+  z-index: 1 !important;
+  border-width: 2rem !important;
+  width: 4rem !important;
+}
+.hover-circle .pulse:after {
+  border-width: 2rem !important;
+  width: 4rem !important;
+}
 /* fix:解决tailwindcss与antd冲突 */
 .m-antd .ant-btn-primary {
   background-color: var(--primary) !important;
@@ -374,6 +427,33 @@
 @keyframes text-svg {
   to {
     stroke-dashoffset: -44;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0.3;
+  }
+
+  25% {
+    -webkit-transform: scale(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    -webkit-transform: scale(0.1);
+    opacity: 0.8;
+  }
+
+  75% {
+    -webkit-transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
   }
 }
 

@@ -8,4 +8,5 @@ declare module 'dom-to-image'
 declare module 'leaflet'
 declare module '*.vue'
 declare module 'element-plus/dist/locale/zh-cn.mjs'
+declare module 'leaflet-ant-path'
 declare const Cesium: any
