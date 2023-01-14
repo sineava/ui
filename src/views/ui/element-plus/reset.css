@@ -4,4 +4,11 @@ html.dark {
 
 html.dark .el-table {
   --el-table-header-bg-color: #1b2130;
+  --el-table-row-hover-bg-color: #1b2130;
+  color: #fff !important;
+  font-size: 14px;
+}
+
+.el-table--large tr {
+  height: 64px !important;
 }

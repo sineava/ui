@@ -1,12 +1,12 @@
 <template>
-  <el-card>
+  <el-card shadow="never">
     <el-table className="w-full" :data="tableData" size="large">
       <el-table-column prop="name" label="姓名" />
       <el-table-column prop="age" label="年龄" />
       <el-table-column prop="address" label="住址" />
       <el-table-column label="性别">
         <template #default="{row}">
-          {{ ['女', '男'][row.sex] }}
+          <el-tag :type="row.sex === 0 ? 'success' : ''">{{ ['女', '男'][row.sex] }}</el-tag>
         </template>
       </el-table-column>
     </el-table>
