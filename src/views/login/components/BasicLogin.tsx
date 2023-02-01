@@ -125,15 +125,19 @@ function BasicLogin() {
               <a className="link link-hover text-[#3F8CFF] text-sm">忘记密码?</a>
             </div>
             <div className="flex items-center mt-[30px]">
-              <button type="button" onClick={login} className="dark:bg-gray-800 t-login w-[170px] h-[48px] t-button t-shadow-blue bg-[#3F8CFF] flex justify-center items-center">
+              <button type="button" onClick={login} className="dark:bg-gray-800 t-login w-[170px] h-[48px] mr-2 t-button t-shadow-blue bg-[#3F8CFF] flex justify-center items-center">
                 <span className="w-[40px] mr-2">登 录</span>
                 <SvgIcon icon="right-arrow" color="#fff" size={24} />
               </button>
-              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
-                <SvgIcon icon="github" size={30} />
+              <div className="tooltip" data-tip="github登录">
+                <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
+                  <SvgIcon icon="github" size={30} />
+                </div>
               </div>
-              <div className="ml-4 w-[30px] h-[30px] cursor-pointer dark:text-white text-gray-800 hover:scale-110" onClick={toBlog}>
-                <SvgIcon icon="pencil" size={30} />
+              <div className="tooltip" data-tip="个人博客">
+                <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white text-gray-800 hover:scale-110" onClick={toBlog}>
+                  <SvgIcon icon="pencil" size={30} />
+                </div>
               </div>
             </div>
           </form>
