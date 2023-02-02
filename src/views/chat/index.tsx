@@ -35,7 +35,7 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
-    socket.current = new WebSocket('ws://localhost:8080')
+    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
     socket.current.onopen = () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
     }
