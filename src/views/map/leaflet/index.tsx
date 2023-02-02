@@ -182,7 +182,7 @@ export default function() {
         <button type="button" onClick={generate} className="dark:bg-gray-800 t-login w-[200px] h-[28px] !rounded-none t-button t-shadow-blue text-xs bg-[#3F8CFF] hover:bg-[#3F8CD1] flex justify-center items-center">
           生成驾车路线
         </button>
-        <Slider className="absolute right-0 top-4 h-[104px]" vertical defaultValue={hue} max={180} onChange={(num) => setHue(num)} />
+        <Slider className="absolute right-0 top-4 h-[104px]" vertical defaultValue={hue} max={180} onChange={(num: number) => setHue(num)} />
         {
           type ? <Select type={type} address={address} setValue={setValue} /> : null
         }

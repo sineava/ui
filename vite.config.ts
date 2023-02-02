@@ -26,7 +26,8 @@ export default defineConfig({
       }
     },
     port: 10086,
-    open: true
+    open: true,
+    host: '0.0.0.0'
   },
   resolve: {
     alias: {

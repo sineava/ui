@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import type { ReactNode } from 'react'
 import Left from './components/Left'
-import { Outlet, Route, Navigate, Routes } from 'react-router-dom'
+import { Outlet, Route, Navigate, Routes, useLocation } from 'react-router-dom'
 import { Suspense } from 'react'
 import Lottie from 'lottie-react'
 import json from '../../assets/lottie/cat.json'
 import SvgIcon from '../../components/SvgIcon'
 import emitter from '../../utils/ev'
+import Chat from '../chat'
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
@@ -14,6 +14,7 @@ function Home() {
   const [theme, setTheme] = useState(initialTheme)
   const [charging, setCharging] = useState(false)
   const [step, setStep] = useState(0)
+  const location = useLocation()
   useEffect(() => {
     (navigator as any).getBattery().then((battery: any) => {
       const process = Math.ceil(battery.level * 4)
@@ -56,14 +57,17 @@ function Home() {
           </div>
         </div>
         <div className="dark:bg-gray-800 t-layout bg-[#F4F9FD] p-2 scroll-smooth overflow-y-auto">
-          <Suspense fallback={mask()}><Outlet /></Suspense>
+          { location.pathname === '/' && <Chat /> }
+          <Suspense fallback={mask()}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </div>
   )
 }
 
-function mask(): ReactNode {
+function mask() {
   return (
     <div className="w-full h-full flex justify-center items-center">
       <Lottie className="w-[500px] mt-10" animationData={json} />

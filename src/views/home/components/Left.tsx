@@ -13,7 +13,7 @@ interface IconType {
 export default function() {
   const location = useLocation()
   const navigate = useNavigate()
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent]: any = useState(null)
   const [avatar] = useState(JSON.parse(localStorage.getItem('user')!)?.avatar || Logo)
   const list = [
     { path: '/ui', icon: 'swatch', name: 'UI库', children: [

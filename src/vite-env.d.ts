@@ -10,3 +10,6 @@ declare module '*.vue'
 declare module 'element-plus/dist/locale/zh-cn.mjs'
 declare module 'leaflet-ant-path'
 declare const Cesium: any
+declare module 'lottie-react'
+declare module 'react-router-dom'
+declare module 'react'

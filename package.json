@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@7.21.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "cp ./antd-theme.js ./node_modules/antd/es/theme/themes/dark/index.js && vite build",
     "preview": "vite preview"
   },

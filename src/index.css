@@ -8,7 +8,37 @@
     --color-text-base: #fff;
     --color-text-sub: #F4F9FD;
     overflow-y: hidden;
+    /* font-family: monospace; */
   }
+}
+
+/* input组美化 */
+.t-uiverse-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.t-uiverse-input {
+  min-height: 50px;
+  max-width: 200px;
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #5e4dcd;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.t-uiverse-button--submit {
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #5e4dcd;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
 }
 
 /* 地图maker */

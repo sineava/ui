@@ -52,7 +52,7 @@ function BasicLogin() {
     let msg
     if (!username) msg = '用户名未填'
     if (!password) msg = '密码未填'
-    if (username !== 'admin') msg = '用户名错误'
+    if (!['admin', 'sineava'].includes(username)) msg = '用户名错误'
     if (password !== '123456') msg = '密码错误'
     if (msg) {
       setError(msg)
@@ -62,6 +62,7 @@ function BasicLogin() {
       }, 3000)
       return false
     }
+    localStorage.setItem('username', username)
     localStorage.setItem('token', 'daisyui')
     navigate("/")
   }
@@ -129,15 +130,11 @@ function BasicLogin() {
                 <span className="w-[40px] mr-2">登 录</span>
                 <SvgIcon icon="right-arrow" color="#fff" size={24} />
               </button>
-              <div className="tooltip" data-tip="github登录">
-                <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
-                  <SvgIcon icon="github" size={30} />
-                </div>
+              <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
+                <SvgIcon icon="github" size={30} />
               </div>
-              <div className="tooltip" data-tip="个人博客">
-                <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white text-gray-800 hover:scale-110" onClick={toBlog}>
-                  <SvgIcon icon="pencil" size={30} />
-                </div>
+              <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white text-gray-800 hover:scale-110" onClick={toBlog}>
+                <SvgIcon icon="pencil" size={30} />
               </div>
             </div>
           </form>
