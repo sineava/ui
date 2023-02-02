@@ -35,7 +35,8 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
-    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+    // socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+    socket.current = new WebSocket('ws://localhost:8080')
     socket.current.onopen = () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
     }
@@ -63,26 +64,28 @@ export default () => {
   const camera = () => {
     const video: any = document.querySelector('video')
     const canvas = document.createElement("canvas")
+    canvas.width = 256
+    canvas.height = 192
     navigator.mediaDevices.getUserMedia({ 
       audio: false, 
       video: true
     }).then(stream => {
       video.srcObject = stream
       setInterval(() => {
-        (canvas.getContext('2d') as any).drawImage(video, 0, 0, 192, 144)
-        socket.current.send(JSON.stringify({ ...user, src: canvas.toDataURL("image/png"), type: 3 }))
+        (canvas.getContext('2d') as any).drawImage(video, 0, 0, 256, 192)
+        socket.current.send(JSON.stringify({ ...user, src: canvas.toDataURL("image/png", 0.1), type: 3 }))
       }, 500)
     }).catch(err => {
-      alert('error: ' + err.message)
+      console.log(err.message)
     })
   }
   return (
     <div className="flex h-full">
-      <div className="flex-1">
-        <video autoPlay />
-        <img src={src} className="w-[192px] h-[144px]" />
+      <div className="flex-1 relative">
+        <video className="h-full" autoPlay />
+        { src && <img src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white" /> }
       </div>
-      <div className="w-[400px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
+      <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
         <div className="flex-1 overflow-y-scroll">
           {
             stack.map((info: any, i: number) => <Message key={i} user={user} info={info} />)
@@ -92,8 +95,8 @@ export default () => {
           <div className="t-uiverse-input-group">
             <input className="t-uiverse-input" value={message} placeholder="输入聊天内容" autoComplete="off" onChange={e => setMessage(e.target.value)} />
             <input className="t-uiverse-button--submit" value="发送消息" type="button" onClick={send} />
-            <button onClick={camera}>开启直播</button>
           </div>
+          <button className="btn btn-success text-white ml-2" onClick={camera}>视频会议</button>
         </div>
       </div>
     </div>
