@@ -35,8 +35,8 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
-    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
-    // socket.current = new WebSocket('ws://localhost:8080')
+    // socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+    socket.current = new WebSocket('ws://localhost:8080')
     socket.current.onopen = () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
     }
@@ -49,7 +49,15 @@ export default () => {
     socket.current.onmessage = (ev: any) => {
       const data = JSON.parse(ev.data)
       if (data.type === 3) { // 图片流
-        setSrc(data.payload.src)
+        const arr = data.payload.src
+        const interval = setInterval(() => {
+          const url = arr.shift()
+          if (!url) {
+            clearInterval(interval)
+          } else {
+            setSrc(url)
+          }
+        }, 50)
       } else {
         setStack([...stack, data])
       }
@@ -71,10 +79,17 @@ export default () => {
       video: true
     }).then(stream => {
       video.srcObject = stream
+      let imgs: string[] = []
       setInterval(() => {
         (canvas.getContext('2d') as any).drawImage(video, 0, 0, 256, 192)
-        socket.current.send(JSON.stringify({ ...user, src: canvas.toDataURL("image/png", 0.1), type: 3 }))
-      }, 500)
+        const url = canvas.toDataURL("image/png", 0.1)
+        if (imgs.length === 10) {
+          socket.current.send(JSON.stringify({ ...user, src: imgs, type: 3 }))
+          imgs = []
+        } else {
+          imgs.push(url)
+        }
+      }, 50)
     }).catch(err => {
       console.log(err.message)
     })
@@ -83,7 +98,7 @@ export default () => {
     <div className="flex h-full">
       <div className="flex-1 relative">
         <video className="h-full" autoPlay />
-        { src && <img src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white" /> }
+        { src && <img draggable src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white cursor-pointer" /> }
       </div>
       <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
         <div className="flex-1 overflow-y-scroll">
