@@ -35,29 +35,20 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
-    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
-    // socket.current = new WebSocket('ws://localhost:8080')
+    // socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+    socket.current = new WebSocket('ws://localhost:8080')
     socket.current.onopen = () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
     }
     return () => {
       socket.current.send(JSON.stringify({ ...user, type: 0 }))
-      socket.current.close()
     }
   }, [])
   useEffect(() => {
     socket.current.onmessage = (ev: any) => {
       const data = JSON.parse(ev.data)
       if (data.type === 3) { // 图片流
-        const arr = data.payload.src
-        const interval = setInterval(() => {
-          const url = arr.shift()
-          if (!url) {
-            clearInterval(interval)
-          } else {
-            setSrc(url)
-          }
-        }, 50)
+        setSrc(data.payload.src)
       } else {
         setStack([...stack, data])
       }
@@ -72,24 +63,19 @@ export default () => {
   const camera = () => {
     const video: any = document.querySelector('video')
     const canvas = document.createElement("canvas")
-    canvas.width = 256
-    canvas.height = 192
+    canvas.width = 128
+    canvas.height = 96
+    const ctx: any = canvas.getContext('2d')
     navigator.mediaDevices.getUserMedia({ 
       audio: false, 
       video: true
     }).then(stream => {
       video.srcObject = stream
-      let imgs: string[] = []
       setInterval(() => {
-        (canvas.getContext('2d') as any).drawImage(video, 0, 0, 256, 192)
+        ctx.drawImage(video, 0, 0, 128, 96)
         const url = canvas.toDataURL("image/png", 0.1)
-        if (imgs.length === 10) {
-          socket.current.send(JSON.stringify({ ...user, src: imgs, type: 3 }))
-          imgs = []
-        } else {
-          imgs.push(url)
-        }
-      }, 50)
+        socket.current.send(JSON.stringify({ ...user, src: url, type: 3 }))
+      }, 500)
     }).catch(err => {
       console.log(err.message)
     })
