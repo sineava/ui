@@ -79,7 +79,7 @@ function BasicLogin() {
   return (
     <div className="dark:bg-gray-800 w-full h-screen bg-[#F4F9FD] flex justify-center items-center">
       <div className="w-[1360px] h-[770px] flex">
-        <div className="dark:bg-gray-900 p-[60px] flex-1 h-full bg-[#3F8CFF] rounded-l-2xl text-[#fff]">
+        <div className="dark:bg-gray-900 p-[60px] flex-1 h-full bg-[#3F8CFF] rounded-l-2xl text-[#fff] opacity-90">
           <div className="flex items-center">
             <img className="w-[50px] h-[50px] cursor-pointer" src={Logo} />
             <span className="ml-[20px] text-[30px] font-bold">daisyUI</span>
@@ -89,18 +89,19 @@ function BasicLogin() {
           </div>
           <Lottie className="w-[500px] mt-10" animationData={json} />
         </div>
-        <div className="dark:bg-gray-900 flex-1 h-full bg-[#FFFFFF] rounded-r-2xl p-[60px]">
+        <div className="dark:bg-gray-900 flex-1 h-full bg-[#FFFFFF] rounded-r-2xl p-[60px] opacity-90">
           <form className="flex flex-col items-center form-control">
             <span className="dark:text-[#fff] text-[30px] mb-4">欢迎回来！</span>
             <label className="w-[400px] mt-[100px]">
               <span className="t-label text-[14px]">用户名</span>
               <div className="relative group">
-                <div className="absolute left-0 top-0 w-[40px] h-full flex justify-center items-center">
-                  <SvgIcon icon="account" color={focus === 'account' ? '#3F8CFF' : '#7D8592'} />
+                <div className="absolute left-0 top-0 w-[40px] h-full flex justify-center items-center cursor-pointer">
+                  <SvgIcon icon="account" size={20} color={focus === 'account' ? '#3F8CFF' : '#7D8592'} />
                 </div>
                 <input className={`dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1`} required type="text" name="price" id="price" placeholder="请输入"
                   defaultValue={username}
                   onFocus={() => setFocus('account')}
+                  onBlur={() => setFocus('')}
                   onChange={(e: any) => setUsername(e.target.value)}
                 />
               </div>
@@ -109,11 +110,12 @@ function BasicLogin() {
               <span className="t-label text-[14px]">密码</span>
               <div className="relative">
                 <div className="absolute left-0 top-0 w-[40px] h-full flex justify-center items-center cursor-pointer" onClick={() => setShow(!show)}>
-                  <SvgIcon icon={show ? 'lock-closed' : 'lock-open'} color={focus === 'password' ? '#3F8CFF' : '#7D8592'} />
+                  <SvgIcon icon={show ? 'lock-closed' : 'lock-open'} size={20} color={focus === 'password' ? '#3F8CFF' : '#7D8592'} />
                 </div>
                 <input className="dark:bg-gray-800 dark:text-[#fff] dark:border-none t-input mt-1" type={show ? 'password' : 'text'} name="price" id="price" placeholder="请输入" required
                   defaultValue={password}
                   onFocus={() => setFocus('password')}
+                  onBlur={() => setFocus('')}
                   onChange={(e: any) => setPassword(e.target.value)}
                 />
               </div>
@@ -130,6 +132,10 @@ function BasicLogin() {
                 <span className="w-[40px] mr-2">登 录</span>
                 <SvgIcon icon="right-arrow" color="#fff" size={24} />
               </button>
+              
+            </div>
+            <div className="w-2/3 mx-auto divider mt-8 text-xs dark:text-white">其他方式登录</div>
+            <div className="flex">
               <div className="mx-2 w-[30px] h-[30px] cursor-pointer dark:text-white hover:scale-110" onClick={auth}>
                 <SvgIcon icon="github" size={30} />
               </div>

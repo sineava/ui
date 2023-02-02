@@ -10,7 +10,7 @@ interface IProps {
 
 function dynamic(name: string) {
   const [loading, setLoading] = useState(false)
-  const importedIconRef = useRef<React.FC<React.SVGProps<SVGElement>>>()
+  const importedIconRef: any = useRef()
   useEffect(() => {
     setLoading(true)
     const importSvgIcon = async (): Promise<void> => {

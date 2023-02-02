@@ -18,7 +18,7 @@ const Position = ({ position }: any) => {
   return (
     <div className="absolute bottom-0 left-0 z-20 w-full h-[40px]">
       <div className="absolute w-full h-full bg-black opacity-40"></div>
-      <div className="absolute w-full h-full text-white z-30 flex justify-end items-center text-xs">
+      <div className="absolute w-full h-full text-white z-30 flex justify-end items-center text-sm">
         <span>经度: { position.lng }</span>
         <span className="ml-2">纬度: { position.lat }</span>
         <span className="ml-2">高程: { position.height }</span>
@@ -148,11 +148,11 @@ export default function() {
   return (
     <div className="w-full h-full overflow-hidden relative" ref={mapRef}>
       <div className="absolute -z-10 t-divGraphic" ref={divGraphicRef}>
-        <div className="absolute top-1 left-[122px] text-white font-bold text-sm">1号观景点</div>
-        <div className="absolute top-8 left-9 w-[140px] h-[120px] text-white text flex flex-col justify-evenly">
-          <div>经度: <span className="badge badge-primary badge-sm ml-1">104.325891</span></div>
-          <div>纬度: <span className="badge badge-secondary badge-sm ml-1">30.594535</span></div>
-          <div>高程: <span className="badge badge-accent badge-sm ml-1 text-white">42.84m</span></div>
+        <div className="absolute top-2 left-[128px] text-white font-bold text-sm">1号观景点</div>
+        <div className="absolute top-8 left-12 w-[140px] h-[120px] text-white text text-sm flex flex-col justify-evenly">
+          <div>经度: <span className="badge badge-primary badge-sm ml-3">104.325891</span></div>
+          <div>纬度: <span className="badge badge-secondary badge-sm ml-3">30.594535</span></div>
+          <div>高程: <span className="badge badge-accent badge-sm ml-3 text-white">42.84m</span></div>
         </div>
       </div>
       <Position position={position} />

@@ -8,7 +8,7 @@
     --color-text-base: #fff;
     --color-text-sub: #F4F9FD;
     overflow-y: hidden;
-    /* font-family: monospace; */
+    font-family: monospace;
   }
 }
 
@@ -384,6 +384,28 @@
 .t-svg-text:nth-of-type(3) {
   stroke: #0000ff;
   animation-delay: 2s;
+}
+
+.dark .divider::before,.dark .divider::after {
+  background-color: white !important;
+  height: 0.02px !important;
+  opacity: .4;
+}
+
+.divider::before, .divider::after {
+  background-color: gray !important;
+  opacity: .2;
+  height: 0.02px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .t-sidebar {
+    flex-direction: column;
+    overflow: scroll;
+  }
+  .t-meeting {
+    flex-direction: column;
+  }
 }
 
 @keyframes move {

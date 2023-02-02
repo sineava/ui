@@ -69,8 +69,8 @@ export default function() {
       key={i}
       onClick={(e: any) => menuClick(e, i)}
     >
-      <div className="inline-block w-[24px] h-[24px]">
-        <SvgIcon icon={x.icon} color={current === i ? '#3F8CFF' : '#7D8592'} />
+      <div className="inline-flex w-[24px] h-[24px] items-center">
+        <SvgIcon icon={x.icon} size={20} color={current === i ? '#3F8CFF' : '#8395a7'} />
       </div>
       <span className="ml-2">{x.name}</span>
       {
@@ -87,7 +87,7 @@ export default function() {
     </li>
   )
   return (
-    <div className="px-[16px] relative">
+    <div className="px-[16px] relative" style={{ height: 'calc(100% - 40px)' }}>
       <div className="my-[50px] flex items-center">
         <img className="w-[50px] h-[50px] mr-4 cursor-pointer rounded" src={avatar} />
         <span className="text-[20px] font-semibold dark:text-[#fff]">daisyUI</span>
@@ -95,7 +95,7 @@ export default function() {
       <ul className="bg-base-100 w-full relative text-[14px] dark:bg-gray-900">
         {menu}
       </ul>
-      <button className="fixed left-12 bottom-4 dark:bg-gray-800 dark:border border border-[#fff] dark:border-[#3F8CFF] t-login mt-[30px] px-6 py-2 t-button bg-[#3F8CFF] flex justify-center items-center" type="button" onClick={() => navigate('/login')}>
+      <button className="absolute left-12 bottom-4 dark:bg-gray-800 dark:border border border-[#fff] dark:border-[#3F8CFF] t-login mt-[30px] px-6 py-2 t-button bg-[#3F8CFF] flex justify-center items-center" type="button" onClick={() => navigate('/login')}>
         <span className="text-[14px] mr-2 font-normal">退出登录</span>
         <SvgIcon icon="right-arrow" color="#fff" size={20} />
       </button>

@@ -43,7 +43,7 @@ function Home() {
     setTheme(mode === 'light' ? '' : 'dark')
   }
   return (
-    <div className="dark:bg-gray-900 w-full h-screen flex">
+    <div className="dark:bg-gray-900 w-full h-screen flex t-sidebar">
       <div className="w-[240px] relative">
         <Left />
       </div>

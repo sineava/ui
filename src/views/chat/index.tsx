@@ -3,10 +3,10 @@ import { users } from '../../utils/user'
 
 const Message = ({ info, user }: { info:any, user: any }) => {
   if (info.type === 0) {
-    return <div className="text-center my-1 text-xs font-bold dark:text-white">用户<div className="badge badge-primary mx-1 badge-xs">{info.payload}</div>退出聊天室</div>
+    return <div className="text-center my-1 text-sm font-bold dark:text-white">用户<div className="badge badge-primary mx-1 badge-sm">{info.payload}</div>退出聊天室</div>
   }
   if (info.type === 1) {
-    return <div className="text-center my-1 text-xs font-bold dark:text-white">用户<div className="badge badge-primary mx-1 badge-xs">{info.payload}</div>进入聊天室</div>
+    return <div className="text-center my-1 text-sm font-bold dark:text-white">用户<div className="badge badge-primary mx-1 badge-sm">{info.payload}</div>进入聊天室</div>
   }
   if (info.type === 2) {
     const { msg, username, time, avatar, nickname } = info.payload
@@ -18,8 +18,8 @@ const Message = ({ info, user }: { info:any, user: any }) => {
           </div>
         </div>
         <div className="chat-header">
-          <span className="dark:text-white text-xs">{nickname}</span>
-          <time className="text-xs opacity-80 dark:text-white ml-1">{time}</time>
+          <span className="dark:text-white text-sm">{nickname}</span>
+          <time className="text-sm opacity-80 dark:text-white ml-1">{time}</time>
         </div>
         <div className="chat-bubble chat-bubble-primary">{msg}</div>
       </div>
@@ -35,8 +35,8 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
-    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
-    // socket.current = new WebSocket('ws://localhost:8080')
+    // socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+    socket.current = new WebSocket('ws://localhost:8080')
     socket.current.onopen = () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
     }
@@ -81,9 +81,9 @@ export default () => {
     })
   }
   return (
-    <div className="flex h-full">
+    <div className="flex h-full t-meeting">
       <div className="flex-1 relative">
-        <video className="h-full" autoPlay />
+        <video className="h-full rounded" autoPlay />
         { src && <img draggable src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white cursor-pointer" /> }
       </div>
       <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
@@ -97,7 +97,7 @@ export default () => {
             <input className="t-uiverse-input" value={message} placeholder="输入聊天内容" autoComplete="off" onChange={e => setMessage(e.target.value)} />
             <input className="t-uiverse-button--submit" value="发送消息" type="button" onClick={send} />
           </div>
-          <button className="btn btn-success text-white ml-2" onClick={camera}>视频会议</button>
+          <button className="btn btn-success text-white ml-2 h-[50px] w-[120px]" onClick={camera}>视频会议</button>
         </div>
       </div>
     </div>

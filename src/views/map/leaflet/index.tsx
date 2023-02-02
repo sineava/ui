@@ -171,18 +171,18 @@ export default function() {
   return (
     <div className="w-full h-full relative">
       <div className="absolute right-[12px] top-3 w-[250px] p-4 rounded z-10 flex flex-col dark:bg-gray-900 bg-[#eee]">
-        <input placeholder="起点: Enter查询目标点" value={position.start} className="input input-accent input-xs rounded w-[200px]"
+        <input placeholder="起点: Enter查询目标点" value={position.start} className="input input-accent input-sm rounded w-[200px]"
           onChange={(e: any) => search('start', e)}
           onKeyDown={(e: any) => down('start', e)}
         />
-        <input placeholder="终点: Enter查询目标点" value={position.end} className="input input-accent input-xs rounded my-4 w-[200px]"
+        <input placeholder="终点: Enter查询目标点" value={position.end} className="input input-accent input-sm rounded my-4 w-[200px]"
           onChange={(e: any) => search('end', e)}
           onKeyDown={(e: any) => down('end', e)}
         />
         <button type="button" onClick={generate} className="dark:bg-gray-800 t-login w-[200px] h-[28px] !rounded-none t-button t-shadow-blue text-xs bg-[#3F8CFF] hover:bg-[#3F8CD1] flex justify-center items-center">
           生成驾车路线
         </button>
-        <Slider className="absolute right-0 top-4 h-[104px]" vertical defaultValue={hue} max={180} onChange={(num: number) => setHue(num)} />
+        <Slider className="absolute right-0 top-4 h-[102px]" vertical defaultValue={hue} max={180} onChange={(num: number) => setHue(num)} />
         {
           type ? <Select type={type} address={address} setValue={setValue} /> : null
         }

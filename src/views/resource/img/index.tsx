@@ -108,7 +108,7 @@ export default function() {
           }
         </div>
         <div className="flex items-center">
-          <button className="dark:bg-gray-900 bg-white dark:text-white px-4 py-2 rounded ml-2" onClick={handleSure}>确定</button>
+          <button className="dark:bg-gray-900 bg-white dark:text-white px-6 py-3 rounded ml-2" onClick={handleSure}>确定</button>
         </div>
       </div>
       <input ref={fileRef} type="file" hidden accept="image/*" onChange={sure} />
