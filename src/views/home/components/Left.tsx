@@ -95,7 +95,7 @@ export default function() {
       <ul className="bg-base-100 w-full relative text-[14px] dark:bg-gray-900">
         {menu}
       </ul>
-      <button className="absolute left-12 bottom-4 dark:bg-gray-800 dark:border border border-[#fff] dark:border-[#3F8CFF] t-login mt-[30px] px-6 py-2 t-button bg-[#3F8CFF] flex justify-center items-center" type="button" onClick={() => navigate('/login')}>
+      <button className="absolute left-14 bottom-8 dark:bg-gray-800 dark:border border border-[#fff] dark:border-[#3F8CFF] t-login mt-[30px] px-6 py-2 t-button bg-[#3F8CFF] flex justify-center items-center" type="button" onClick={() => navigate('/login')}>
         <span className="text-[14px] mr-2 font-normal">退出登录</span>
         <SvgIcon icon="right-arrow" color="#fff" size={20} />
       </button>

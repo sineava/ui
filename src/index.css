@@ -388,14 +388,14 @@
 
 .dark .divider::before,.dark .divider::after {
   background-color: white !important;
-  height: 0.02px !important;
+  height: 0.2px !important;
   opacity: .4;
 }
 
 .divider::before, .divider::after {
   background-color: gray !important;
   opacity: .2;
-  height: 0.02px !important;
+  height: 0.2px !important;
 }
 
 @media screen and (max-width: 600px) {

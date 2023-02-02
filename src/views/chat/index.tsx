@@ -88,6 +88,11 @@ export default () => {
       </div>
       <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
         <div className="flex-1 overflow-y-scroll">
+          <div className="text-center my-1 text-sm font-bold dark:text-white">
+            可测试账号:
+            <div className="badge badge-secondary mx-1 badge-sm badge-outline">admin</div>
+            <div className="badge badge-accent mx-1 badge-sm badge-outline">sineava</div>
+          </div>
           {
             stack.map((info: any, i: number) => <Message key={i} user={user} info={info} />)
           }
