@@ -36,7 +36,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['@vue/shared']
+      external: ['@vue/shared', '@vue/reactivity']
     }
   }
 })
