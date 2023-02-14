@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { users } from '../../utils/user'
+import Lottie from 'lottie-react'
+import json from '../../assets/lottie/loading.json'
 
 const Message = ({ info, user }: { info:any, user: any }) => {
   if (info.type === 0) {
@@ -32,13 +34,18 @@ export default () => {
   const [src, setSrc] = useState('')
   const [message, setMessage] = useState('')
   const [stack, setStack] = useState([])
+  const [loading, setLoading] = useState(false)
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
-  useEffect(() => {
+  useEffect(async () => {
+    setLoading(true)
     socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
-    // socket.current = new WebSocket('ws://localhost:8080')
-    socket.current.onopen = () => {
+    socket.current.onopen = async () => {
       socket.current.send(JSON.stringify({ ...user, type: 1 }))
+      setLoading(false)
+    }
+    socket.current.onclose = () => {
+      socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
     }
     return () => {
       socket.current.send(JSON.stringify({ ...user, type: 0 }))
@@ -89,13 +96,21 @@ export default () => {
       <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
         <div className="flex-1 overflow-y-scroll">
           <div className="text-center my-1 text-sm font-bold dark:text-white">
-            可测试账号:
+            可测试账号(无心跳):
             <div className="badge badge-secondary mx-1 badge-sm badge-outline">admin</div>
             <div className="badge badge-accent mx-1 badge-sm badge-outline">sineava</div>
           </div>
           {
             stack.map((info: any, i: number) => <Message key={i} user={user} info={info} />)
           }
+          {
+            loading && (
+              <div className="text-white text-center text-sm font-bold">
+                <Lottie className="h-[80px]" animationData={json} />
+              </div>
+            )
+          }
+          
         </div>
         <div className="h-[60px] flex justify-center items-center">
           <div className="t-uiverse-input-group">
