@@ -5,7 +5,7 @@ import { javascript } from '@codemirror/lang-javascript'
 import { StreamLanguage } from '@codemirror/language';
 import { css as cssparse } from '@codemirror/legacy-modes/mode/css'
 import { dracula } from '@uiw/codemirror-theme-dracula'
-import SvgIcon from '@/components/SvgIcon'
+import SvgIcon from '../components/SvgIcon'
 
 interface Type {
   html: string

@@ -4,7 +4,7 @@ import json from '../../../assets/lottie/machine.json'
 import Logo from '../../../assets/logo.png'
 import { useNavigate } from "react-router-dom"
 import SvgIcon from '../../../components/SvgIcon'
-import Alert  from '@/components/Alert'
+import Alert  from '../../../components/Alert'
 import axios from 'axios'
 
 function BasicLogin() {
