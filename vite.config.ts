@@ -36,7 +36,7 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: [/^@\d.*/g]
+      external: [/^@/g]
     }
   }
 })
