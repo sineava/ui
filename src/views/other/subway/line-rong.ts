@@ -276,7 +276,7 @@ const data = {
       x: 320,
       y: 517,
       size: [50, 20],
-      style: { fill: color, radius: 10 },
+      style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
     },
@@ -343,7 +343,7 @@ const data = {
       x: 420,
       y: 335,
       style: { fill: color },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node38',
@@ -367,7 +367,7 @@ const data = {
       x: 590,
       y: 164,
       style: { fill: color },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node41',
@@ -375,7 +375,7 @@ const data = {
       x: 617,
       y: 139,
       style: { fill: color },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node42',
@@ -383,7 +383,7 @@ const data = {
       x: 641,
       y: 112,
       style: { fill: color },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node43',
@@ -391,8 +391,64 @@ const data = {
       x: 668,
       y: 87,
       style: { fill: color },
-      labelCfg: { position: 'right' }
-    }
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node44',
+      label: '西华大学'.split('').join('\n'),
+      x: 694,
+      y: 71,
+      style: { fill: color },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: 'node45',
+      label: '双林村'.split('').join('\n'),
+      x: 727,
+      y: 71,
+      style: { fill: color },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: 'node46',
+      label: '金土'.split('').join('\n'),
+      x: 759,
+      y: 71,
+      style: { fill: color },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: 'node47',
+      label: '技师学院'.split('').join('\n'),
+      x: 791,
+      y: 71,
+      style: { fill: color },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: 'node48',
+      label: '仁和'.split('').join('\n'),
+      x: 824,
+      y: 71,
+      style: { fill: color },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: "node49",
+      label: "蓉2",
+      x: 861,
+      y: 71,
+      size: 30,
+      style: {
+        fill: color
+      },
+      labelCfg: {
+        position: 'center',
+        style: {
+          fill: '#fff'
+        }
+      }
+    },
   ],
   edges: [
     { source: 'node1', target: 'node2', style: { stroke: color } },
@@ -437,6 +493,12 @@ const data = {
     { source: 'node40', target: 'node41', style: { stroke: color } },
     { source: 'node41', target: 'node42', style: { stroke: color } },
     { source: 'node42', target: 'node43', style: { stroke: color } },
+    { source: 'node43', target: 'node44', style: { stroke: color } },
+    { source: 'node44', target: 'node45', style: { stroke: color } },
+    { source: 'node45', target: 'node46', style: { stroke: color } },
+    { source: 'node46', target: 'node47', style: { stroke: color } },
+    { source: 'node47', target: 'node48', style: { stroke: color } },
+    { source: 'node48', target: 'node49', style: { stroke: color } }
   ]
 }
 

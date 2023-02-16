@@ -1,5 +1,12 @@
 import { useRef, useEffect } from 'react'
-import data from './data'
+import lineRong from './line-rong'
+import line2 from './line2'
+import line3 from './line3'
+import line4 from './line4'
+import line5 from './line5'
+import line6 from './line6'
+import line7 from './line7'
+import walk from './walk'
 import { Graph } from '@antv/g6'
 
 export default () => {
@@ -26,13 +33,18 @@ export default () => {
         style: {
           lineWidth: 4
         }
-      },
-      // modes: {
-      //   default: ['drag-node']
-      // }
+      }
     })
+    const data = {
+      nodes: [...lineRong.nodes, ...line2.nodes, ...line3.nodes, ...line4.nodes, ...line5.nodes, ...line6.nodes, ...line7.nodes],
+      edges: [...lineRong.edges, ...line2.edges, ...line3.edges, ...line4.edges, ...line5.edges, ...line6.edges, ...line7.edges, ...walk.edges]
+    }
     graph.data(data)
     graph.render()
   }, [])
-  return <div className="bg-white dark:bg-gray-900 w-full h-full rounded" ref={subwayRef}></div>
+  return (
+    <div className="bg-white dark:bg-gray-900 w-full h-full rounded overflow-scroll">
+      <div className="h-full" ref={subwayRef} style={{ zoom: 0.88 }}></div>
+    </div>
+  )
 }
