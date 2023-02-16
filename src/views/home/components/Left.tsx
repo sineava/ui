@@ -37,7 +37,12 @@ export default function() {
     { path: '/resource', icon: 'folder-minus', name: '流媒体', children: [
       { path: '/resource/img', name: '图像' },
       { path: '/resource/video', name: '视频' }
-    ] }
+    ] },
+    {
+      path: '/other', icon: 'folder-minus', name: '其他', children: [
+        { path: '/other/subway', name: '地铁拓扑图' }
+      ]
+    }
   ]
   const [trigger, setTrigger] = useState(false)
 

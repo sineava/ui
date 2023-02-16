@@ -13,3 +13,4 @@ declare const Cesium: any
 declare module 'lottie-react'
 declare module 'react-router-dom'
 declare module 'react'
+declare module '@antv/g6'
