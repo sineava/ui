@@ -15,6 +15,7 @@ export default function() {
   const colorRef: any = useRef()
   const fileRef: any = useRef()
   const imgRef: any = useRef()
+  const maskRef: any = useRef()
   const ctxImgRef: any = useRef()
   const trigger = () => {
     fileRef.current.click()
@@ -68,6 +69,23 @@ export default function() {
       setCanvasUrl(url)
     })
   }
+  const addMask = () => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')!
+    const maskCtx = maskRef.current.getContext('2d')
+    canvas.height = 300
+    maskCtx.beginPath()
+    maskCtx.arc(40, 40, 40, 0, 2 * Math.PI)
+    maskCtx.closePath()
+    maskCtx.fillStyle = 'rgba(0, 255, 0, 0.1)'
+    maskCtx.fill()
+    maskCtx.font = 'bold 18px Arial'
+    maskCtx.strokeStyle = '#0000ff'
+    maskCtx.strokeText('盗图可耻', 2, 44)
+    ctx.drawImage(imgRef.current, 0, 0, canvas.width, canvas.height)
+    ctx.drawImage(maskRef.current, 0, 0)
+    setCtxUrl(canvas.toDataURL())
+  }
   const handle = (e: any) => {
     setVal('')
     setVal(e.target.value)
@@ -80,6 +98,48 @@ export default function() {
       case 'code':
         code()
         break
+      case 'watermask':
+        addMask()
+        break
+    }
+  }
+  // 渲染input元素
+  const renderInput = () => {
+    if (val === 'watermask') return null
+    return (<div className="dark:bg-gray-900 bg-white dark:text-[#fff] flex items-center rounded ml-2 py-1 px-2">
+      {
+        val === 'base' && <div className="flex items-center gap-2 text-sm">
+          <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
+        </div>
+      }
+      {
+        val === 'code' && (
+          <div className="flex items-center gap-2 text-sm">
+            c1: <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
+            c2: <input className="cursor-pointer" type="color" value={color2} ref={colorRef} onChange={(e: any) => setColor2(e.target.value)} />
+          </div>
+        )
+      }
+    </div>)
+  }
+  // 渲染img
+  const renderImg = () => {
+    if (['base', 'watermask'].includes(val) && url) {
+      return (
+        <div className="flex">
+          <div className="dark:bg-gray-900 bg-[#fff] rounded mx-2 w-[300px] t-img-container"><img className="w-[300px] h-[300px]" ref={imgRef} src={url} /></div>
+          { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded t-img-container"><img ref={ctxImgRef} src={ctxUrl} /></div> }
+        </div>
+      )
+    }
+    if (val === 'code' && canvasUrl) {
+      return (
+        <div className="flex">
+          <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded mr-2 qrcode-container ml-2 relative t-img-container">
+            <img className="w-[300px] h-[300px]" src={canvasUrl} />
+          </div>
+        </div>
+      )
     }
   }
   return (
@@ -90,45 +150,17 @@ export default function() {
           <select className="dark:bg-gray-900 dark:text-[#fff] w-[200px] outline-none rounded select-sm h-[37px] font-normal" defaultValue={val} onChange={handle}>
             <option value="base">更换底色</option>
             <option value="code">二维码</option>
+            <option value="watermask">水印</option>
           </select>
         </div>
-        <div className="dark:bg-gray-900 bg-white dark:text-[#fff] flex items-center rounded ml-2 py-1 px-2">
-          {
-            val === 'base' && <div className="flex items-center gap-2 text-sm">
-              <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
-            </div>
-          }
-          {
-            val === 'code' && (
-              <div className="flex items-center gap-2 text-sm">
-                c1: <input className="cursor-pointer" type="color" value={color} ref={colorRef} onChange={(e: any) => setColor(e.target.value)} />
-                c2: <input className="cursor-pointer" type="color" value={color2} ref={colorRef} onChange={(e: any) => setColor2(e.target.value)} />
-              </div>
-            )
-          }
-        </div>
+        { renderInput() }
         <div className="flex items-center">
           <button className="dark:bg-gray-900 bg-white dark:text-white px-6 py-3 rounded ml-2" onClick={handleSure}>确定</button>
         </div>
       </div>
       <input ref={fileRef} type="file" hidden accept="image/*" onChange={sure} />
-      {
-        val === 'base' && url && (
-          <div className="flex">
-            <div className="dark:bg-gray-900 bg-[#fff] rounded mx-2 w-[300px]  t-img-container"><img className="w-[300px]" ref={imgRef} src={url} /></div>
-            { ctxUrl && <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded t-img-container"><img ref={ctxImgRef} src={ctxUrl} /></div> }
-          </div>
-        )
-      }
-      {
-        val === 'code' && canvasUrl && (
-          <div className="flex">
-            <div className="dark:bg-gray-900 bg-[#fff] w-[300px] rounded mr-2 qrcode-container ml-2 relative t-img-container">
-              <img className="w-[300px] h-[300px]" src={canvasUrl} />
-            </div>
-          </div>
-        )
-      }
+      { renderImg() }
+      <canvas ref={maskRef} width="200" height="80" className="hidden"></canvas>
     </div>
   )
 }

@@ -19,7 +19,7 @@ function Wrapper() {
     <div className="w-full h-full flex justify-center items-center">
       {
         time && (
-          <svg width="200" height="50">
+          <svg width="250" height="50">
             <symbol id="text">
               <text x="0" y="40" strokeDasharray="10 34" strokeWidth="2" fill="transparent" style={{fontSize: '50px'}}>{time}</text>
             </symbol>

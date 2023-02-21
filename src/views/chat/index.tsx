@@ -39,13 +39,17 @@ export default () => {
   const user: any = users.get(localStorage.getItem('username') as any)
   useEffect(() => {
     setLoading(true)
-    socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
-    socket.current.onopen = async () => {
-      socket.current.send(JSON.stringify({ ...user, type: 1 }))
-      setLoading(false)
-    }
-    return () => {
-      socket.current.send(JSON.stringify({ ...user, type: 0 }))
+    try {
+      socket.current = new WebSocket('wss://socket-wfeg.onrender.com')
+      socket.current.onopen = async () => {
+        socket.current.send(JSON.stringify({ ...user, type: 1 }))
+        setLoading(false)
+      }
+      return () => {
+        socket.current.send(JSON.stringify({ ...user, type: 0 }))
+      }
+    } catch(err) {
+      console.log(err)
     }
   }, [])
   useEffect(() => {
