@@ -188,6 +188,258 @@ const data = {
       type: 'rect',
       labelCfg: { position: 'center' }
     },
+    {
+      id: "node6-19",
+      label: "沙湾",
+      x: 867,
+      y: 483,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node6-20',
+      label: '西北桥',
+      x: 903,
+      y: 521,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-21',
+      label: '人民北路',
+      x: 985,
+      y: 521,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: "node6-22",
+      label: "梁春路".split('').join('\n'),
+      x: 1039,
+      y: 521,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'bottom' }
+    },
+    {
+      id: 'node6-23',
+      label: '前锋路'.split('').join('\n'),
+      x: 1067,
+      y: 521,
+      size: [20, 50],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-24',
+      label: '建设北路',
+      x: 1139,
+      y: 594,
+      style: { fill: color },
+      labelCfg: { position: 'right' }
+    },
+    {
+      id: 'node6-25',
+      label: '新鸿路',
+      x: 1139,
+      y: 674,
+      style: { fill: color },
+      labelCfg: { position: 'right' }
+    },
+    {
+      id: 'node6-26',
+      label: '玉双路',
+      x: 1139,
+      y: 752,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-27',
+      label: '牛王庙',
+      x: 1090,
+      y: 821,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-28',
+      label: '顺江路',
+      x: 1068,
+      y: 867,
+      style: { fill: color },
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node6-29',
+      label: '三官堂',
+      x: 1068,
+      y: 895,
+      style: { fill: color },
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node6-30',
+      label: '东光',
+      x: 1068,
+      y: 935,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-31',
+      label: '琉璃场',
+      x: 1068,
+      y: 992,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-32',
+      label: '琉三路',
+      x: 1132,
+      y: 1046,
+      style: { fill: color },
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node6-33',
+      label: '金石路',
+      x: 1185,
+      y: 1096,
+      style: { fill: color },
+      labelCfg: { position: 'right' }
+    },
+    {
+      id: 'node6-34',
+      label: '金融城东',
+      x: 1248,
+      y: 1161,
+      size: [50, 20],
+      style: { fill: '#1abc9c', radius: 10 },
+      type: 'rect',
+      labelCfg: { position: 'center' }
+    },
+    {
+      id: 'node6-35',
+      label: '中和'.split('').join('\n'),
+      x: 1295,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-36',
+      label: '张家寺'.split('').join('\n'),
+      x: 1329,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-37',
+      label: '陆肖'.split('').join('\n'),
+      x: 1362,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-38',
+      label: '观东'.split('').join('\n'),
+      x: 1396,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-39',
+      label: '新通大道'.split('').join('\n'),
+      x: 1429,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-40',
+      label: '新川路'.split('').join('\n'),
+      x: 1462,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-41',
+      label: '龙灯山'.split('').join('\n'),
+      x: 1495,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-42',
+      label: '蒲草堂'.split('').join('\n'),
+      x: 1530,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-43',
+      label: '万安'.split('').join('\n'),
+      x: 1563,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-44',
+      label: '麓山大道'.split('').join('\n'),
+      x: 1596,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-45',
+      label: '沈阳路'.split('').join('\n'),
+      x: 1632,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-46',
+      label: '青鸟路'.split('').join('\n'),
+      x: 1664,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node6-47',
+      label: '昌公堰'.split('').join('\n'),
+      x: 1700,
+      y: 1161,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
   ],
   edges: [
     { source: 'node6-1', target: 'node6-2', style: { stroke: color } },
@@ -207,6 +459,35 @@ const data = {
     { source: 'node6-15', target: 'node6-16', style: { stroke: color } },
     { source: 'node6-16', target: 'node6-17', style: { stroke: color } },
     { source: 'node6-17', target: 'node6-18', style: { stroke: color } },
+    { source: 'node6-18', target: 'node6-19', style: { stroke: color } },
+    { source: 'node6-19', target: 'node6-20', style: { stroke: color } },
+    { source: 'node6-20', target: 'node6-21', style: { stroke: color } },
+    { source: 'node6-21', target: 'node6-22', style: { stroke: color } },
+    { source: 'node6-22', target: 'node6-23', style: { stroke: color } },
+    { source: 'node6-23', target: 'node6-24', style: { stroke: color } },
+    { source: 'node6-24', target: 'node6-25', style: { stroke: color } },
+    { source: 'node6-25', target: 'node6-26', style: { stroke: color } },
+    { source: 'node6-26', target: 'node6-27', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1139, y: 770 }] },
+    { source: 'node6-27', target: 'node6-28', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1069, y: 842 }] },
+    { source: 'node6-28', target: 'node6-29', style: { stroke: color } },
+    { source: 'node6-29', target: 'node6-30', style: { stroke: color } },
+    { source: 'node6-30', target: 'node6-31', style: { stroke: color } },
+    { source: 'node6-31', target: 'node6-32', style: { stroke: color } },
+    { source: 'node6-32', target: 'node6-33', style: { stroke: color } },
+    { source: 'node6-33', target: 'node6-34', style: { stroke: color } },
+    { source: 'node6-34', target: 'node6-35', style: { stroke: color } },
+    { source: 'node6-35', target: 'node6-36', style: { stroke: color } },
+    { source: 'node6-36', target: 'node6-37', style: { stroke: color } },
+    { source: 'node6-37', target: 'node6-38', style: { stroke: color } },
+    { source: 'node6-38', target: 'node6-39', style: { stroke: color } },
+    { source: 'node6-39', target: 'node6-40', style: { stroke: color } },
+    { source: 'node6-40', target: 'node6-41', style: { stroke: color } },
+    { source: 'node6-41', target: 'node6-42', style: { stroke: color } },
+    { source: 'node6-42', target: 'node6-43', style: { stroke: color } },
+    { source: 'node6-43', target: 'node6-44', style: { stroke: color } },
+    { source: 'node6-44', target: 'node6-45', style: { stroke: color } },
+    { source: 'node6-45', target: 'node6-46', style: { stroke: color } },
+    { source: 'node6-46', target: 'node6-47', style: { stroke: color } },
   ]
 }
 

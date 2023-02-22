@@ -45,9 +45,6 @@ export default () => {
         socket.current.send(JSON.stringify({ ...user, type: 1 }))
         setLoading(false)
       }
-      return () => {
-        socket.current.send(JSON.stringify({ ...user, type: 0 }))
-      }
     } catch(err) {
       console.log(err)
     }

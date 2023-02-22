@@ -29,7 +29,7 @@ function Wrapper() {
               key={i}
               className="flex"
               style={
-                { '--duration': '20s', '--reverse': i % 2 ? 'reverse' : 'normal' } as React.CSSProperties
+                { '--duration': '20s', '--reverse': i % 2 ? 'reverse' : 'normal' } as any
               }>
               <div className="t-inner">
                 { random().map((x: any) => card(x, i)) }
