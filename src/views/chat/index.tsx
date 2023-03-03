@@ -41,7 +41,7 @@ export default () => {
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
   const configuration = new Configuration({
-    apiKey: import.meta.env?.CHATGPT_API || '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'
+    apiKey: import.meta.env?.VITE_CHATGPT_API
   })
   const openai = new OpenAIApi(configuration)
   useEffect(() => {
