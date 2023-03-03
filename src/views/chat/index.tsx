@@ -4,7 +4,7 @@ import Lottie from 'lottie-react'
 import json from '../../assets/lottie/loading.json'
 import { Configuration, OpenAIApi } from 'openai'
 import SvgIcon from '../../components/SvgIcon'
-const OPENAI_KEY = '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'
+const OPENAI_KEY = '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'
 
 const Message = ({ info, user }: { info:any, user: any }) => {
   if (info.type === 0) {
