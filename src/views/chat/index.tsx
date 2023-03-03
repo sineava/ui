@@ -2,6 +2,9 @@ import { useEffect, useState, useRef } from 'react'
 import { users } from '../../utils/user'
 import Lottie from 'lottie-react'
 import json from '../../assets/lottie/loading.json'
+import { Configuration, OpenAIApi } from 'openai'
+import SvgIcon from '../../components/SvgIcon'
+const OPENAI_KEY = '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'
 
 const Message = ({ info, user }: { info:any, user: any }) => {
   if (info.type === 0) {
@@ -31,12 +34,18 @@ const Message = ({ info, user }: { info:any, user: any }) => {
 }
 
 export default () => {
+  const [isChat, setIsChat] = useState(false)
   const [src, setSrc] = useState('')
   const [message, setMessage] = useState('')
   const [stack, setStack] = useState([])
   const [loading, setLoading] = useState(false)
   const socket = useRef(null)
   const user: any = users.get(localStorage.getItem('username') as any)
+  const answer = useState('')
+  const configuration = new Configuration({
+    apiKey: OPENAI_KEY
+  })
+  const openai = new OpenAIApi(configuration)
   useEffect(() => {
     setLoading(true)
     try {
@@ -55,14 +64,29 @@ export default () => {
       if (data.type === 3) { // 图片流
         setSrc(data.payload.src)
       } else {
+        console.log(data)
         setStack([...stack, data])
       }
     }
   }, [stack, src])
 
-  const send = () => {
-    socket.current.send(JSON.stringify({ ...user, msg: message, type: 2 }))
+  const send = async () => {
+    setLoading(true)
     setMessage('')
+    if (isChat) { // 是聊天机器人
+      const res = await openai.createCompletion({
+        model: "text-davinci-003", // 模型id
+        prompt: message,
+        temperature: 0,
+        max_tokens: 1000,
+      }).finally(() => setLoading(false))
+      if (res?.data?.choices?.length > 0) {
+        setStack([...stack, {payload: { avatar: '/robot.png', msg: res.data.choices[0].text, nickname: '机器人', time: '', username: 'robot' }, type: 2}])
+      }
+    } else {
+      socket.current.send(JSON.stringify({ ...user, msg: message, type: 2 }))
+      setLoading(false)
+    }
   }
 
   const camera = () => {
@@ -91,7 +115,10 @@ export default () => {
         <video className="h-full rounded" autoPlay />
         { src && <img draggable src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white cursor-pointer" /> }
       </div>
-      <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col">
+      <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col relative">
+        <div className="cursor-pointer absolute top-0 left-0 bg-[#3f8cff] rounded w-8 h-8 flex justify-center items-center" onClick={() => setIsChat(!isChat)}>
+          <SvgIcon size={16} icon="robot" fill={isChat ? '#fff' : '#ccc'} />
+        </div>
         <div className="flex-1 overflow-y-scroll">
           <div className="text-center my-1 text-sm font-bold dark:text-white">
             可测试账号(无心跳):

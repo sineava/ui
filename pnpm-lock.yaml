@@ -41,6 +41,7 @@ specifiers:
   lottie-react: ^2.3.1
   mars3d: ^3.4.17
   mars3d-cesium: ^1.96.8
+  openai: ^3.2.1
   patch-package: ^6.5.1
   postcss: ^8.4.19
   qrcode: ^1.5.1
@@ -92,6 +93,7 @@ dependencies:
   lottie-react: 2.3.1_biqbaboplfbrettd7655fr4n2y
   mars3d: 3.4.20
   mars3d-cesium: 1.96.8
+  openai: 3.2.1
   patch-package: 6.5.1
   qrcode: 1.5.1
   react: 18.2.0
@@ -2893,6 +2895,14 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
+  /axios/0.26.1:
+    resolution: {integrity: sha512-fPwcX4EvnSHuInCMItEhAGnaSEXRBjtzh9fOtsE6E1G6p7vl7edEeZe11QHf18+6+9gR5PbKV/sGKNaD8YaMeA==}
+    dependencies:
+      follow-redirects: 1.15.2
+    transitivePeerDependencies:
+      - debug
+    dev: false
+
   /axios/0.27.2:
     resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
     dependencies:
@@ -4308,6 +4318,15 @@ packages:
     dependencies:
       is-docker: 2.2.1
       is-wsl: 2.2.0
+    dev: false
+
+  /openai/3.2.1:
+    resolution: {integrity: sha512-762C9BNlJPbjjlWZi4WYK9iM2tAVAv0uUp1UmI34vb0CN5T2mjB/qM6RYBmNKMh/dN9fC+bxqPwWJZUTWW052A==}
+    dependencies:
+      axios: 0.26.1
+      form-data: 4.0.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /os-tmpdir/1.0.2:
