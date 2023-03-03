@@ -71,6 +71,7 @@ export default () => {
   const send = async () => {
     setLoading(true)
     setMessage('')
+    await socket.current.send(JSON.stringify({ ...user, msg: message, type: 2 }))
     if (isChat) { // 是聊天机器人
       const res = await openai.createCompletion({
         model: "text-davinci-003", // 模型id
@@ -79,10 +80,9 @@ export default () => {
         max_tokens: 1000,
       }).finally(() => setLoading(false))
       if (res?.data?.choices?.length > 0) {
-        setStack([...stack, {payload: { avatar: '/robot.png', msg: res.data.choices[0].text, nickname: '机器人', time: '', username: 'robot' }, type: 2}])
+        await socket.current.send(JSON.stringify({ avatar: '/robot.png', msg: res.data.choices[0].text, nickname: '机器人', time: '', username: 'robot', type: 2 }))
       }
     } else {
-      socket.current.send(JSON.stringify({ ...user, msg: message, type: 2 }))
       setLoading(false)
     }
   }
