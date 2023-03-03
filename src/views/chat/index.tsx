@@ -4,7 +4,6 @@ import Lottie from 'lottie-react'
 import json from '../../assets/lottie/loading.json'
 import { Configuration, OpenAIApi } from 'openai'
 import SvgIcon from '../../components/SvgIcon'
-const OPENAI_KEY = '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'
 
 const Message = ({ info, user }: { info:any, user: any }) => {
   if (info.type === 0) {
@@ -43,7 +42,7 @@ export default () => {
   const user: any = users.get(localStorage.getItem('username') as any)
   const answer = useState('')
   const configuration = new Configuration({
-    apiKey: OPENAI_KEY
+    apiKey: process.env.CHATGPT_API
   })
   const openai = new OpenAIApi(configuration)
   useEffect(() => {
