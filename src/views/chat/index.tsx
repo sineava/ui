@@ -25,7 +25,7 @@ const Message = ({ info, user }: { info:any, user: any }) => {
           <span className="dark:text-white text-sm">{nickname}</span>
           <time className="text-sm opacity-80 dark:text-white ml-1">{time}</time>
         </div>
-        <div className="chat-bubble chat-bubble-primary">{msg}</div>
+        <div className="text-md chat-bubble chat-bubble-primary whitespace-pre-line">{msg}</div>
       </div>
     )
   }
@@ -79,8 +79,11 @@ export default () => {
         temperature: 0,
         max_tokens: 1000,
       }).finally(() => setLoading(false))
-      if (res?.data?.choices?.length > 0) {
-        await socket.current.send(JSON.stringify({ avatar: '/robot.png', msg: res.data.choices[0].text, nickname: '机器人', time: '', username: 'robot', type: 2 }))
+      const choice = res?.data?.choices
+      if (choice?.length > 0) {
+        const text = choice[0].text as any
+        const str = text.replace(/(^\s*)|(\s*$)/g, '')
+        await socket.current.send(JSON.stringify({ avatar: '/robot.png', msg: str, nickname: '机器人', time: '', username: 'robot', type: 2 }))
       }
     } else {
       setLoading(false)
