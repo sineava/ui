@@ -8,7 +8,8 @@ import { Viewer,
   ScreenSpaceEventHandler,
   ScreenSpaceEventType,
   Math as CMath,
-  HeightReference
+  HeightReference,
+  Ion
 } from 'cesium'
 import 'cesium/Build/Cesium/Widgets/widgets.css'
 import { cesiumOption } from '../../../../utils/map'
@@ -30,6 +31,7 @@ const Position = ({ position }: any) => {
 }
 
 export default function() {
+  Ion.defaultAccessToken = import.meta.env?.VITE_CESIUM
   const lnglat = { lng: 104.341738, lat: 30.593555, pitch: -10, heading: 280, height: 1000 }
   const [position, setPosition] = useState({...lnglat})
   const mapRef: any = useRef()
