@@ -230,39 +230,39 @@ const data = {
     },
     {
       id: 'node3-23',
-      label: '簇锦',
-      x: 609,
-      y: 983,
+      label: '川藏立交'.split('').join('\n'),
+      x: 596,
+      y: 917,
       style: {
         fill: color
       },
-      labelCfg: { position: 'left' }
+      labelCfg: { position: 'top' }
     },
     {
       id: 'node3-24',
-      label: '华兴',
-      x: 564,
-      y: 1026,
+      label: '武侯立交'.split('').join('\n'),
+      x: 548,
+      y: 915,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node3-25',
+      label: '武青南路',
+      x: 455,
+      y: 915,
       size: [50, 20],
       style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
     },
     {
-      id: 'node3-25',
-      label: '金花',
-      x: 460,
-      y: 1134,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'left' }
-    },
-    {
       id: 'node3-26',
-      label: '双流机场1航站楼'.split('').join('\n'),
-      x: 296,
-      y: 1213,
+      label: '双凤桥',
+      x: 384,
+      y: 915,
       style: {
         fill: color
       },
@@ -270,127 +270,63 @@ const data = {
     },
     {
       id: 'node3-27',
-      label: '双流机场2航站楼'.split('').join('\n'),
-      x: 203,
-      y: 1213,
+      label: '龙桥路',
+      x: 340,
+      y: 923,
       style: {
         fill: color
       },
-      labelCfg: { position: 'top' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node3-28',
-      label: '双流西站',
-      x: 61,
-      y: 1213,
-      size: [50, 20],
-      style: { fill: '#1abc9c', radius: 10 },
-      type: 'rect',
-      labelCfg: { position: 'center' }
+      label: '航都大街',
+      x: 313,
+      y: 952,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node3-29',
-      label: '应天寺',
-      x: 39,
-      y: 1174,
+      label: '迎春桥',
+      x: 278,
+      y: 988,
       style: {
         fill: color
       },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node3-30',
-      label: '黄水',
-      x: 39,
-      y: 1131,
+      label: '东升',
+      x: 241,
+      y: 1027,
       style: {
         fill: color
       },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node3-31',
-      label: '花源',
-      x: 39,
-      y: 1093,
+      label: '双流广场',
+      x: 205,
+      y: 1060,
       style: {
         fill: color
       },
-      labelCfg: { position: 'right' }
+      labelCfg: { position: 'left' }
     },
     {
       id: 'node3-32',
-      label: '新津站',
-      x: 39,
-      y: 1051,
+      label: '三里坝',
+      x: 170,
+      y: 1098,
       style: {
         fill: color
       },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-33',
-      label: '花桥',
-      x: 39,
-      y: 1010,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-34',
-      label: '五津',
-      x: 39,
-      y: 968,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-35',
-      label: '儒林路',
-      x: 39,
-      y: 928,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-36',
-      label: '刘家碾',
-      x: 39,
-      y: 887,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-37',
-      label: '新平',
-      x: 39,
-      y: 848,
-      style: {
-        fill: color
-      },
-      labelCfg: { position: 'right' }
-    },
-    {
-      id: 'node3-38',
-      label: '3',
-      x: 39,
-      y: 800,
-      size: 30,
-      style: { fill: color },
-      labelCfg: {
-        position: 'center',
-        style: {
-          fill: '#fff'
-        }
-      }
+      labelCfg: { position: 'left' }
     },
   ],
   edges: [
@@ -400,7 +336,7 @@ const data = {
     { source: 'node3-4', target: 'node3-5', style: { stroke: color } },
     { source: 'node3-5', target: 'node3-6', style: { stroke: color } },
     { source: 'node3-6', target: 'node3-7', style: { stroke: color } },
-    { source: 'node3-7', target: 'node3-8', style: { stroke: color } },
+    { source: 'node3-7', target: 'node3-8', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1456, y: 73 }] },
     { source: 'node3-8', target: 'node3-9', style: { stroke: color } },
     { source: 'node3-9', target: 'node3-10', style: { stroke: color } },
     { source: 'node3-10', target: 'node3-11', style: { stroke: color } },
@@ -423,19 +359,14 @@ const data = {
     { source: 'node7-7', target: 'node3-23', style: { stroke: color }},
     { source: 'node3-23', target: 'node3-24', style: { stroke: color }},
     { source: 'node3-24', target: 'node3-25', style: { stroke: color }},
-    { source: 'node3-25', target: 'node3-26', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 381, y: 1213 }]},
-    { source: 'node3-26', target: 'node3-27', style: { stroke: color }},
+    { source: 'node3-25', target: 'node3-26', style: { stroke: color }},
+    { source: 'node3-26', target: 'node3-27', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 352, y: 915 }]},
     { source: 'node3-27', target: 'node3-28', style: { stroke: color }},
-    { source: 'node3-28', target: 'node3-29', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 39, y: 1213 }]},
+    { source: 'node3-28', target: 'node3-29', style: { stroke: color }},
     { source: 'node3-29', target: 'node3-30', style: { stroke: color }},
     { source: 'node3-30', target: 'node3-31', style: { stroke: color }},
     { source: 'node3-31', target: 'node3-32', style: { stroke: color }},
-    { source: 'node3-32', target: 'node3-33', style: { stroke: color }},
-    { source: 'node3-33', target: 'node3-34', style: { stroke: color }},
-    { source: 'node3-34', target: 'node3-35', style: { stroke: color }},
-    { source: 'node3-35', target: 'node3-36', style: { stroke: color }},
-    { source: 'node3-36', target: 'node3-37', style: { stroke: color }},
-    { source: 'node3-37', target: 'node3-38', style: { stroke: color }},
+    { source: 'node3-32', target: 'node10-6', style: { stroke: color }}
   ]
 }
 

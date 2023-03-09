@@ -139,7 +139,7 @@ const data = {
       label: '世纪城'.split('').join('\n'),
       x: 1070,
       y: 1280,
-      size: [20, 50],
+      size: [20, 90],
       style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
@@ -189,7 +189,7 @@ const data = {
       label: '海昌路'.split('').join('\n'),
       x: 1379,
       y: 1280,
-      size: [20, 50],
+      size: [20, 90],
       style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
@@ -239,7 +239,7 @@ const data = {
       label: '西博城'.split('').join('\n'),
       x: 1700,
       y: 1280,
-      size: [20, 50],
+      size: [20, 90],
       style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
@@ -284,6 +284,22 @@ const data = {
         }
       }
     },
+    {
+      id: 'node1-32',
+      label: '广都',
+      x: 1328,
+      y: 1227,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node1-33',
+      label: '五根松',
+      x: 1435,
+      y: 1227,
+      style: { fill: color },
+      labelCfg: { position: 'top' }
+    },
   ],
   edges: [
     { source: 'node1-1', target: 'node1-2', style: { stroke: color } },
@@ -318,7 +334,9 @@ const data = {
     { source: 'node1-27', target: 'node1-28', style: { stroke: color } },
     { source: 'node1-28', target: 'node1-29', style: { stroke: color } },
     { source: 'node1-29', target: 'node1-30', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1832, y: 1280 }] },
-    { source: 'node1-30', target: 'node1-31', style: { stroke: color } }
+    { source: 'node1-30', target: 'node1-31', style: { stroke: color } },
+    { source: 'node1-19', target: 'node1-32', style: { stroke: color } },
+    { source: 'node1-32', target: 'node1-33', style: { stroke: color } }
   ]
 }
 

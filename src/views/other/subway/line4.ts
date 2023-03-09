@@ -208,6 +208,92 @@ const data = {
       type: 'rect',
       labelCfg: { position: 'center' }
     },
+    {
+      id: 'node4-21',
+      label: '太升南路',
+      x: 1013,
+      y: 683,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'left' }
+    },
+    {
+      id: 'node4-22',
+      label: '万年场',
+      x: 1242,
+      y: 752,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node4-23',
+      label: '来龙',
+      x: 1402,
+      y: 752,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node4-24',
+      label: '十陵',
+      x: 1466,
+      y: 752,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node4-25',
+      label: '成都大学',
+      x: 1538,
+      y: 752,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node4-26',
+      label: '明蜀王陵',
+      x: 1602,
+      y: 727,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'top' }
+    },
+    {
+      id: 'node4-27',
+      label: '西河',
+      x: 1642,
+      y: 686,
+      style: {
+        fill: color
+      },
+      labelCfg: { position: 'right' }
+    },
+    {
+      id: 'node4-28',
+      label: '4',
+      x: 1693,
+      y: 628,
+      size: 30,
+      style: {
+        fill: color
+      },
+      labelCfg: {
+        position: 'center',
+        style: {
+          fill: '#fff'
+        }
+      }
+    },
   ],
   edges: [
     { source: 'node4-1', target: 'node4-2', style: { stroke: color } },
@@ -229,6 +315,16 @@ const data = {
     { source: 'node4-17', target: 'node4-18', style: { stroke: color } },
     { source: 'node4-18', target: 'node4-19', style: { stroke: color } },
     { source: 'node4-19', target: 'node4-20', style: { stroke: color } },
+    { source: 'node4-20', target: 'node4-21', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 984, y: 652 }] },
+    { source: 'node4-21', target: 'node3-18', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1043, y: 713 }] },
+    { source: 'node3-18', target: 'node6-26', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1043, y: 713 }, { x: 1080, y: 752 }] },
+    { source: 'node6-26', target: 'node4-22', style: { stroke: color } },
+    { source: 'node4-22', target: 'node4-23', style: { stroke: color } },
+    { source: 'node4-23', target: 'node4-24', style: { stroke: color } },
+    { source: 'node4-24', target: 'node4-25', style: { stroke: color } },
+    { source: 'node4-25', target: 'node4-26', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1576, y: 752 }] },
+    { source: 'node4-26', target: 'node4-27', style: { stroke: color } },
+    { source: 'node4-27', target: 'node4-28', style: { stroke: color } },
   ]
 }
 
