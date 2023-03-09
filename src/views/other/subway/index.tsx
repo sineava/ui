@@ -46,7 +46,7 @@ export default () => {
   }, [])
   return (
     <div className="bg-white dark:bg-gray-900 w-full h-full rounded overflow-y-scroll scroll-smooth">
-      <div className="h-[1200px]" ref={subwayRef} style={{ zoom: 0.88 }}></div>
+      <div className="h-[1600px]" ref={subwayRef} style={{ zoom: 0.88 }}></div>
     </div>
   )
 }

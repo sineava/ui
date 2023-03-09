@@ -3,8 +3,8 @@ const color = '#6bc8dd'
 const data = {
   nodes: [
     {
-      id: "node7-1",
-      label: "花照壁",
+      id: 'node7-1',
+      label: '花照壁',
       x: 730,
       y: 466,
       style: {
@@ -13,8 +13,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node7-2",
-      label: "茶店子",
+      id: 'node7-2',
+      label: '茶店子',
       x: 702,
       y: 496,
       style: {
@@ -23,8 +23,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node7-3",
-      label: "金沙博物馆",
+      id: 'node7-3',
+      label: '金沙博物馆',
       x: 626,
       y: 602,
       style: {
@@ -33,8 +33,8 @@ const data = {
       labelCfg: { position: 'left' }
     },
     {
-      id: "node7-4",
-      label: "东坡路",
+      id: 'node7-4',
+      label: '东坡路',
       x: 626,
       y: 706,
       style: {
@@ -43,8 +43,8 @@ const data = {
       labelCfg: { position: 'left' }
     },
     {
-      id: "node7-5",
-      label: "龙爪堰",
+      id: 'node7-5',
+      label: '龙爪堰',
       x: 626,
       y: 764,
       style: {
@@ -53,8 +53,8 @@ const data = {
       labelCfg: { position: 'left' }
     },
     {
-      id: "node7-6",
-      label: "武侯大道",
+      id: 'node7-6',
+      label: '武侯大道',
       x: 626,
       y: 820,
       style: {
@@ -103,8 +103,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node7-11",
-      label: "三瓦窑",
+      id: 'node7-11',
+      label: '三瓦窑',
       x: 989,
       y: 992,
       style: {
@@ -113,8 +113,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node7-12",
-      label: "四川师大",
+      id: 'node7-12',
+      label: '四川师大',
       x: 1163,
       y: 992,
       style: {
@@ -123,8 +123,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node7-13",
-      label: "狮子山",
+      id: 'node7-13',
+      label: '狮子山',
       x: 1192,
       y: 963,
       style: {
@@ -133,8 +133,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node7-14",
-      label: "大观",
+      id: 'node7-14',
+      label: '大观',
       x: 1219,
       y: 936,
       style: {
@@ -145,16 +145,16 @@ const data = {
     {
       id: 'node7-15',
       label: '成都东客站',
-      x: 1270,
-      y: 882,
-      size: [60, 20],
+      x: 1291,
+      y: 893,
+      size: [80, 20],
       style: { fill: '#1abc9c', radius: 10 },
       type: 'rect',
       labelCfg: { position: 'center' }
     },
     {
-      id: "node7-16",
-      label: "迎晖路",
+      id: 'node7-16',
+      label: '迎晖路',
       x: 1288,
       y: 820,
       style: {
@@ -173,8 +173,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node7-18",
-      label: "双店路",
+      id: 'node7-18',
+      label: '双店路',
       x: 1288,
       y: 696,
       style: {
@@ -183,8 +183,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node7-19",
-      label: "崔家店",
+      id: 'node7-19',
+      label: '崔家店',
       x: 1288,
       y: 641,
       style: {
@@ -253,8 +253,8 @@ const data = {
     { source: 'node6-31', target: 'node7-12', style: { stroke: color } },
     { source: 'node7-12', target: 'node7-13', style: { stroke: color } },
     { source: 'node7-13', target: 'node7-14', style: { stroke: color } },
-    { source: 'node7-14', target: 'node7-15', style: { stroke: color } },
-    { source: 'node7-15', target: 'node7-16', style: { stroke: color } },
+    { source: 'node7-14', target: 'node7-15', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1265, y: 888 }] },
+    { source: 'node7-15', target: 'node7-16', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 1262, y: 890 }] },
     { source: 'node7-16', target: 'node7-17', style: { stroke: color } },
     { source: 'node7-17', target: 'node7-18', style: { stroke: color } },
     { source: 'node7-18', target: 'node7-19', style: { stroke: color } },

@@ -2,8 +2,8 @@ const color = '#7abb30'
 const data = {
   nodes: [
     {
-      id: "node1",
-      label: "蓉2",
+      id: 'node1',
+      label: '蓉2',
       x: 430,
       y: 73,
       size: 30,
@@ -18,8 +18,8 @@ const data = {
       }
     },
     {
-      id: "node2",
-      label: "郫县西站",
+      id: 'node2',
+      label: '郫县西站',
       x: 343,
       y: 73,
       style: {
@@ -27,8 +27,8 @@ const data = {
       }
     },
     {
-      id: "node3",
-      label: "菠萝滩",
+      id: 'node3',
+      label: '菠萝滩',
       x: 288,
       y: 73,
       style: {
@@ -36,8 +36,8 @@ const data = {
       }
     },
     {
-      id: "node4",
-      label: "梨园路",
+      id: 'node4',
+      label: '梨园路',
       x: 231,
       y: 73,
       style: {
@@ -45,8 +45,8 @@ const data = {
       }
     },
     {
-      id: "node5",
-      label: "和兴街",
+      id: 'node5',
+      label: '和兴街',
       x: 177,
       y: 73,
       style: {
@@ -54,8 +54,8 @@ const data = {
       }
     },
     {
-      id: "node6",
-      label: "望丛祠",
+      id: 'node6',
+      label: '望丛祠',
       x: 122,
       y: 73,
       style: {
@@ -63,8 +63,8 @@ const data = {
       }
     },
     {
-      id: "node7",
-      label: "望丛中路",
+      id: 'node7',
+      label: '望丛中路',
       x: 40,
       y: 96,
       style: {
@@ -75,8 +75,8 @@ const data = {
       }
     },
     {
-      id: "node8",
-      label: "何公路",
+      id: 'node8',
+      label: '何公路',
       x: 40,
       y: 122,
       style: {
@@ -87,8 +87,8 @@ const data = {
       }
     },
     {
-      id: "node9",
-      label: "晨光",
+      id: 'node9',
+      label: '晨光',
       x: 40,
       y: 148,
       style: {
@@ -99,8 +99,8 @@ const data = {
       }
     },
     {
-      id: "node10",
-      label: "花石",
+      id: 'node10',
+      label: '花石',
       x: 40,
       y: 174,
       style: {
@@ -111,8 +111,8 @@ const data = {
       }
     },
     {
-      id: "node11",
-      label: "大禹东路",
+      id: 'node11',
+      label: '大禹东路',
       x: 40,
       y: 197,
       style: {
@@ -123,8 +123,8 @@ const data = {
       }
     },
     {
-      id: "node12",
-      label: "红展东路",
+      id: 'node12',
+      label: '红展东路',
       x: 40,
       y: 224,
       style: {
@@ -135,8 +135,8 @@ const data = {
       }
     },
     {
-      id: "node13",
-      label: "红旗大道",
+      id: 'node13',
+      label: '红旗大道',
       x: 40,
       y: 249,
       style: {
@@ -147,8 +147,8 @@ const data = {
       }
     },
     {
-      id: "node14",
-      label: "德富大道",
+      id: 'node14',
+      label: '德富大道',
       x: 40,
       y: 275,
       style: {
@@ -434,8 +434,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node49",
-      label: "蓉2",
+      id: 'node49',
+      label: '蓉2',
       x: 861,
       y: 71,
       size: 30,

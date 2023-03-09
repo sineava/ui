@@ -112,11 +112,11 @@ export default () => {
   }
   return (
     <div className="flex h-full t-meeting">
-      <div className="flex-1 relative">
+      <div className="flex-1 relative t-video">
         <video className="h-full rounded" autoPlay />
         { src && <img draggable src={src} className="absolute right-6 rounded top-2 w-[256px] h-[192px] border-2 border-white cursor-pointer" /> }
       </div>
-      <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col relative">
+      <div className="w-[500px] dark:bg-gray-900 bg-white rounded-md py-1 flex flex-col relative max-w-full min-h-[500px]">
         <div className="cursor-pointer absolute top-0 left-0 bg-[#3f8cff] rounded w-8 h-8 flex justify-center items-center" onClick={() => setIsChat(!isChat)}>
           <SvgIcon size={16} icon="robot" fill={isChat ? '#fff' : '#ccc'} />
         </div>
@@ -138,7 +138,7 @@ export default () => {
           }
           
         </div>
-        <div className="h-[60px] flex justify-center items-center">
+        <div className="h-[60px] flex justify-center items-center t-chat">
           <div className="t-uiverse-input-group">
             <input className="t-uiverse-input" value={message} placeholder="输入聊天内容" autoComplete="off" onChange={e => setMessage(e.target.value)} />
             <input className="t-uiverse-button--submit" value="发送消息" type="button" onClick={send} />

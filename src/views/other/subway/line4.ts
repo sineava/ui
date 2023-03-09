@@ -3,8 +3,8 @@ const color = '#04ae61'
 const data = {
   nodes: [
     {
-      id: "node4-1",
-      label: "4",
+      id: 'node4-1',
+      label: '4',
       x: 40,
       y: 421,
       size: 30,
@@ -19,8 +19,8 @@ const data = {
       }
     },
     {
-      id: "node4-2",
-      label: "万盛",
+      id: 'node4-2',
+      label: '万盛',
       x: 40,
       y: 511,
       style: {
@@ -29,8 +29,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node4-3",
-      label: "杨柳河",
+      id: 'node4-3',
+      label: '杨柳河',
       x: 40,
       y: 582,
       style: {
@@ -39,8 +39,8 @@ const data = {
       labelCfg: { position: 'right' }
     },
     {
-      id: "node4-4",
-      label: "凤\n溪\n河",
+      id: 'node4-4',
+      label: '凤\n溪\n河',
       x: 114,
       y: 652,
       size: [20, 50],
@@ -49,8 +49,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node4-5",
-      label: "南熏大道".split('').join('\n'),
+      id: 'node4-5',
+      label: '南熏大道'.split('').join('\n'),
       x: 150,
       y: 652,
       style: {
@@ -59,8 +59,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-6",
-      label: "光华公园".split('').join('\n'),
+      id: 'node4-6',
+      label: '光华公园'.split('').join('\n'),
       x: 185,
       y: 652,
       style: {
@@ -69,8 +69,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-7",
-      label: "涌泉".split('').join('\n'),
+      id: 'node4-7',
+      label: '涌泉'.split('').join('\n'),
       x: 220,
       y: 652,
       style: {
@@ -79,8 +79,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-8",
-      label: "凤凰大街".split('').join('\n'),
+      id: 'node4-8',
+      label: '凤凰大街'.split('').join('\n'),
       x: 254,
       y: 652,
       style: {
@@ -89,8 +89,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-9",
-      label: "马厂坝".split('').join('\n'),
+      id: 'node4-9',
+      label: '马厂坝'.split('').join('\n'),
       x: 288,
       y: 652,
       style: {
@@ -99,8 +99,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-10",
-      label: "非遗博览园".split('').join('\n'),
+      id: 'node4-10',
+      label: '非遗博览园'.split('').join('\n'),
       x: 322,
       y: 652,
       style: {
@@ -109,8 +109,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-11",
-      label: "蔡桥".split('').join('\n'),
+      id: 'node4-11',
+      label: '蔡桥'.split('').join('\n'),
       x: 357,
       y: 652,
       style: {
@@ -119,8 +119,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-12",
-      label: "中坝".split('').join('\n'),
+      id: 'node4-12',
+      label: '中坝'.split('').join('\n'),
       x: 392,
       y: 652,
       style: {
@@ -129,8 +129,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-13",
-      label: "成都西站",
+      id: 'node4-13',
+      label: '成都西站',
       x: 457,
       y: 652,
       size: [60, 20],
@@ -139,8 +139,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node4-14",
-      label: "清江西路".split('').join('\n'),
+      id: 'node4-14',
+      label: '清江西路'.split('').join('\n'),
       x: 528,
       y: 652,
       style: {
@@ -149,8 +149,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-15",
-      label: "文化宫",
+      id: 'node4-15',
+      label: '文化宫',
       x: 627,
       y: 652,
       size: [60, 20],
@@ -159,8 +159,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node4-16",
-      label: "西南财大".split('').join('\n'),
+      id: 'node4-16',
+      label: '西南财大'.split('').join('\n'),
       x: 683,
       y: 652,
       style: {
@@ -169,8 +169,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-17",
-      label: "草堂北路".split('').join('\n'),
+      id: 'node4-17',
+      label: '草堂北路'.split('').join('\n'),
       x: 704,
       y: 652,
       style: {
@@ -179,8 +179,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-18",
-      label: "中医大省医院",
+      id: 'node4-18',
+      label: '中医大省医院',
       x: 782,
       y: 652,
       size: [60, 20],
@@ -189,8 +189,8 @@ const data = {
       labelCfg: { position: 'center' }
     },
     {
-      id: "node4-19",
-      label: "宽窄巷子",
+      id: 'node4-19',
+      label: '宽窄巷子',
       x: 877,
       y: 652,
       style: {
@@ -199,8 +199,8 @@ const data = {
       labelCfg: { position: 'bottom' }
     },
     {
-      id: "node4-20",
-      label: "骡马市",
+      id: 'node4-20',
+      label: '骡马市',
       x: 931,
       y: 652,
       size: [60, 20],

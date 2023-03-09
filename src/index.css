@@ -406,6 +406,13 @@
   .t-meeting {
     flex-direction: column;
   }
+  .t-chat input {
+    width: 120px;
+    height: 40px;
+  }
+  .t-video {
+    display: none;
+  }
 }
 
 @keyframes move {
