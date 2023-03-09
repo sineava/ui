@@ -526,7 +526,7 @@ const data = {
   edges: [
     { source: 'node6-1', target: 'node6-2', style: { stroke: color } },
     { source: 'node6-2', target: 'node6-3', style: { stroke: color } },
-    { source: 'node6-3', target: 'node6-4', style: { stroke: color } },
+    { source: 'node6-3', target: 'node6-4', style: { stroke: color, radius: 4 }, type: 'polyline', controlPoints: [{ x: 124, y: 261 }] },
     { source: 'node6-4', target: 'node6-5', style: { stroke: color } },
     { source: 'node6-5', target: 'node6-6', style: { stroke: color } },
     { source: 'node6-6', target: 'node6-7', style: { stroke: color } },
