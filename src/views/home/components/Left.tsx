@@ -39,7 +39,7 @@ export default function() {
       { path: '/resource/video', name: '视频' }
     ] },
     {
-      path: '/other', icon: 'folder-minus', name: '其他', children: [
+      path: '/other', icon: 'face-smile', name: '其他', children: [
         { path: '/other/subway', name: '地铁拓扑图' }
       ]
     }
@@ -75,13 +75,13 @@ export default function() {
       onClick={(e: any) => menuClick(e, i)}
     >
       <div className="inline-flex w-[24px] h-[24px] items-center">
-        <SvgIcon icon={x.icon} size={20} color={current === i ? '#3F8CFF' : '#8395a7'} />
+        <SvgIcon icon={x.icon} size={20} color={current === i ? '#3F8CFF' : '#666'} />
       </div>
       <span className="ml-2">{x.name}</span>
       {
         trigger && current === i && x.children && x.children.length > 0 && (
           <div className="dropdown dropdown-open absolute -right-5 top-0">
-            <ul tabIndex={0} className="dark:bg-gray-900 dark:text-[#fff] dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 text-[#7D8592]">
+            <ul tabIndex={0} className="dark:bg-gray-900 dark:text-white dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 text-[#333]">
               {
                 x.children?.map((x: IconType, n: number) => <li onClick={() => toView(x.path)} key={n}><a className="t-bg">{x.name}</a></li>)
               }
@@ -101,7 +101,7 @@ export default function() {
         {menu}
       </ul>
       <button className="absolute left-14 bottom-8 dark:bg-gray-800 dark:border border border-[#fff] dark:border-[#3F8CFF] t-login mt-[30px] px-6 py-2 t-button bg-[#3F8CFF] flex justify-center items-center" type="button" onClick={() => navigate('/login')}>
-        <span className="text-[14px] mr-2 font-normal">退出登录</span>
+        <span className="">退出登录</span>
         <SvgIcon icon="right-arrow" color="#fff" size={20} />
       </button>
     </div>

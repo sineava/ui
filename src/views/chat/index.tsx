@@ -141,7 +141,7 @@ export default () => {
         <div className="h-[60px] flex justify-center items-center t-chat">
           <div className="t-uiverse-input-group">
             <input className="t-uiverse-input" value={message} placeholder="输入聊天内容" autoComplete="off" onChange={e => setMessage(e.target.value)} />
-            <input className="t-uiverse-button--submit" value="发送消息" type="button" onClick={send} />
+            <input className="t-uiverse-button--submit text-sm" value="发送消息" type="button" onClick={send} />
           </div>
           <button className="btn btn-success text-white ml-2 h-[50px] w-[120px]" onClick={camera}>视频会议</button>
         </div>

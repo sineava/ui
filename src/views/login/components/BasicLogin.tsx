@@ -74,7 +74,7 @@ function BasicLogin() {
     location.href = `https://github.com/login/oauth/authorize?${query}`
   }
   const toBlog = () => {
-    window.open('https://sineava.netlify.app/', '_blank')
+    window.open('https://sineava.vercel.app/', '_blank')
   }
   return (
     <div className="dark:bg-gray-800 w-full h-screen bg-[#F4F9FD] flex justify-center items-center">

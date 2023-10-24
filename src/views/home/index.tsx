@@ -6,7 +6,7 @@ import Lottie from 'lottie-react'
 import json from '../../assets/lottie/cat.json'
 import SvgIcon from '../../components/SvgIcon'
 import emitter from '../../utils/ev'
-import Chat from '../chat'
+// import Chat from '../chat'
 
 const initialTheme = localStorage.getItem('theme') || 'dark'
 document.documentElement.className = initialTheme
@@ -57,7 +57,7 @@ function Home() {
           </div>
         </div>
         <div className="dark:bg-gray-800 t-layout bg-[#F4F9FD] p-2 scroll-smooth overflow-y-auto">
-          { location.pathname === '/' && <Chat /> }
+          {/* { location.pathname === '/' && <Chat /> } */}
           <Suspense fallback={mask()}>
             <Outlet />
           </Suspense>
