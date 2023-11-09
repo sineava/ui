@@ -31,7 +31,7 @@ const Position = ({ position }: any) => {
 }
 
 export default function() {
-  Ion.defaultAccessToken = import.meta.env?.VITE_CESIUM
+  Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJmNjJjMzY0OS1hZGQxLTRiZmYtYWYwNS03NmIyM2MwMDgwZDAiLCJpZCI6MTIzMTgsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NjA4NDQ3Mjd9.OLTL_rs2gAi2R9zoztBHcJPDHnVl2Q7OZxRtZhoCeZE'
   const lnglat = { lng: 104.341738, lat: 30.593555, pitch: -10, heading: 280, height: 1000 }
   const [position, setPosition] = useState({...lnglat})
   const mapRef: any = useRef()
